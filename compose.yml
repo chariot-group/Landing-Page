@@ -1,27 +1,29 @@
 services:
-  frontend:
+
+  chariot-lp:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: showcase-chariot-dev
+    container_name: chariot-lp
+    platform: linux/amd64
+    restart: unless-stopped
     working_dir: /app
-    ports:
-      - "3000:3000"
     volumes:
       - .:/app
       - /app/node_modules
+      - /var/log/web.log:/var/log/web.log
+    ports:
+      - "3000:3000"
     environment:
-      - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY}
-      - NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=${NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY}
-      - NEXT_PUBLIC_RECAPTCHA_SITE_KEY=${NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-      - RECAPTCHA_SECRET_KEY=${RECAPTCHA_SECRET_KEY}
-      - SMTP_HOST=${SMTP_HOST}
-      - SMTP_PORT=${SMTP_PORT}
-      - SMTP_USER=${SMTP_USER}
-      - SMTP_PASS=${SMTP_PASS}
-      - RECEIVER_EMAIL=${RECEIVER_EMAIL}
-      - NEXT_PUBLIC_APP_URL=${NEXT_PUBLIC_APP_URL}
-      - NEXT_PUBLIC_STATE=${NEXT_PUBLIC_STATE}
-      - PORT=${PORT}
-      - NODE_ENV=${NODE_ENV}
+      NODE_ENV: development
+      # File watching optimizations (no polling needed on modern Docker Desktop)
+      WATCHPACK_POLLING: "false"
+      CHOKIDAR_USEPOLLING: "false"
+    shm_size: 512mb
+    networks:
+      - chariot-group-network
     command: ["npm", "run", "dev"]
+
+networks:
+  chariot-group-network:
+    external: true

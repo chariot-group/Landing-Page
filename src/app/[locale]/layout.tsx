@@ -1,43 +1,53 @@
-import "../globals.css";
-import "react-toastify/dist/ReactToastify.css";
-import { getMessages } from "next-intl/server";
+import type { Metadata } from "next";
+import { Inter_Tight } from "next/font/google";
+import "./globals.css";
+import ToastContainer from "@/components/ToastContainer";
 import { NextIntlClientProvider } from "next-intl";
-import { notFound } from "next/navigation";
-import { routing } from "@/i18n/routing";
-import Header from "@/components/common/Header";
-import ToastContainer from "@/components/common/ToastContainer";
-import { Footer } from "@/components/common/Footer";
-import { Locale } from "@/i18n/locales";
-import RecaptchaScript from "@/components/modules/RecaptchaScript";
+import { getMessages } from "next-intl/server";
+import { locales } from "@/i18n/request";
 
-export default async function LocalLayout({
+const interTight = Inter_Tight({
+  variable: "--font-inter-tight",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "Chariot App",
+  description: "A Dungeons & Dragons character management app.",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: "/favicon.svg",
+  },
+  manifest: "/site.webmanifest",
+};
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
+export default async function RootLayout({
   children,
   params,
-}: {
+}: Readonly<{
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
-}) {
+}>) {
   const { locale } = await params;
   const messages = await getMessages();
 
-  // Ensure that the incoming `locale` is valid
-  if (!routing.locales.includes(locale as Locale)) {
-    notFound();
-  }
-
   return (
-    <NextIntlClientProvider messages={messages}>
-      <RecaptchaScript lang={locale as Locale} />
-      <header>
-        <Header />
-      </header>
-      <main className="w-full h-full">
-        <ToastContainer />
-        {children}
-      </main>
-      <footer>
-        <Footer />
-      </footer>
-    </NextIntlClientProvider>
+    <html lang={locale}>
+      <body
+        className={`${interTight.variable} antialiased bg-[url('/background.svg')] bg-cover bg-fixed bg-center bg-no-repeat font-sans overflow-hidden h-screen`}
+      >
+        <NextIntlClientProvider messages={messages}>
+          <ToastContainer />
+          {children}
+        </NextIntlClientProvider>
+      </body>
+    </html>
   );
 }

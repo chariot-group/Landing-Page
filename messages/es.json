@@ -1,632 +1,437 @@
 {
-  "LocaleSwitcher": {
-    "locale": "{locale, select, fr {🇫🇷 Francés} en {🇬🇧 Inglés} es {🇪🇸 Español} other {🏴‍☠️ Desconocido}}",
-    "flag": "{locale, select, fr {🇫🇷} en {🇬🇧} es {🇪🇸} other {🏴‍☠️}}"
+  "sidebar": {
+    "mainNavigation": "Navegación principal",
+    "gmNavigation": "Navegación de director de juego",
+    "playerNavigation": "Navegación de jugador",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "yourSpaces": "Tus espacios",
+    "yourCharacters": "Tus personajes",
+    "createCampaign": "Crear una campaña",
+    "yourGroups": "Tus grupos",
+    "createGroup": "Crear un grupo",
+    "yourArchives": "Tus archivos",
+    "noArchives": "Sin archivos.",
+    "rightClickToAdd": "Clic derecho para añadir.",
+    "noGroups": "Sin grupos",
+    "noCharacters": "Sin personajes",
+    "archive": "Archivar",
+    "launchSession": "Iniciar sesión",
+    "initBattle": "Inicializar batalla",
+    "startBattle": "Comenzar batalla",
+    "reset": "Reiniciar",
+    "returnToBattle": "Volver a la batalla",
+    "joinSession": "Unirse a la sesión",
+    "returnToSheet": "Volver a la hoja de personaje",
+    "selectCampaign": "Seleccionar campaña",
+    "selectedCampaign": "Campaña seleccionada",
+    "selected": "seleccionado"
   },
-  "header": {
-    "subtitle": "Su herramienta de gestión de juegos de rol",
-    "buttons": {
-      "about": "Acerca de",
-      "pricing": "Nuestras ofertas",
-      "team": "El equipo",
-      "thanks": "Reconocimientos",
-      "contact": "Contacto"
+  "error": {
+    "title": "¡Ups! Algo salió mal",
+    "description": "Encontramos un error inesperado al procesar su solicitud.",
+    "unknownError": "Ocurrió un error desconocido",
+    "suggestion": "Aquí hay algunas cosas que puede intentar:",
+    "suggestions": {
+      "refresh": "Actualizar la página",
+      "retry": "Intentar su acción nuevamente",
+      "contact": "Contactar al soporte si el problema persiste"
+    },
+    "actions": {
+      "retry": "Intentar de Nuevo",
+      "home": "Volver al Inicio"
     }
   },
-  "hero": {
-    "title": "Deje fluir su creatividad, tome las riendas de sus campañas y ¡diviértase!",
-    "cta": "Descubre nuestras ofertas"
+  "auth": {
+    "loading": "Cargando...",
+    "pleaseWait": "Por favor, espere mientras verificamos su sesión"
   },
-  "about": {
-    "title": "Acerca de",
-    "description": "¿Cansado de hacer malabarismos con distintas herramientas para organizar sus campañas?",
-    "content": [
-      "Descubra CHARIOT, su nueva herramienta de gestión integral. Vive tus campañas más intensamente centralizando todas las funciones que necesitas para llevarlas a cabo sin problemas.",
-      "Gracias a su intuitiva interfaz, CHARIOT te permite gestionar personajes, tanto jugadores como no jugadores, acceder a sus estadísticas, organizar grupos y batallas con un simple movimiento, optimizar las batallas con el rastreador initiave, y guardar de forma sencilla los HP de los personajes durante y después de una batalla."
-    ]
+  "notFound": {
+    "message": "Página no encontrada. Redirigiendo al inicio..."
   },
-  "pricing": {
-    "title": "Nuestras ofertas",
-    "plans": {
-      "annual": "Plan anual",
-      "monthly": "Plan mensual"
+  "Profile": {
+    "profile": "Perfil",
+    "logout": "Cerrar sesión"
+  },
+  "ProfilePage": {
+    "pageTitle": "Perfil de usuario",
+    "changePasswordTitle": "Cambiar contraseña",
+    "currentPassword": "Contraseña actual",
+    "newPassword": "Nueva contraseña",
+    "confirmNewPassword": "Confirmar nueva contraseña",
+    "updatePassword": "Actualizar contraseña",
+    "sessionHistory": "Historial de sesiones",
+    "yourTokens": "Tus tokens:",
+    "noHistory": "No hay historial disponible",
+    "reloadTokens": "Recargar tus tokens",
+    "changePassword": {
+      "successMessage": "Contraseña cambiada correctamente",
+      "errorMessage": "Error al cambiar la contraseña",
+      "incorrectPassword": "La contraseña actual es incorrecta",
+      "complexityError": "La nueva contraseña no cumple con los requisitos de complejidad",
+      "networkError": "Error de red. Por favor, inténtalo de nuevo.",
+      "validation": {
+        "currentPasswordRequired": "La contraseña actual es obligatoria",
+        "newPasswordMin": "La contraseña debe tener al menos 8 caracteres",
+        "confirmPasswordRequired": "Por favor, confirma tu contraseña",
+        "passwordMismatch": "Las contraseñas no coinciden"
+      }
     },
-    "button": {
-      "comingSoon": "Pronto disponible",
-      "subscribe": "Suscribirse a la oferta {name}"
-    },
-    "byYear": "año",
-    "byMonth": "mes"
-  },
-  "team": {
-    "title": "El equipo",
-    "developer": "Programador",
-    "description": [
-      "CHARIOT son ante todo dos amigos unidos por una pasión común por los juegos de rol. Juntos hemos experimentado la dificultad de organizar campañas, utilizando diversas herramientas, desde páginas web hasta papel y lápiz. Y un día nos decidimos: íbamos a crear nuestra propia herramienta para facilitar la organización de nuestras campañas. Así nació CHARIOT, una herramienta de gestión única creada por jugadores, para jugadores.",
-      "Esperamos que CHARIOT le ayude y que lo disfrute tanto como nosotros.",
-      "¡Hora de la aventura!"
-    ],
-    "joinUs": "Únete a la aventura CHARIOT"
-  },
-  "thanks": {
-    "title": "Reconocimientos",
-    "content": [
-      "Nada de esto habría sido posible sin el talento, la energía y la generosidad de todos los que han contribuido, de un modo u otro, a hacer realidad este proyecto.",
-      "Queremos expresar nuestra más profunda gratitud a todos los que nos han apoyado, aconsejado, desafiado o inspirado. Cada gesto, cada idea, cada palabra de aliento han contado.",
-      "Éstas son las personas a las que queremos dar las gracias más sinceramente."
-    ],
-    "jobs": {
-      "developer": "Programador",
-      "designer": "Diseñador UI/UX",
-      "marketer": "Comercializador",
-      "illustrator": "Ilustrador",
-      "graphicDesigner": "Diseñador gráfico & Diseñador UI/UX"
-    },
-    "descriptions": {
-      "JL": "Contamos con el apoyo de Jovis Lélue, que contribuyó a las fases iniciales de diseño y prestó una ayuda inestimable en materia de DevOps y gestión de la configuración.",
-      "EC": "Nos beneficiamos de la experiencia de Emma Caroff en el diseño gráfico y la creación de maquetas durante las primeras iteraciones del proyecto.",
-      "MV": "Morgane Vigier nos ayudó a crear nuestros primeros carteles publicitarios.",
-      "LL": "Léane Loubère nos ayudó mucho a crear las ilustraciones necesarias para ciertas partes de la aplicación.",
-      "AB": "Amina nos prestó una ayuda inestimable en la organización de la campaña de comunicación y marketing.",
-      "RL": "Rémi ha contribuido mucho al proyecto, ayudando a Amina en las tareas de marketing.",
-      "GB": "La llegada de Gabriel permitió que el proyecto diera un giro profesional, desde el punto de vista gráfico y de diseño UI/UX."
+    "editProfile": {
+      "successMessage": "Perfil actualizado correctamente",
+      "errorMessage": "Error al actualizar el perfil",
+      "networkError": "Error de red. Por favor, inténtalo de nuevo.",
+      "emailAlreadyInUse": "Esta dirección de correo electrónico ya está en uso por otra cuenta",
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "email": "Correo electrónico",
+      "updateProfile": "Actualizar perfil",
+      "cancelUpdate": "Cancelar",
+      "formLabel": "Formulario de actualización de perfil"
     }
   },
-  "contact": {
-    "title": "Contacto",
-    "errors": {
-      "emailRequired": "Debe introducir una dirección de correo electrónico.",
-      "emailInvalid": "Debe introducir una dirección de correo electrónico válida.",
-      "objectRequired": "Debe introducir un asunto. (5 caracteres mínimo)",
-      "contentRequired": "Su correo electrónico debe contener un mensaje. (25 caracteres mínimo)",
-      "reCaptchaRequired": "Debe validar el reCAPTCHA.",
-      "reCaptchaInvalid": "La comprobación ReCAPTCHA falla.",
-      "serverError": "No se ha podido enviar el mensaje. Vuelva a intentarlo más tarde."
+  "welcome": {
+    "title": "Bienvenido a Chariot",
+    "subTitle": "¿Cómo deseas comenzar tu aventura?",
+    "choices-list": "Opciones disponibles para empezar",
+    "campaign": {
+      "title": "Crea tu primera <br /> campaña",
+      "button": "Crear una campaña",
+      "button-aria": "Navegar hacia la creación de campaña"
     },
-    "success": "Su mensaje ha sido enviado. Le responderemos lo antes posible.",
-    "contactUs": "Contacte con nosotros",
-    "form": {
-      "labels": {
-        "email": "E-mail",
-        "object": "Objeto",
-        "content": "Contenido"
-      },
-      "placeholders": {
-        "email": "Su e-mail",
-        "object": "Asunto del mensaje",
-        "content": "Su mensaje"
-      },
-      "submit": "Enviar",
-      "submitLoading": "Enviando..."
+    "session": {
+      "title": "Únete a <br /> una sesión",
+      "button": "Unirse a una sesión",
+      "button-aria": "Navegar hacia unirse a una sesión"
     },
-    "whatToSay": "¿Qué decirnos?",
-    "whatToSayContent": [
-      "¿Tiene alguna pregunta, sugerencia o comentario?",
-      "No dude en ponerse en contacto con nosotros: ¡estamos aquí para ayudarle!"
-    ],
-    "responseTime": "Tiempos de respuesta",
-    "responseTimeContent": [
-      "Haremos todo lo posible por responderle lo antes posible.",
-      "Tenga en cuenta, no obstante, que podemos tardar algún tiempo en ponernos en contacto con usted.",
-      "¡Gracias por su paciencia!"
-    ]
+    "character": {
+      "title": "Crea tu primer <br /> personaje",
+      "button": "Crear un personaje",
+      "button-aria": "Navegar hacia la creación de personaje"
+    }
+  },  "characterForm": {
+    "createSuccess": "Personaje creado con éxito",
+    "createError": "Error al crear el personaje",
+    "updateSuccess": "Personaje actualizado con éxito",
+    "updateError": "Error al actualizar el personaje",
+    "missingId": "No se puede actualizar: falta el identificador del personaje",
+    "changesCancelled": "Cambios cancelados"
   },
-  "success": {
-    "title": "Todo ha ido bien, ¡bienvenido a Chariot!",
-    "content": ["Recibirá un correo electrónico en ", " para activar su cuenta."],
-    "thanks": "¡Disfrute de CHARIOT!"
-  },
-  "footer": {
-    "TOU": "TCU",
-    "TOS": "CGV",
-    "legalNotice": "Aviso legal",
-    "privacyPolicy": "Política de privacidad"
-  },
-  "NotFound": {
-    "title": "Fallo crítico, página no encontrada",
-    "description": "Tirada de localización: 1. El oso lechuza se queda mirando el cartel... pero el cartel no responde.",
-    "backToHome": "Volver a la página de inicio"
-  },
-  "TOU": {
-    "sections": [
-      {
-        "title": "Artículo 1 - Objeto",
-        "content": [
-          {
-            "type": "paragraph",
-            "text": "Estas Condiciones Generales de Uso (CGU) tienen como objetivo definir las condiciones de acceso y uso de la aplicación Chariot ofrecida por CHARIOT, accesible a través del sitio web {a}."
-          },
-          {
-            "type": "paragraph",
-            "text": "Chariot es un servicio en línea dedicado a apoyar a los Maestros del Juego (MJ) en la gestión de campañas de Dungeons & Dragons (D&D)."
-          }
-        ]
+  "zodErrors": {
+    "invalidTypeReceived": "Entrada inválida",
+    "required": "Requerido",
+    "tooSmall": {
+      "string": {
+        "inclusive": "La cadena debe contener al menos {minimum} carácter(es)"
       },
-      {
-        "title": "Artículo 2 - Aceptación de las CGU",
-        "content": [
-          {
-            "type": "paragraph",
-            "text": "El usuario reconoce haber leído y aceptado sin reservas estas CGU antes de utilizar el servicio."
-          }
-        ]
+      "number": {
+        "inclusive": "El número debe ser mayor o igual a {minimum}"
       },
-      {
-        "title": "Artículo 3 - Descripción del servicio",
-        "content": [
-          {
-            "type": "paragraph",
-            "text": "El servicio ofrece una versión freemium para crear, organizar y gestionar campañas, así como opciones de pago con funciones avanzadas."
-          }
-        ]
-      },
-      {
-        "title": "Artículo 4 - Registro y acceso",
-        "content": [
-          {
-            "type": "list",
-            "text": "El acceso a las funcionalidades requiere la creación de una cuenta de usuario."
-          },
-          {
-            "type": "list",
-            "text": "El usuario se compromete a proporcionar información precisa."
-          },
-          {
-            "type": "list",
-            "text": "El usuario es responsable de la confidencialidad de sus credenciales."
-          }
-        ]
-      },
-      {
-        "title": "Artículo 5 - Uso permitido y prohibido",
-        "content": [
-          {
-            "type": "paragraph",
-            "text": "El usuario se compromete a no:"
-          },
-          {
-            "type": "list",
-            "text": "utilizar el servicio con fines ilegales o contrarios a las CGU,"
-          },
-          {
-            "type": "list",
-            "text": "infringir los derechos de terceros,"
-          },
-          {
-            "type": "list",
-            "text": "interferir con el funcionamiento del servicio,"
-          },
-          {
-            "type": "list",
-            "text": "intentar acceder a áreas restringidas del servicio."
-          }
-        ]
-      },
-      {
-        "title": "Artículo 6 - Propiedad intelectual",
-        "content": [
-          {
-            "type": "paragraph",
-            "text": "Chariot y su contenido (diseño, código, logotipos, etc.) son propiedad exclusiva de CHARIOT."
-          },
-          {
-            "type": "paragraph",
-            "text": "El contenido generado por el usuario le pertenece, pero este concede a CHARIOT un derecho de uso limitado para permitir el funcionamiento del servicio."
-          }
-        ]
-      },
-      {
-        "title": "Artículo 7 - Datos personales",
-        "content": [
-          {
-            "type": "list",
-            "text": "El tratamiento de datos personales se describe en la Política de Privacidad."
-          },
-          {
-            "type": "list",
-            "text": "El usuario tiene derechos de acceso, modificación y supresión de sus datos."
-          }
-        ]
-      },
-      {
-        "title": "Artículo 8 - Responsabilidad",
-        "content": [
-          {
-            "type": "list",
-            "text": "CHARIOT se compromete a proporcionar un servicio fiable pero no puede garantizar una disponibilidad del 100%."
-          },
-          {
-            "type": "list",
-            "text": "El uso del servicio es bajo la responsabilidad del usuario."
-          },
-          {
-            "type": "list",
-            "text": "La responsabilidad de CHARIOT está limitada a casos de negligencia grave o conducta intencionada."
-          }
-        ]
-      },
-      {
-        "title": "Artículo 9 - Modificación del servicio y de las CGU",
-        "content": [
-          {
-            "type": "list",
-            "text": "CHARIOT puede modificar las CGU y el servicio en cualquier momento."
-          },
-          {
-            "type": "list",
-            "text": "El usuario será informado por correo electrónico o notificación."
-          },
-          {
-            "type": "list",
-            "text": "El uso continuado del servicio implica la aceptación de dichas modificaciones."
-          }
-        ]
-      },
-      {
-        "title": "Artículo 10 - Duración y terminación",
-        "content": [
-          {
-            "type": "list",
-            "text": "El usuario puede eliminar su cuenta en cualquier momento."
-          },
-          {
-            "type": "list",
-            "text": "CHARIOT puede suspender o eliminar una cuenta en caso de violación de las CGU."
-          }
-        ]
-      },
-      {
-        "title": "Artículo 11 - Ley aplicable y litigios",
-        "content": [
-          {
-            "type": "paragraph",
-            "text": "Estas CGU se rigen por la legislación francesa. En caso de disputa, los tribunales competentes serán los del domicilio social de CHARIOT."
-          }
-        ]
+      "array": {
+        "inclusive": "El array debe contener al menos {minimum} elemento(s)"
       }
-    ]
-  },
-  "TOS": {
-    "sections": [
-      {
-        "title": "Artículo 1 – Objeto",
-        "content": [
-          {
-            "type": "paragraph",
-            "text": "Estas Condiciones Generales de Venta regulan la venta de servicios de pago de la aplicación Chariot por parte de CHARIOT."
-          }
-        ]
+    },
+    "tooBig": {
+      "string": {
+        "inclusive": "La cadena debe contener como máximo {maximum} carácter(es)"
       },
-      {
-        "title": "Artículo 2 – Ofertas y precios",
-        "content": [
-          {
-            "type": "list",
-            "text": "Las ofertas de pago se describen en el sitio web."
-          },
-          {
-            "type": "list",
-            "text": "Los precios se indican en euros con IVA incluido."
-          },
-          {
-            "type": "list",
-            "text": "Los precios pueden cambiar, los usuarios serán informados antes de la facturación."
-          }
-        ]
+      "number": {
+        "inclusive": "El número debe ser menor o igual a {maximum}"
       },
-      {
-        "title": "Artículo 3 – Pedido",
-        "content": [
-          {
-            "type": "list",
-            "text": "El pedido se realiza a través del formulario en línea."
-          },
-          {
-            "type": "list",
-            "text": "La validación del pedido implica la aceptación de las Condiciones Generales de Venta."
-          }
-        ]
-      },
-      {
-        "title": "Artículo 4 – Pago",
-        "content": [
-          {
-            "type": "list",
-            "text": "El pago se realiza en línea a través de Stripe."
-          },
-          {
-            "type": "list",
-            "text": "Los métodos de pago aceptados son las principales tarjetas bancarias."
-          },
-          {
-            "type": "list",
-            "text": "Los pagos están asegurados."
-          }
-        ]
-      },
-      {
-        "title": "Artículo 5 – Duración y renovación",
-        "content": [
-          {
-            "type": "list",
-            "text": "Las suscripciones se renuevan automáticamente salvo cancelación."
-          },
-          {
-            "type": "list",
-            "text": "El usuario puede cancelar en cualquier momento; la cancelación será efectiva al final del período en curso."
-          }
-        ]
-      },
-      {
-        "title": "Artículo 6 – Derecho de desistimiento",
-        "content": [
-          {
-            "type": "list",
-            "text": "De acuerdo con la ley, el derecho de desistimiento no se aplica a los servicios completamente ejecutados tras la compra (contenido digital)."
-          }
-        ]
-      },
-      {
-        "title": "Artículo 7 – Cancelación y suspensión",
-        "content": [
-          {
-            "type": "list",
-            "text": "CHARIOT puede suspender el acceso en caso de impago o incumplimiento de las Condiciones de Uso."
-          },
-          {
-            "type": "list",
-            "text": "En caso de cancelación, los datos pueden eliminarse después de un período de tiempo."
-          }
-        ]
-      },
-      {
-        "title": "Artículo 8 – Garantía y responsabilidad",
-        "content": [
-          {
-            "type": "list",
-            "text": "Los servicios se proporcionan “tal cual.”"
-          },
-          {
-            "type": "list",
-            "text": "La responsabilidad de CHARIOT está limitada conforme a la ley."
-          }
-        ]
-      },
-      {
-        "title": "Artículo 9 – Datos personales",
-        "content": [
-          {
-            "type": "list",
-            "text": "Consultar la Política de Privacidad."
-          }
-        ]
-      },
-      {
-        "title": "Artículo 10 – Ley aplicable y jurisdicción",
-        "content": [
-          {
-            "type": "list",
-            "text": "Derecho francés, tribunales del domicilio social de CHARIOT."
-          }
-        ]
+      "array": {
+        "inclusive": "El array debe contener como máximo {maximum} elemento(s)"
       }
-    ]
-  },
-  "legalNotice": {
-    "sections": [
-      {
-        "title": "Introducción",
-        "content": [
-          {
-            "type": "paragraph",
-            "text": "Chariot se compromete a proteger los datos personales de los usuarios."
-          }
-        ]
-      },
-      {
-        "title": "Datos recogidos",
-        "content": [
-          {
-            "type": "list",
-            "text": "Datos de identificación,"
-          },
-          {
-            "type": "list",
-            "text": "Datos de conexión,"
-          },
-          {
-            "type": "list",
-            "text": "Datos sobre el uso del servicio."
-          }
-        ]
-      },
-      {
-        "title": "Finalidades",
-        "content": [
-          {
-            "type": "list",
-            "text": "Gestión de la cuenta,"
-          },
-          {
-            "type": "list",
-            "text": "Prestación del servicio,"
-          },
-          {
-            "type": "list",
-            "text": "Marketing (con consentimiento),"
-          },
-          {
-            "type": "list",
-            "text": "Mejora del servicio."
-          }
-        ]
-      },
-      {
-        "title": "Duración de conservación",
-        "content": [
-          {
-            "type": "list",
-            "text": "Datos conservados durante el tiempo necesario para su finalidad,"
-          },
-          {
-            "type": "list",
-            "text": "Cumplimiento de obligaciones legales."
-          }
-        ]
-      },
-      {
-        "title": "Derechos de los usuarios",
-        "content": [
-          {
-            "type": "list",
-            "text": "Acceso, rectificación, supresión,"
-          },
-          {
-            "type": "list",
-            "text": "Oposición al tratamiento,"
-          },
-          {
-            "type": "list",
-            "text": "Portabilidad,"
-          },
-          {
-            "type": "list",
-            "text": "Contacto para ejercer sus derechos."
-          }
-        ]
-      },
-      {
-        "title": "Seguridad",
-        "content": [
-          {
-            "type": "paragraph",
-            "text": "Medidas técnicas y organizativas para proteger los datos."
-          }
-        ]
-      },
-      {
-        "title": "Cookies",
-        "content": [
-          {
-            "type": "list",
-            "text": "Uso limitado,"
-          },
-          {
-            "type": "list",
-            "text": "Consentimiento requerido."
-          }
-        ]
-      },
-      {
-        "title": "Contacto",
-        "content": [
-          {
-            "type": "paragraph",
-            "text": "Correo electrónico: {e} para cualquier consulta relacionada con el RGPD."
-          }
-        ]
+    },
+    "invalidString": {
+      "email": "Email inválido",
+      "url": "URL inválida",
+      "uuid": "UUID inválido"
+    },
+    "notMultipleOf": "El número debe ser un múltiplo de {multipleOf}"
+  },  "characterDetail": {
+    "editCharacter": "Modificar personaje",
+    "saveChanges": "Guardar cambios",
+    "saving": "Guardando...",
+    "cancel": "Cancelar",
+    "edit": {
+      "basicInfo": "Información Básica",
+      "firstname": "Nombre",
+      "lastname": "Apellido",
+      "surname": "Apodo",
+      "optional": "opcional",
+      "profile": "Perfil",
+      "race": "Raza",
+      "alignment": "Alineamiento",
+      "challenge": "Desafío",
+      "challengeRating": "Índice de Desafío",
+      "experiencePoints": "Puntos de Experiencia",
+      "type": "Tipo",
+      "combatStats": "Estadísticas de Combate",
+      "editInProgress": "Edición en progreso",
+      "currentHP": "PV Actuales",
+      "maxHP": "PV Máximo",
+      "tempHP": "PV Temporales",
+      "defense": "Defensa",
+      "initiative": "Iniciativa",
+      "spellcastingStats": "Estadísticas de Hechicería",
+      "spellcastingAbility": "Habilidad de Lanzamiento",
+      "spellSaveDC": "CD de Salvación de Conjuros",
+      "spellAttackBonus": "Bonificación de Ataque de Conjuros",
+      "copperPieces": "Piezas de Cobre",
+      "silverPieces": "Piezas de Plata",
+      "electrumPieces": "Piezas de Electro",
+      "goldPieces": "Piezas de Oro",
+      "platinumPieces": "Piezas de Platino",
+      "reset": "Reiniciar",
+      "speeds": "Velocidades",
+      "walk": "Caminar",
+      "climb": "Escalar",
+      "swim": "Nadar",
+      "fly": "Volar",
+      "burrow": "Excavar"
+    },
+    "tabs": {
+      "general": "General",
+      "battle": "Combate",
+      "magic": "Magia",
+      "inventory": "Inventario",
+      "history": "Historia"
+    },
+    "battle": {
+      "stats": "Estadísticas",
+      "hitLevel": "Nivel",
+      "hitDice": "Dados de Golpe:",
+      "hitPointsRoll": "Tirada de Puntos de Golpe:",
+      "savingThrows": "Tiradas de salvación",
+      "deathSaves": "Salvaciones de Muerte",
+      "successes": "Éxitos:",
+      "failures": "Fallos:",
+      "performedThrow": "Tirada realizada",
+      "unperformedThrow": "Tirada no realizada",
+      "abilitiesAndTraits": "Habilidades y rasgos",
+      "actions": "Acciones",
+      "legendaryActions": "Acciones Legendarias",
+      "lairActions": "Acciones de guarida",
+      "actionDetails": "Detalles de la acción",
+      "attackDC": "Ataque/CD:",
+      "damageType": "Daño/Tipo:",
+      "description": "Descripción:",
+      "details": "detalles",
+      "descriptionPrefix": "descripción",
+      "armorClass": "Clase de Armadura",
+      "armorClassTooltip": "Clase de armadura (CA) del personaje",
+      "initiativeTooltip": "Bonificación de iniciativa",
+      "walkSpeedTooltip": "Velocidad de marcha",
+      "climbSpeedTooltip": "Velocidad de escalada",
+      "swimSpeedTooltip": "Velocidad de natación",
+      "flySpeedTooltip": "Velocidad de vuelo",
+      "burrowSpeedTooltip": "Velocidad de excavación",
+      "statsRegion": "Estadísticas de combate",
+      "healthPoints": "Puntos de Golpe",
+      "healthPointsTooltip": "PG actuales / PG máximos (PG temporales)",
+      "noValue": "Sin valor",
+      "hpAbbr": "PG",
+      "feet": "pies",
+      "feetAbbr": "pies"
+    },
+    "history": {
+      "appearance": "Apariencia",
+      "eyes": "Ojos",
+      "age": "Edad",
+      "skin": "Piel",
+      "height": "Altura",
+      "weight": "Peso",
+      "hair": "Cabello",
+      "alliesAndOrgs": "Aliados y organizaciones",
+      "bonds": "Vínculos",
+      "description": "Descripción",
+      "personalityTraits": "Rasgos de personalidad",
+      "ideals": "Ideales",
+      "flaws": "Defectos",
+      "backstory": "Historia"
+    },
+    "player": {
+      "level": "Nivel",
+      "race": "Raza",
+      "class": "Clase",
+      "alignment": "Alineamiento",
+      "general": {
+        "title": "Pestaña General",
+        "characterInfoLabel": "Información general del personaje",
+        "character": "Personaje",
+        "raceLabel": "Raza",
+        "levelLabel": "Nivel",
+        "globalLevel": "Nivel global",
+        "classes": "Clase(s)",
+        "subclassOf": "Subclase de",
+        "proficiencies": "Competencias",
+        "languages": "Idioma(s)",
+        "tools": "Herramienta(s)",
+        "weapons": "Arma(s)",
+        "armors": "Armadura(s)",
+        "inspiration": "Inspiración",
+        "inspirationActive": "activa",
+        "inspirationInactive": "inactiva",
+        "inspirationState": "Estado de inspiración",
+        "exhaustion": "Agotamiento",
+        "exhaustionLevel": "Nivel de agotamiento",
+        "exhaustionLevels": {
+          "0": "Sin efecto",
+          "1": "Desventaja en las pruebas de habilidad",
+          "2": "Velocidad reducida a la mitad",
+          "3": "Desventaja en tiradas de ataque y salvaciones",
+          "4": "Puntos de golpe máximos reducidos a la mitad",
+          "5": "Velocidad reducida a 0",
+          "6": "Muerte"
+        },
+        "savingThrows": "Tiradas de salvación",
+        "masteryOf": "Competencia de",
+        "masteryActive": "activa",
+        "masteryInactive": "inactiva",
+        "mastery": "Competencia",
+        "abilities": {
+          "strength": "Fuerza",
+          "dexterity": "Destreza",
+          "constitution": "Constitución",
+          "intelligence": "Inteligencia",
+          "wisdom": "Sabiduría",
+          "charisma": "Carisma"
+        },
+        "skills": "Habilidades",
+        "proficiencyBonus": "Bonificador de competencia",
+        "skillsList": "Lista de habilidades del personaje",
+        "passivePerception": "Percepción pasiva",
+        "background": "Trasfondo",
+        "characterAbilities": "Aptitudes",
+        "abilityDetails": "Detalles de la aptitud",
+        "abilityDescription": "Descripción de",
+        "characteristics": "Características",
+        "masteryLevelIcon": "Nivel de competencia {level}",
+        "noLanguages": "Ninguno",
+        "skillNames": {
+          "acrobatics": "Acrobacias",
+          "arcana": "Arcanos",
+          "athletics": "Atletismo",
+          "stealth": "Sigilo",
+          "animalHandling": "Trato con animales",
+          "sleightHand": "Juego de manos",
+          "history": "Historia",
+          "intimidation": "Intimidación",
+          "insight": "Perspicacia",
+          "investigation": "Investigación",
+          "medicine": "Medicina",
+          "nature": "Naturaleza",
+          "perception": "Percepción",
+          "persuasion": "Persuasión",
+          "religion": "Religión",
+          "performance": "Actuación",
+          "survival": "Supervivencia",
+          "deception": "Engaño"
+        }
       }
-    ]
-  },
-  "privacyPolicy": {
-    "sections": [
-      {
-        "title": "Editor del sitio",
-        "content": [
-          {
-            "type": "paragraph",
-            "text": "El sitio web de Chariot {a} es editado por:"
-          },
-          {
-            "type": "list",
-            "text": "Nombre del editor: CHARIOT"
-          },
-          {
-            "type": "list",
-            "text": "Estatus legal: En trámite"
-          },
-          {
-            "type": "list",
-            "text": "Dirección de la sede: 82B Allée de Barcelone, 31000 Toulouse, Francia"
-          },
-          {
-            "type": "list",
-            "text": "Número SIREN / SIRET: En trámite"
-          },
-          {
-            "type": "list",
-            "text": "Correo electrónico: {e}"
-          },
-          {
-            "type": "list",
-            "text": "Directores de publicación: Elvis PICHOU y Hugo PIEDANNA, futuros presidentes de la SAS CHARIOT"
-          }
-        ]
-      },
-      {
-        "title": "Alojamiento",
-        "content": [
-          {
-            "type": "paragraph",
-            "text": "El sitio está alojado por:"
-          },
-          {
-            "type": "list",
-            "text": "Proveedor: HOSTINGER"
-          },
-          {
-            "type": "list",
-            "text": "Dirección: 61 Lordou Vironos Street, 6023 Lárnaca, Chipre"
-          },
-          {
-            "type": "list",
-            "text": "Sitio web: https://www.hostinger.com/"
-          },
-          {
-            "type": "list",
-            "text": "Correo de contacto: support@hostinger.com"
-          }
-        ]
-      },
-      {
-        "title": "Propiedad intelectual",
-        "content": [
-          {
-            "type": "paragraph",
-            "text": "Todos los contenidos del sitio Chariot, incluyendo pero no limitándose a textos, imágenes, gráficos, logotipos, iconos, interfaces, elementos de audio y video, así como el código fuente, están protegidos por la legislación vigente sobre propiedad intelectual y son propiedad exclusiva del editor, salvo mención en contrario."
-          },
-          {
-            "type": "paragraph",
-            "text": "Toda reproducción, distribución, modificación, adaptación, retransmisión o publicación, incluso parcial, está estrictamente prohibida sin el consentimiento previo por escrito del editor."
-          }
-        ]
-      },
-      {
-        "title": "Responsabilidad",
-        "content": [
-          {
-            "type": "paragraph",
-            "text": "El editor hace todo lo posible para proporcionar en el sitio Chariot información lo más precisa posible. No obstante, no se hace responsable de omisiones, inexactitudes o deficiencias en la actualización, ya sea por su causa o por parte de terceros."
-          },
-          {
-            "type": "paragraph",
-            "text": "El usuario reconoce disponer de la capacidad y los medios necesarios para acceder y utilizar este sitio. También reconoce haber verificado que su configuración informática no contiene virus y que está en perfecto estado de funcionamiento."
-          },
-          {
-            "type": "paragraph",
-            "text": "Pueden existir enlaces hacia otros sitios distintos al de Chariot. El editor no se hace responsable del contenido de dichos sitios externos."
-          }
-        ]
-      },
-      {
-        "title": "Datos personales",
-        "content": [
-          {
-            "type": "paragraph",
-            "text": "Para cualquier información sobre la recopilación y el tratamiento de sus datos personales, consulte nuestra Política de Privacidad."
-          }
-        ]
+    },
+    "npc": {
+      "type": "Tipo",
+      "typeLabel": "Tipo",
+      "subtype": "Subtipo",
+      "subtypeLabel": "Subtipo",
+      "challengeRating": "Índice de desafío",
+      "challengeRatingAbbr": "ID",
+      "alignment": "Alineamiento",
+      "general": {
+        "title": "Pestaña General",
+        "npcInfoLabel": "Información general del PNJ",
+        "characterInfo": "Información del personaje",
+        "characteristicsSkills": "Características y habilidades",
+        "additionalInfo": "Información adicional"
       }
-    ]
-  }
+    },
+    "placeholder": {
+      "noImage": "Sin imagen"
+    },
+    "group": "Grupo",
+    "inventory": {
+      "coins": "Monedas",
+      "equipment": "Equipamiento",
+      "treasure": "Tesoro",
+      "pp": "pp",
+      "gp": "po",
+      "ep": "pe",
+      "sp": "pp",
+      "cp": "pc",
+      "platinumPieces": "Piezas de platino",
+      "goldPieces": "Piezas de oro",
+      "electrumPieces": "Piezas de electrum",
+      "silverPieces": "Piezas de plata",
+      "copperPieces": "Piezas de cobre",
+      "noEquipment": "Sin equipamiento por el momento.",
+      "noTreasure": "Sin tesoro por el momento.",
+      "coinsRegion": "Sección de monedas",
+      "equipmentRegion": "Sección de equipamiento",
+      "treasureRegion": "Sección de tesoro"
+    },
+    "magic": {
+      "noMagicAbilities": "Este personaje no tiene habilidades mágicas.",
+      "spellcastingClass": "Clase de lanzamiento de conjuros",
+      "spellcastingStats": "Estadísticas de conjuros",
+      "level": "Niv",
+      "preparedSpells": "Conjuros preparados",
+      "preparedShort": "Prep.",
+      "attackBonus": "Bonificación de ataque",
+      "attackShort": "Atq.",
+      "saveDC": "CD de salvación",
+      "saveDCShort": "CD",
+      "cantrips": "Trucos",
+      "noCantrips": "Sin trucos",
+      "spellLevel": "Conjuros de nivel {level}",
+      "spellSlots": "{used} / {total}",
+      "spellDetails": {
+        "school": "Escuela",
+        "castingTime": "Tiempo de lanzamiento",
+        "range": "Alcance",
+        "components": "Componentes",
+        "duration": "Duración",
+        "description": "Descripción"
+      },
+      "mainRegion": "Sección de magia",
+      "spellListRegion": "Lista de conjuros",
+      "spellDetailRegion": "Detalles del conjuro",
+      "selectSpellcasting": "Seleccionar clase de lanzamiento {className}",
+      "selectSpell": "Seleccionar conjuro",
+      "backToList": "Volver a la lista",
+      "expandAll": "Expandir todo",
+      "collapseAll": "Colapsar todo",
+      "spells": "Conjuros"
+    }
+  },
+  "classes": {
+    "Artificer": "Artífice",
+    "Barbarian": "Bárbaro",
+    "Bard": "Bardo",
+    "Cleric": "Clérigo",
+    "Druid": "Druida",
+    "Fighter": "Guerrero",
+    "Monk": "Monje",
+    "Paladin": "Paladín",
+    "Ranger": "Guardabosques",
+    "Rogue": "Pícaro",
+    "Sorcerer": "Hechicero",
+    "Warlock": "Brujo",
+    "Wizard": "Mago"
+  },
+  "alignments": {
+    "Lawful Good": "Legal Bueno",
+    "Neutral Good": "Neutral Bueno",
+    "Chaotic Good": "Caótico Bueno",
+    "Lawful Neutral": "Legal Neutral",
+    "True Neutral": "Neutral Verdadero",
+    "Chaotic Neutral": "Caótico Neutral",
+    "Lawful Evil": "Legal Malvado",
+    "Neutral Evil": "Neutral Malvado",
+    "Chaotic Evil": "Caótico Malvado",
+    "Unaligned": "Sin alineación",
+    "Any Good Alignment": "Cualquier alineación buena",
+    "Any Evil Alignment": "Cualquier alineación malvada",
+    "Any Lawful Alignment": "Cualquier alineación legal",
+    "Any Chaotic Alignment": "Cualquier alineación caótica"  }
 }
