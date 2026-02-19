@@ -9,6 +9,7 @@ export async function GET() {
   try {
     const products = await stripe.products.list({
       limit: 100,
+      active: true,
     });
 
     // Si tu veux inclure les prix associés :
