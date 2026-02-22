@@ -1,31 +1,84 @@
 {
-  "sidebar": {
-    "mainNavigation": "Navigation principale",
-    "gmNavigation": "Navigation maître du jeu",
-    "playerNavigation": "Navigation joueur",
-    "openMenu": "Ouvrir le menu",
-    "closeMenu": "Fermer le menu",
-    "yourSpaces": "Vos espaces",
-    "yourCharacters": "Vos personnages",
-    "createCampaign": "Créer une campagne",
-    "yourGroups": "Vos groupes",
-    "createGroup": "Créer un groupe",
-    "yourArchives": "Vos archives",
-    "noArchives": "Aucune archive.",
-    "rightClickToAdd": "Clic droit pour ajouter.",
-    "noGroups": "Aucun groupe",
-    "noCharacters": "Aucun personnage",
-    "archive": "Archiver",
-    "launchSession": "Lancer une session",
-    "initBattle": "Initier un combat",
-    "startBattle": "Lancer le combat",
-    "reset": "Réinitialiser",
-    "returnToBattle": "Retour au combat",
-    "joinSession": "Rejoindre la session",
-    "returnToSheet": "Retour à la fiche personnage",
-    "selectCampaign": "Sélectionner la campagne",
-    "selectedCampaign": "Campagne sélectionnée",
-    "selected": "sélectionné"
+  "header": {
+    "registration": "Inscription",
+    "connection": "Connexion",
+    "home": "Accueil",
+    "packs": "Nos packs",
+    "howWorks": "Comment ça marche ?",
+    "features": "Fonctionnalités Chariot"
+  },
+  "hero": {
+    "title": "Explorez une toute nouvelle façon de vivre le jeu de rôle !",
+    "packs": "NOS PACKS",
+    "registration": "Créer mon compte"
+  },
+  "packs": {
+    "custom": {
+      "name": "NOS 3 PACKS",
+      "description": "Chacune de nos offres est conçue spécialement pour la plus épique des aventures.",
+      "cta": "Montant personnalisé"
+    },
+    "explorator": {
+      "name": "PACK EXPLORATEUR",
+      "description": "Idéal pour les aventuriers débutants."
+    },
+    "legendary": {
+      "name": "PACK LÉGENDAIRE",
+      "description": "Pour les maîtres du jeu aguerris en quête de puissance ultime."
+    },
+    "aventurer": {
+      "name": "PACK AVENTURIER",
+      "description": "Le meilleur pack pour la meilleure expérience. Tout simplement."
+    },
+    "recommended": "Recommandé"
+  },
+  "howWorks": {
+    "title1": "COMMENT MARCHENT",
+    "title2": "LES CHARS",
+    "description1": "Le Char est la monnaie unique de Chariot, elle vous permet d’accéder à toutes les fonctionnalités “in game” de l’application, sur Chariot le principe est simple.",
+    "description2": "Pour lancer une session à 5, vous pourriez très bien dépenser 1 char chacun, ou un joueur pourrait payer 5 chars pour que tout le monde puisse jouer. Sur Chariot, chacun s’organise comme il le veut.",
+    "session": "SESSION"
+  },
+  "features": {
+    "title": "LES FONCTIONNALITÉS",
+    "description": "Tout ce dont vous avez besoin pour vivre une aventure fluide.",
+    "feature1": {
+      "title": "Gestion fluide des joueurs",
+      "description1": "Centralisez fiches de personnages, inventaires, jets et états en un seul espace.",
+      "description2": "Chaque joueur avance sans friction, pendant que la partie reste parfaitement lisible pour tous."
+    },
+    "feature2": {
+      "title": "Boîte à outils narrative pour MJ",
+      "description1": "Créez, organisez et improvisez vos scénarios en temps réel.",
+      "description2": "PNJ, lieux, intrigues et événements sont à portée de clic pour garder le rythme et nourrir l'immersion."
+    },
+    "feature3": {
+      "title": "Initiative et combat simplifiés",
+      "description1": "Automatisez les tours, suivez les actions et visualisez l'ordre de jeu instantanément.",
+      "description2": "Moins de calculs, plus de flow: la mécanique s'efface au profit de l'aventure."
+    },
+    "feature4": {
+      "title": "CODEX - Votre grimoire d'aventure",
+      "description1": "Regroupe, partage et enrichis tes personnages et sorts.",
+      "description2": "Chaque joueur et chaque maître du jeu peut alimenter le CODEX pour en faire une véritable bibliothèque vivante."
+    },
+    "ready": "Prêt à partir à l'aventure ?",
+    "packs": "NOS PACKS",
+    "registration": "Créer mon compte"
+  },
+  "footer": {
+    "mobile": {
+      "tou": "CGU",
+      "tos": "CGV"
+    },
+    "tou": "Conditions générales d'utilisation",
+    "tos": "Conditions générales de vente",
+    "privacyPolicy": "Politique de confidentialité",
+    "legalNotice": "Mentions légales",
+    "contact": "Nous contacter"
+  },
+  "notFound": {
+    "message": "Page introuvable. Redirection vers l'accueil..."
   },
   "error": {
     "title": "Oups ! Une erreur s'est produite",
@@ -42,396 +95,506 @@
       "home": "Retour à l'Accueil"
     }
   },
-  "auth": {
-    "loading": "Chargement...",
-    "pleaseWait": "Veuillez patienter pendant la vérification de votre session"
-  },
-  "notFound": {
-    "message": "Page introuvable. Redirection vers l'accueil..."
-  },
-  "Profile": {
-    "profile": "Profil",
-    "logout": "Se déconnecter"
-  },
-  "ProfilePage": {
-    "pageTitle": "Profil utilisateur",
-    "changePasswordTitle": "Changer de mot de passe",
-    "currentPassword": "Mot de passe actuel",
-    "newPassword": "Nouveau mot de passe",
-    "confirmNewPassword": "Confirmer le nouveau mot de passe",
-    "updatePassword": "Modifier le mot de passe",
-    "sessionHistory": "Historique des sessions",
-    "yourTokens": "Vos tokens :",
-    "noHistory": "Aucun historique disponible",
-    "reloadTokens": "Recharger vos tokens",
-    "changePassword": {
-      "successMessage": "Mot de passe modifié avec succès",
-      "errorMessage": "Échec de la modification du mot de passe",
-      "incorrectPassword": "Le mot de passe actuel est incorrect",
-      "complexityError": "Le nouveau mot de passe ne respecte pas les exigences de complexité",
-      "networkError": "Erreur réseau. Veuillez réessayer.",
-      "validation": {
-        "currentPasswordRequired": "Le mot de passe actuel est requis",
-        "newPasswordMin": "Le mot de passe doit contenir au moins 8 caractères",
-        "confirmPasswordRequired": "Veuillez confirmer votre mot de passe",
-        "passwordMismatch": "Les mots de passe ne correspondent pas"
-      }
-    },
-    "editProfile": {
-      "successMessage": "Profil mis à jour avec succès",
-      "errorMessage": "Échec de la mise à jour du profil",
-      "networkError": "Erreur réseau. Veuillez réessayer.",
-      "emailAlreadyInUse": "Cette adresse email est déjà utilisée par un autre compte",
-      "firstName": "Prénom",
-      "lastName": "Nom",
-      "email": "Email",
-      "updateProfile": "Mettre à jour le profil",
-      "cancelUpdate": "Annuler",
-      "formLabel": "Formulaire de modification du profil"
-    }
-  },
-  "welcome": {
-    "title": "Bienvenue sur Chariot",
-    "subTitle": "Comment souhaitez-vous commencer votre aventure ?",
-    "choices-list": "Choix disponibles pour commencer",
-    "campaign": {
-      "title": "Créer votre première <br /> campagne",
-      "button": "Créer une campagne",
-      "button-aria": "Naviguer vers la création de campagne"
-    },
-    "session": {
-      "title": "Rejoindre <br /> une session",
-      "button": "Rejoindre une session",
-      "button-aria": "Naviguer vers la participation à une session"
-    },
-    "character": {
-      "title": "Créer votre premier <br /> personnage",
-      "button": "Créer un personnage",
-      "button-aria": "Naviguer vers la création de personnage"
-    }
-  },  "characterForm": {
-    "createSuccess": "Personnage créé avec succès",
-    "createError": "Échec de la création du personnage",
-    "updateSuccess": "Personnage mis à jour avec succès",
-    "updateError": "Échec de la mise à jour du personnage",
-    "missingId": "Impossible de mettre à jour : l'identifiant du personnage est manquant",
-    "changesCancelled": "Modifications annulées"
-  },
-  "zodErrors": {
-    "invalidTypeReceived": "Entrée invalide",
-    "required": "Requis",
-    "tooSmall": {
-      "string": {
-        "inclusive": "La chaîne doit contenir au moins {minimum} caractère(s)"
+  "TOU": {
+    "sections": [
+      {
+        "title": "Article 1 - Objet",
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "Les présentes Conditions Générales d’Utilisation (CGU) ont pour objet de définir les modalités d’accès et d’utilisation de l’application Chariot proposée par CHARIOT, accessible via le site {a}."
+          },
+          {
+            "type": "paragraph",
+            "text": "Chariot est un service en ligne dédié à l’accompagnement des Maîtres du Jeu (MJ) dans la gestion de campagnes de Donjons & Dragons (D&D)."
+          }
+        ]
       },
-      "number": {
-        "inclusive": "Le nombre doit être supérieur ou égal à {minimum}"
+      {
+        "title": "Article 2 - Acceptation des CGU",
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "L’utilisateur reconnaît avoir pris connaissance des présentes CGU et les accepter sans réserve avant toute utilisation du service."
+          }
+        ]
       },
-      "array": {
-        "inclusive": "Le tableau doit contenir au moins {minimum} élément(s)"
-      }
-    },
-    "tooBig": {
-      "string": {
-        "inclusive": "La chaîne doit contenir au maximum {maximum} caractère(s)"
+      {
+        "title": "Article 3 - Description du service",
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "Le service propose une version freemium permettant de créer, organiser et gérer des campagnes, ainsi que des options payantes offrant des fonctionnalités avancées."
+          }
+        ]
       },
-      "number": {
-        "inclusive": "Le nombre doit être inférieur ou égal à {maximum}"
+      {
+        "title": "Article 4 - Inscription et accès",
+        "content": [
+          {
+            "type": "list",
+            "text": "L’accès aux fonctionnalités nécessite la création d’un compte utilisateur."
+          },
+          {
+            "type": "list",
+            "text": "L’utilisateur s’engage à fournir des informations exactes."
+          },
+          {
+            "type": "list",
+            "text": "L’utilisateur est responsable de la confidentialité de ses identifiants."
+          }
+        ]
       },
-      "array": {
-        "inclusive": "Le tableau doit contenir au maximum {maximum} élément(s)"
-      }
-    },
-    "invalidString": {
-      "email": "Email invalide",
-      "url": "URL invalide",
-      "uuid": "UUID invalide"
-    },
-    "notMultipleOf": "Le nombre doit être un multiple de {multipleOf}"
-  },  "characterDetail": {
-    "editCharacter": "Modifier le personnage",
-    "saveChanges": "Sauvegarder",
-    "saving": "Sauvegarde...",
-    "cancel": "Annuler",
-    "edit": {
-      "basicInfo": "Informations de base",
-      "firstname": "Prénom",
-      "lastname": "Nom",
-      "surname": "Surnom",
-      "optional": "optionnel",
-      "profile": "Profil",
-      "race": "Race",
-      "alignment": "Alignement",
-      "challenge": "Difficulté",
-      "challengeRating": "Indice de Dangerosité",
-      "experiencePoints": "Points d'Expérience",
-      "type": "Type",
-      "combatStats": "Statistiques de Combat",
-      "editInProgress": "Édition en cours de développement",
-      "currentHP": "PV Actuels",
-      "maxHP": "PV Maximum",
-      "tempHP": "PV Temporaires",
-      "defense": "Défense",
-      "initiative": "Initiative",
-      "spellcastingStats": "Statistiques de Magie",
-      "spellcastingAbility": "Caractéristique d'Incantation",
-      "spellSaveDC": "DD des Sorts",
-      "spellAttackBonus": "Bonus d'Attaque de Sort",
-      "copperPieces": "Pièces de Cuivre",
-      "silverPieces": "Pièces d'Argent",
-      "electrumPieces": "Pièces d'Électrum",
-      "goldPieces": "Pièces d'Or",
-      "platinumPieces": "Pièces de Platine",      
-      "reset": "Réinitialiser",      
-      "speeds": "Vitesses",
-      "walk": "Marche",
-      "climb": "Escalade",
-      "swim": "Nage",
-      "fly": "Vol",
-      "burrow": "Fouissage"
-    },
-    "tabs": {
-      "general": "Général",
-      "battle": "Combat",
-      "magic": "Magie",
-      "inventory": "Inventaire",
-      "history": "Histoire"
-    },
-    "battle": {
-      "stats": "Statistiques",
-      "hitLevel": "Niveau",
-      "hitDice": "Dés de Vie :",
-      "hitPointsRoll": "Dés de points de Vie :",
-      "savingThrows": "Jets de sauvegarde",
-      "deathSaves": "JDS contre la Mort",
-      "successes": "Succès :",
-      "failures": "Échecs :",
-      "performedThrow": "Jet effectué",
-      "unperformedThrow": "Jet non effectué",
-      "abilitiesAndTraits": "Capacités et traits",
-      "actions": "Actions",
-      "legendaryActions": "Actions Légendaires",
-      "lairActions": "Actions de repère",
-      "actionDetails": "Détails de l'action",
-      "attackDC": "Attaque/DD :",
-      "damageType": "Dégâts/Type :",
-      "description": "Description :",
-      "details": "détails",
-      "descriptionPrefix": "description",
-      "armorClass": "Classe d'Armure",
-      "armorClassTooltip": "Classe d'armure (CA) du personnage",
-      "initiativeTooltip": "Bonus d'initiative",
-      "walkSpeedTooltip": "Vitesse de marche",
-      "climbSpeedTooltip": "Vitesse d'escalade",
-      "swimSpeedTooltip": "Vitesse de nage",
-      "flySpeedTooltip": "Vitesse de vol",
-      "burrowSpeedTooltip": "Vitesse de fouissage",
-      "statsRegion": "Statistiques de combat",
-      "healthPoints": "Points de Vie",
-      "healthPointsTooltip": "PV actuels / PV maximum (PV temporaires)",
-      "noValue": "Aucune valeur",
-      "hpAbbr": "PV",
-      "feet": "pieds",
-      "feetAbbr": "pi"
-    },
-    "history": {
-      "appearance": "Apparence",
-      "eyes": "Yeux",
-      "age": "Âge",
-      "skin": "Peau",
-      "height": "Taille",
-      "weight": "Poids",
-      "hair": "Cheveux",
-      "alliesAndOrgs": "Alliés et organisations",
-      "bonds": "Liens",
-      "description": "Description",
-      "personalityTraits": "Traits de personnalité",
-      "ideals": "Idéaux",
-      "flaws": "Défauts",
-      "backstory": "Histoire"
-    },
-    "player": {
-      "level": "Niveau",
-      "race": "Race",
-      "class": "Classe",
-      "alignment": "Alignement",
-      "general": {
-        "title": "Onglet Général",
-        "characterInfoLabel": "Informations générales du personnage",
-        "character": "Personnage",
-        "raceLabel": "Race",
-        "levelLabel": "Niveau",
-        "globalLevel": "Niveau global",
-        "classes": "Classe(s)",
-        "subclassOf": "Sous classe de",
-        "proficiencies": "Maîtrises",
-        "languages": "Langue(s)",
-        "tools": "Outil(s)",
-        "weapons": "Arme(s)",
-        "armors": "Armure(s)",
-        "inspiration": "Inspiration",
-        "inspirationActive": "active",
-        "inspirationInactive": "inactive",
-        "inspirationState": "État d'inspiration",
-        "exhaustion": "Épuisement",
-        "exhaustionLevel": "Niveau d'épuisement",
-        "exhaustionLevels": {
-          "0": "Aucun effet",
-          "1": "Désavantage sur les jets de compétence",
-          "2": "Vitesse réduite de moitié",
-          "3": "Désavantage sur les jets d'attaque et de sauvegarde",
-          "4": "Points de vie maximum réduits de moitié",
-          "5": "Vitesse réduite à 0",
-          "6": "Mort"
-        },
-        "savingThrows": "Jets de sauvegarde",
-        "masteryOf": "Maîtrise de",
-        "masteryActive": "active",
-        "masteryInactive": "inactive",
-        "mastery": "Maîtrise",
-        "abilities": {
-          "strength": "Force",
-          "dexterity": "Dextérité",
-          "constitution": "Constitution",
-          "intelligence": "Intelligence",
-          "wisdom": "Sagesse",
-          "charisma": "Charisme"
-        },
-        "skills": "Compétences",
-        "proficiencyBonus": "Bonus de maîtrise",
-        "skillsList": "Liste des compétences du personnage",
-        "passivePerception": "Perception passive",
-        "background": "Historique",
-        "characterAbilities": "Aptitudes",
-        "abilityDetails": "Détails de l'aptitude",
-        "abilityDescription": "Description de",
-        "characteristics": "Caractéristiques",
-        "masteryLevelIcon": "Niveau de maîtrise {level}",
-        "noLanguages": "Aucune",
-        "skillNames": {
-          "acrobatics": "Acrobaties",
-          "arcana": "Arcanes",
-          "athletics": "Athlétisme",
-          "stealth": "Discrétion",
-          "animalHandling": "Dressage",
-          "sleightHand": "Escamotage",
-          "history": "Histoire",
-          "intimidation": "Intimidation",
-          "insight": "Intuition",
-          "investigation": "Investigation",
-          "medicine": "Médecine",
-          "nature": "Nature",
-          "perception": "Perception",
-          "persuasion": "Persuasion",
-          "religion": "Religion",
-          "performance": "Représentation",
-          "survival": "Survie",
-          "deception": "Tromperie"
-        }
-      }
-    },
-    "npc": {
-      "type": "Type",
-      "typeLabel": "Type",
-      "subtype": "Sous-type",
-      "subtypeLabel": "Sous-type",
-      "challengeRating": "Indice de dangerosité",
-      "challengeRatingAbbr": "ID",
-      "alignment": "Alignement",
-      "general": {
-        "title": "Onglet Général",
-        "npcInfoLabel": "Informations générales du PNJ",
-        "characterInfo": "Informations du personnage",
-        "characteristicsSkills": "Caractéristiques et compétences",
-        "additionalInfo": "Informations additionnelles"
-      }
-    },
-    "placeholder": {
-      "noImage": "Aucune image"
-    },
-    "group": "Groupe",
-    "inventory": {
-      "coins": "Pièces",
-      "equipment": "Équipement",
-      "treasure": "Trésor",
-      "pp": "pp",
-      "gp": "po",
-      "ep": "pe",
-      "sp": "pa",
-      "cp": "pc",
-      "platinumPieces": "Pièces de platine",
-      "goldPieces": "Pièces d'or",
-      "electrumPieces": "Pièces d'électrum",
-      "silverPieces": "Pièces d'argent",
-      "copperPieces": "Pièces de cuivre",
-      "noEquipment": "Aucun équipement pour le moment.",
-      "noTreasure": "Aucun trésor pour le moment.",
-      "coinsRegion": "Section des pièces de monnaie",
-      "equipmentRegion": "Section de l'équipement",
-      "treasureRegion": "Section du trésor"
-    },
-    "magic": {
-      "noMagicAbilities": "Ce personnage n'a pas de capacités magiques.",
-      "spellcastingClass": "Classe de sorts",
-      "spellcastingStats": "Statistiques de sorts",
-      "level": "Niv",
-      "preparedSpells": "Sorts préparés",
-      "preparedShort": "Prép.",
-      "attackBonus": "Bonus d'attaque",
-      "attackShort": "Att.",
-      "saveDC": "Degré de difficulté (DD)",
-      "saveDCShort": "DD",
-      "cantrips": "Tours de magie",
-      "noCantrips": "Aucun tour de magie",
-      "spellLevel": "Sorts de niveau {level}",
-      "spellSlots": "{used} / {total}",
-      "spellDetails": {
-        "school": "École",
-        "castingTime": "Temps d'incantation",
-        "range": "Portée",
-        "components": "Composants",
-        "duration": "Durée",
-        "description": "Description"
+      {
+        "title": "Article 5 – Utilisation autorisée et interdite",
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "L’utilisateur s’engage à ne pas :"
+          },
+          {
+            "type": "list",
+            "text": "utiliser le service à des fins illégales ou non conformes aux CGU,"
+          },
+          {
+            "type": "list",
+            "text": "porter atteinte aux droits de tiers,"
+          },
+          {
+            "type": "list",
+            "text": "perturber le fonctionnement du service,"
+          },
+          {
+            "type": "list",
+            "text": "tenter d’accéder à des zones réservées du service."
+          }
+        ]
       },
-      "mainRegion": "Section magie",
-      "spellListRegion": "Liste des sorts",
-      "spellDetailRegion": "Détails des sorts",
-      "selectSpellcasting": "Sélectionner la classe de sorts {className}",
-      "selectSpell": "Sélectionner le sort",
-      "backToList": "Retour à la liste",
-      "expandAll": "Tout ouvrir",
-      "collapseAll": "Tout fermer",
-      "spells": "Sorts"
-    }
+      {
+        "title": "Article 6 – Propriété intellectuelle",
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "Chariot et ses contenus (design, code, logos, etc.) sont la propriété exclusive de CHARIOT."
+          },
+          {
+            "type": "paragraph",
+            "text": "Les contenus générés par l’utilisateur lui appartiennent, mais l’utilisateur concède à CHARIOT un droit d’exploitation limité pour assurer le fonctionnement du service."
+          }
+        ]
+      },
+      {
+        "title": "Article 7 – Données personnelles",
+        "content": [
+          {
+            "type": "list",
+            "text": "La gestion des données personnelles est décrite dans la Politique de confidentialité."
+          },
+          {
+            "type": "list",
+            "text": "L’utilisateur dispose de droits d’accès, de modification et de suppression."
+          }
+        ]
+      },
+      {
+        "title": "Article 8 – Responsabilité",
+        "content": [
+          {
+            "type": "list",
+            "text": "CHARIOT s’engage à fournir un service fiable mais ne peut garantir une disponibilité 100%."
+          },
+          {
+            "type": "list",
+            "text": "L’utilisateur utilise le service à ses risques et périls."
+          },
+          {
+            "type": "list",
+            "text": "La responsabilité de CHARIOT est limitée aux cas de faute lourde ou intentionnelle."
+          }
+        ]
+      },
+      {
+        "title": "Article 9 – Modification du service et des CGU",
+        "content": [
+          {
+            "type": "list",
+            "text": "CHARIOT peut modifier les CGU et le service à tout moment."
+          },
+          {
+            "type": "list",
+            "text": "L’utilisateur sera informé par email ou notification."
+          },
+          {
+            "type": "list",
+            "text": "La poursuite de l’utilisation vaut acceptation des modifications."
+          }
+        ]
+      },
+      {
+        "title": "Article 10 – Durée et résiliation",
+        "content": [
+          {
+            "type": "list",
+            "text": "L’utilisateur peut supprimer son compte à tout moment."
+          },
+          {
+            "type": "list",
+            "text": "CHARIOT peut suspendre ou supprimer un compte en cas de violation des CGU."
+          }
+        ]
+      },
+      {
+        "title": "Article 11 – Loi applicable et litiges",
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "Les présentes CGU sont soumises au droit français. En cas de litige, les tribunaux compétents sont ceux du siège social de CHARIOT."
+          }
+        ]
+      }
+    ]
   },
-  "classes": {
-    "Artificer": "Artificier",
-    "Barbarian": "Barbare",
-    "Bard": "Barde",
-    "Cleric": "Clerc",
-    "Druid": "Druide",
-    "Fighter": "Guerrier",
-    "Monk": "Moine",
-    "Paladin": "Paladin",
-    "Ranger": "Rôdeur",
-    "Rogue": "Roublard",
-    "Sorcerer": "Ensorceleur",
-    "Warlock": "Sorcier",
-    "Wizard": "Magicien"
+  "TOS": {
+    "sections": [
+      {
+        "title": "Article 1 – Objet",
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "Les présentes Conditions Générales de Vente régissent la vente des services payants de l’application Chariot par CHARIOT."
+          }
+        ]
+      },
+      {
+        "title": "Article 2 – Offres et tarifs",
+        "content": [
+          {
+            "type": "list",
+            "text": "Les offres payantes sont décrites sur le site."
+          },
+          {
+            "type": "list",
+            "text": "Les prix sont indiqués en euros TTC."
+          },
+          {
+            "type": "list",
+            "text": "Les tarifs peuvent être modifiés, les utilisateurs en seront informés avant facturation."
+          }
+        ]
+      },
+      {
+        "title": "Article 3 – Commande",
+        "content": [
+          {
+            "type": "list",
+            "text": "La commande se fait via le formulaire en ligne."
+          },
+          {
+            "type": "list",
+            "text": "La validation de la commande vaut acceptation des CGV."
+          }
+        ]
+      },
+      {
+        "title": "Article 4 – Paiement",
+        "content": [
+          {
+            "type": "list",
+            "text": "Le paiement s’effectue en ligne via Stripe."
+          },
+          {
+            "type": "list",
+            "text": "Les moyens de paiement acceptés sont les cartes bancaires principales."
+          },
+          {
+            "type": "list",
+            "text": "Les paiements sont sécurisés."
+          }
+        ]
+      },
+      {
+        "title": "Article 5 – Durée et renouvellement",
+        "content": [
+          {
+            "type": "list",
+            "text": "Les abonnements sont renouvelés automatiquement sauf résiliation."
+          },
+          {
+            "type": "list",
+            "text": "L’utilisateur peut résilier à tout moment, la résiliation prendra effet à la fin de la période en cours."
+          }
+        ]
+      },
+      {
+        "title": "Article 6 – Droit de rétractation",
+        "content": [
+          {
+            "type": "list",
+            "text": "Conformément à la loi, le droit de rétractation ne s’applique pas aux services pleinement exécutés dès l’achat (contenus numériques)."
+          }
+        ]
+      },
+      {
+        "title": "Article 7 – Résiliation et suspension",
+        "content": [
+          {
+            "type": "list",
+            "text": "CHARIOT peut suspendre l’accès en cas de non-paiement ou de violation des CGU."
+          },
+          {
+            "type": "list",
+            "text": "En cas de résiliation, les données peuvent être supprimées après un délai."
+          }
+        ]
+      },
+      {
+        "title": "Article 8 – Garantie et responsabilité",
+        "content": [
+          {
+            "type": "list",
+            "text": "Les services sont fournis “en l’état”."
+          },
+          {
+            "type": "list",
+            "text": "La responsabilité de CHARIOT est limitée conformément à la loi."
+          }
+        ]
+      },
+      {
+        "title": "Article 9 – Données personnelles",
+        "content": [
+          {
+            "type": "list",
+            "text": "Voir la Politique de confidentialité."
+          }
+        ]
+      },
+      {
+        "title": "Article 10 – Loi applicable et juridiction",
+        "content": [
+          {
+            "type": "list",
+            "text": "Droit français, tribunaux du siège social."
+          }
+        ]
+      }
+    ]
   },
-  "alignments": {
-    "Lawful Good": "Loyal Bon",
-    "Neutral Good": "Neutre Bon",
-    "Chaotic Good": "Chaotique Bon",
-    "Lawful Neutral": "Loyal Neutre",
-    "True Neutral": "Neutre Strict",
-    "Chaotic Neutral": "Chaotique Neutre",
-    "Lawful Evil": "Loyal Mauvais",
-    "Neutral Evil": "Neutre Mauvais",
-    "Chaotic Evil": "Chaotique Mauvais",
-    "Unaligned": "Sans alignement",
-    "Any Good Alignment": "N'importe quel alignement bon",
-    "Any Evil Alignment": "N'importe quel alignement mauvais",
-    "Any Lawful Alignment": "N'importe quel alignement loyal",
-    "Any Chaotic Alignment": "N'importe quel alignement chaotique"  }
+  "legalNotice":{
+    "sections": [
+      {
+        "title": "Introduction",
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "Chariot s’engage à protéger les données personnelles des utilisateurs."
+          }
+        ]
+      },
+      {
+        "title": "Données collectées",
+        "content": [
+          {
+            "type": "list",
+            "text": "Données d’identification,"
+          },
+          {
+            "type": "list",
+            "text": "Données de connexion,"
+          },
+          {
+            "type": "list",
+            "text": "Données relatives à l’usage du service."
+          }
+        ]
+      },
+      {
+        "title": "Finalités",
+        "content": [
+          {
+            "type": "list",
+            "text": "Gestion du compte,"
+          },
+          {
+            "type": "list",
+            "text": "Fourniture du service,"
+          },
+          {
+            "type": "list",
+            "text": "Marketing (avec consentement),"
+          },
+          {
+            "type": "list",
+            "text": "Amélioration du service."
+          }
+        ]
+      },
+      {
+        "title": "Durée de conservation",
+        "content": [
+          {
+            "type": "list",
+            "text": "Données conservées le temps nécessaire à la finalité,"
+          },
+          {
+            "type": "list",
+            "text": "Respect des obligations légales."
+          }
+        ]
+      },
+      {
+        "title": "Droits des utilisateurs",
+        "content": [
+          {
+            "type": "list",
+            "text": "Accès, rectification, suppression,"
+          },
+          {
+            "type": "list",
+            "text": "Opposition au traitement,"
+          },
+          {
+            "type": "list",
+            "text": "Portabilité,"
+          },
+          {
+            "type": "list",
+            "text": "Contact pour exercer ses droits."
+          }
+        ]
+      },
+      {
+        "title": "Sécurité",
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "Mesures techniques et organisationnelles pour protéger les données."
+          }
+        ]
+      },
+      {
+        "title": "Cookies",
+        "content": [
+          {
+            "type": "list",
+            "text": "Utilisation limitée,"
+          },
+          {
+            "type": "list",
+            "text": "Consentement requis."
+          }
+        ]
+      },
+      {
+        "title": "Contact",
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "Email : {e} pour toute question RGPD."
+          }
+        ]
+      }
+    ]
+  },
+  "privacyPolicy": {
+    "sections": [
+      {
+        "title": "Éditeur du site",
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "Le site Chariot {a} est édité par :"
+          },
+          {
+            "type": "list",
+            "text": "Nom de l’éditeur : CHARIOT"
+          },
+          {
+            "type": "list",
+            "text": "Statut juridique : En cours d'optention"
+          },
+          {
+            "type": "list",
+            "text": "Adresse du siège : 82B Allée de Barcelone, 31000 Toulouse, France"
+          },
+          {
+            "type": "list",
+            "text": "Numéro SIREN / SIRET : En cours d'optention"
+          },
+          {
+            "type": "list",
+            "text": "Adresse email : {e}"
+          },
+          {
+            "type": "list",
+            "text": "Directeur de la publication : Elvis PICHOU & Hugo PIEDANNA, présidents de la future SAS CHARIOT"
+          }
+        ]
+      },
+      {
+        "title": "Hébergement",
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "Le site est hébergé par :"
+          },
+          {
+            "type": "list",
+            "text": "Hébergeur : HOSTINGER"
+          },
+          {
+            "type": "list",
+            "text": "Adresse : 61 Lordou Vironos Street, 6023 Larnaca, Chypre"
+          },
+          {
+            "type": "list",
+            "text": "Site web : https://www.hostinger.com/"
+          },
+          {
+            "type": "list",
+            "text": "Email de contact : support@hostinger.com"
+          }
+        ]
+      },
+      {
+        "title": "Propriété intellectuelle",
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "L’ensemble des contenus présents sur le site Chariot, incluant de manière non exhaustive les textes, images, graphismes, logo, icônes, interfaces, éléments audio et vidéo, ainsi que le code source, sont protégés par les lois en vigueur sur la propriété intellectuelle et sont la propriété exclusive de l’éditeur, sauf mention contraire."
+          },
+          {
+            "type": "paragraph",
+            "text": "Toute reproduction, distribution, modification, adaptation, retransmission ou publication, même partielle, est strictement interdite sans l’accord écrit préalable de l’éditeur."
+          }
+        ]
+      },
+      {
+        "title": "Responsabilité",
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "L’éditeur met tout en œuvre pour fournir sur le site Chariot des informations aussi précises que possible. Toutefois, il ne pourra être tenu responsable des omissions, des inexactitudes ou des carences dans la mise à jour, qu’elles soient de son fait ou du fait de tiers."
+          },
+          {
+            "type": "paragraph",
+            "text": "L’utilisateur du site reconnaît disposer de la compétence et des moyens nécessaires pour accéder et utiliser ce site. Il reconnaît également avoir vérifié que la configuration informatique utilisée ne contient aucun virus et qu’elle est en parfait état de fonctionnement."
+          },
+          {
+            "type": "paragraph",
+            "text": "Des liens hypertextes peuvent renvoyer vers d’autres sites que le site Chariot. L’éditeur dégage toute responsabilité quant au contenu de ces sites."
+          }
+        ]
+      },
+      {
+        "title": "Données personnelles",
+        "content": [
+          {
+            "type": "paragraph",
+            "text": "Pour toute information concernant la collecte et le traitement de vos données personnelles, veuillez consulter notre Politique de confidentialité."
+          }
+        ]
+      }
+    ]
+  }
 }

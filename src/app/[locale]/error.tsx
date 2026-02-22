@@ -1,9 +1,15 @@
 "use client";
 
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { XCircle } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useEffect } from "react";
 
 interface ErrorProps {
   error: Error & { digest?: string };
@@ -13,17 +19,14 @@ interface ErrorProps {
 export default function Error({ error, reset }: ErrorProps) {
   const t = useTranslations("error");
 
-  useEffect(() => {
-    // Log l'erreur côté client pour le monitoring
-    console.error("Error boundary caught:", error);
-  }, [error]);
-
   return (
     <div className="flex min-h-screen items-center justify-center">
       <Card className="max-w-lg w-full border-none p-6">
         <CardHeader>
           <CardTitle className="text-2xl text-white">{t("title")}</CardTitle>
-          <CardDescription className="text-white">{t("description")}</CardDescription>
+          <CardDescription className="text-white">
+            {t("description")}
+          </CardDescription>
         </CardHeader>
 
         <CardContent className="space-y-4">
@@ -47,12 +50,14 @@ export default function Error({ error, reset }: ErrorProps) {
         <CardFooter className="flex gap-3">
           <button
             onClick={reset}
-            className="cursor-pointer flex-1 px-4 py-2 ring hover:ring-1 rounded-lg transition-colors font-medium">
+            className="cursor-pointer flex-1 px-4 py-2 ring hover:ring-1 rounded-lg transition-colors font-medium"
+          >
             {t("actions.retry")}
           </button>
           <button
             onClick={() => (window.location.href = "/")}
-            className="cursor-pointer flex-1 px-4 py-2 bg-primary rounded-lg hover:bg-primary/90 transition-colors font-medium">
+            className="cursor-pointer flex-1 px-4 py-2 bg-primary rounded-lg hover:bg-primary/90 transition-colors font-medium"
+          >
             {t("actions.home")}
           </button>
         </CardFooter>
