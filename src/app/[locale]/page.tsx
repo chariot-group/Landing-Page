@@ -35,7 +35,7 @@ export default function Home() {
         className="relative h-[90vh] bg-[url('/background.svg')] xl:bg-size-[60%] lg:bg-size-[80%] bg-cover bg-center bg-no-repeat"
       >
         <div className="flex flex-col h-[70vh] justify-end xl:max-w-5xl sm:px-10 px-2 mx-auto gap-5">
-          <h1 className="lg:text-6xl text-4xl font-medium text-center text-shadow-md text-shadow-white">
+          <h1 className="lg:text-6xl text-4xl font-medium text-center text-shadow-sm text-shadow-white">
             {t("hero.title")}
           </h1>
           <div className="flex sm:gap-4 gap-2 justify-center">

@@ -8,6 +8,8 @@ export function scrollToSection(
       top: topOffset - 100,
       behavior: "smooth",
     });
+  } else {
+    window.location.href = `/#${section}`;
   }
 }
 
