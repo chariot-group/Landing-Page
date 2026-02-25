@@ -112,9 +112,6 @@ export default function Home() {
                     />
                   </span>
                   <div className="flex flex-col">
-                    <span className="text-foreground md:text-sm text-xs line-through">
-                      14.99€
-                    </span>
                     <span className="md:text-sm text-xs">11.99€</span>
                   </div>
                 </div>
@@ -146,9 +143,6 @@ export default function Home() {
                     />
                   </span>
                   <div className="flex flex-col">
-                    <span className="text-foreground md:text-sm text-xs line-through">
-                      59.99€
-                    </span>
                     <span className="md:text-sm text-xs">44.99€</span>
                   </div>
                 </div>
@@ -187,9 +181,6 @@ export default function Home() {
                   10 <Image src={Token} alt="Coin" width={25} height={25} />
                 </span>
                 <div className="flex flex-col">
-                  <span className="text-foreground md:text-sm text-xs line-through">
-                    29.99€
-                  </span>
                   <span className="md:text-sm text-xs">24.99€</span>
                 </div>
               </div>
