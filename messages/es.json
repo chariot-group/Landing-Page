@@ -596,5 +596,9 @@
         ]
       }
     ]
+  },
+  "auth": {
+    "loading": "Cargando...",
+    "pleaseWait": "Por favor, espere mientras verificamos su sesión"
   }
 }

@@ -7,6 +7,7 @@ import { getMessages } from "next-intl/server";
 import { locales } from "@/i18n/request";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { KeycloakProvider } from "@/providers/KeycloakProvider";
 
 const interTight = Inter_Tight({
   variable: "--font-inter-tight",
@@ -90,12 +91,14 @@ export default async function RootLayout({
         className={`${interTight.variable} w-full antialiased font-sans h-screen`}
       >
         <NextIntlClientProvider messages={messages}>
-          <div className="bg-card w-full overflow-hidden">
-            <Header />
-            <ToastContainer />
-            {children}
-            <Footer />
-          </div>
+          <KeycloakProvider>
+            <div className="bg-card w-full overflow-hidden">
+              <Header />
+              <ToastContainer />
+              {children}
+              <Footer />
+            </div>
+          </KeycloakProvider>
         </NextIntlClientProvider>
       </body>
     </html>
