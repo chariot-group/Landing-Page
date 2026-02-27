@@ -1,3 +1,5 @@
+import { detectBrowserLocale, saveStoredLocale } from "@/hooks/useLocalPreference";
+
 export function scrollToSection(
   section: string,
 ) {
@@ -11,4 +13,11 @@ export function scrollToSection(
   } else {
     window.location.href = `/#${section}`;
   }
+}
+
+export function chariotAppUrl(): string {
+  const detectedLocale = detectBrowserLocale();
+  saveStoredLocale(detectedLocale);
+
+  return `${process.env.NEXT_PUBLIC_CHARIOT_URL}/${detectedLocale}`;
 }

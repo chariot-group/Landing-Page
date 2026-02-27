@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import LogoTypo from "@public/logo_typo.svg";
 import Link from "next/link";
-import { scrollToSection } from "@/utils/global.util";
+import { chariotAppUrl, scrollToSection } from "@/utils/global.util";
 import { useState } from "react";
 import { useKeycloak } from "@/providers/KeycloakProvider";
 import {
@@ -18,10 +18,6 @@ import {
 import { MenuIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import React from "react";
-import {
-  detectBrowserLocale,
-  saveStoredLocale,
-} from "@/hooks/useLocalPreference";
 
 interface item {
   libelle: string;
@@ -33,13 +29,6 @@ export default function Header() {
 
   const t = useTranslations("header");
   const { authenticated, login, register, logout } = useKeycloak();
-
-  function chariotAppUrl(): string {
-    const detectedLocale = detectBrowserLocale();
-    saveStoredLocale(detectedLocale);
-
-    return `${process.env.NEXT_PUBLIC_CHARIOT_URL}/${detectedLocale}`;
-  }
 
   const buttons: item[] = [
     { libelle: `${t("home")}`, id: "hero" },

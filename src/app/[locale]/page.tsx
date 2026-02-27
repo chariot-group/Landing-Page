@@ -14,7 +14,7 @@ import Image from "next/image";
 
 import Token from "@public/assets/token.svg";
 import Feature from "@/components/Feature";
-import { scrollToSection } from "@/utils/global.util";
+import { chariotAppUrl, scrollToSection } from "@/utils/global.util";
 import Link from "next/link";
 import { useKeycloak } from "@/providers/KeycloakProvider";
 import { useEffect, useState } from "react";
@@ -22,7 +22,7 @@ import { fetchStripeProducts, Products } from "@/lib/stripe.service";
 
 export default function Home() {
   const t = useTranslations();
-  const { register } = useKeycloak();
+  const { authenticated, register } = useKeycloak();
 
   const [products, setProducts] = useState<Products>();
   const [loading, setLoading] = useState(true);
@@ -52,13 +52,19 @@ export default function Home() {
             >
               <ArrowRight /> {t("hero.packs")}
             </Button>
-            <Button
-              onClick={register}
-              className="md:text-sm text-xs"
-              variant={"outline"}
-            >
-              {t("hero.registration")}
-            </Button>
+            {authenticated ? (
+              <Link href={chariotAppUrl()}>
+                <Button variant={"custom"}>{t("header.myAccount")}</Button>
+              </Link>
+            ) : (
+              <Button
+                onClick={register}
+                className="md:text-sm text-xs"
+                variant={"outline"}
+              >
+                {t("hero.registration")}
+              </Button>
+            )}
           </div>
         </div>
         <div className="absolute -z-10 -bottom-5 bg-linear-to-t from-black to-transparent h-15 w-full"></div>
@@ -302,13 +308,21 @@ export default function Home() {
                   >
                     <ArrowRight /> {t("features.packs")}
                   </Button>
-                  <Button
-                    onClick={register}
-                    className="md:text-sm text-xs"
-                    variant={"outline"}
-                  >
-                    {t("features.registration")}
-                  </Button>
+                  {authenticated ? (
+                    <Link href={chariotAppUrl()}>
+                      <Button variant={"custom"}>
+                        {t("header.myAccount")}
+                      </Button>
+                    </Link>
+                  ) : (
+                    <Button
+                      onClick={register}
+                      className="md:text-sm text-xs"
+                      variant={"outline"}
+                    >
+                      {t("hero.registration")}
+                    </Button>
+                  )}
                 </div>
               </div>
             </div>
