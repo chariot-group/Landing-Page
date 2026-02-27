@@ -14,18 +14,14 @@ import Image from "next/image";
 
 import Token from "@public/assets/token.svg";
 import Feature from "@/components/Feature";
-import { getRegistrationUrl, scrollToSection } from "@/utils/global.util";
+import { scrollToSection } from "@/utils/global.util";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useKeycloak } from "@/providers/KeycloakProvider";
 
 export default function Home() {
   const t = useTranslations();
 
-  const [registrationUrl, setRegistrationUrl] = useState<string>("");
-
-  useEffect(() => {
-    setRegistrationUrl(getRegistrationUrl());
-  }, []);
+  const { authenticated, login, register } = useKeycloak();
 
   return (
     <div className="flex flex-col bg-background">
@@ -45,11 +41,13 @@ export default function Home() {
             >
               <ArrowRight /> {t("hero.packs")}
             </Button>
-            <Link href={registrationUrl}>
-              <Button className="md:text-sm text-xs" variant={"outline"}>
-                {t("hero.registration")}
-              </Button>
-            </Link>
+            <Button
+              onClick={register}
+              className="md:text-sm text-xs"
+              variant={"outline"}
+            >
+              {t("hero.registration")}
+            </Button>
           </div>
         </div>
         <div className="absolute -z-10 -bottom-5 bg-linear-to-t from-black to-transparent h-15 w-full"></div>
@@ -301,11 +299,13 @@ export default function Home() {
                   >
                     <ArrowRight /> {t("features.packs")}
                   </Button>
-                  <Link href={registrationUrl}>
-                    <Button className="md:text-sm text-xs" variant={"outline"}>
-                      {t("features.registration")}
-                    </Button>
-                  </Link>
+                  <Button
+                    onClick={register}
+                    className="md:text-sm text-xs"
+                    variant={"outline"}
+                  >
+                    {t("features.registration")}
+                  </Button>
                 </div>
               </div>
             </div>

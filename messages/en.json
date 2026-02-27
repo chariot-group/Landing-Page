@@ -5,7 +5,9 @@
     "home": "Home",
     "packs": "Our packs",
     "howWorks": "How it works?",
-    "features": "Chariot features"
+    "features": "Chariot features",
+    "myAccount": "My account",
+    "logout": "Logout"
   },
   "hero": {
     "title": "Discover a new way to live the role-playing game!",

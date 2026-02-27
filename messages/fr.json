@@ -5,7 +5,9 @@
     "home": "Accueil",
     "packs": "Nos packs",
     "howWorks": "Comment ça marche ?",
-    "features": "Fonctionnalités Chariot"
+    "features": "Fonctionnalités Chariot",
+    "myAccount": "Mon espace",
+    "logout": "Déconnexion"
   },
   "hero": {
     "title": "Explorez une toute nouvelle façon de vivre le jeu de rôle !",

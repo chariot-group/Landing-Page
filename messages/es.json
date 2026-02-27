@@ -5,7 +5,9 @@
     "home": "Inicio",
     "packs": "Nuestros paquetes",
     "howWorks": "¿Cómo funciona?",
-    "features": "Funcionalidades de Chariot"
+    "features": "Funcionalidades de Chariot",
+    "myAccount": "Mi espacio",
+    "logout": "Cerrar sesión"
   },
   "hero": {
     "title": "¡Descubre una nueva forma de vivir el juego de rol!",

@@ -66,7 +66,7 @@ export function KeycloakProvider({ children }: { children: ReactNode }) {
 
       try {
         const initOptions: KeycloakInitOptions = {
-          onLoad: "login-required",
+          onLoad: "check-sso", // Ne force pas la connexion
           checkLoginIframe: false,
           pkceMethod: "S256",
         };

@@ -5,8 +5,9 @@ import Image from "next/image";
 
 import LogoTypo from "@public/logo_typo.svg";
 import Link from "next/link";
-import { getRegistrationUrl, scrollToSection } from "@/utils/global.util";
-import { use, useEffect, useState } from "react";
+import { scrollToSection } from "@/utils/global.util";
+import { useState } from "react";
+import { useKeycloak } from "@/providers/KeycloakProvider";
 import {
   Sheet,
   SheetContent,
@@ -16,6 +17,11 @@ import {
 } from "@/components/ui/sheet";
 import { MenuIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
+import React from "react";
+import {
+  detectBrowserLocale,
+  saveStoredLocale,
+} from "@/hooks/useLocalPreference";
 
 interface item {
   libelle: string;
@@ -23,10 +29,17 @@ interface item {
 }
 
 export default function Header() {
-  const [registrationUrl, setRegistrationUrl] = useState<string>("");
   const [isSheetOpen, setIsSheetOpen] = useState(false);
 
   const t = useTranslations("header");
+  const { authenticated, login, register, logout } = useKeycloak();
+
+  function chariotAppUrl(): string {
+    const detectedLocale = detectBrowserLocale();
+    saveStoredLocale(detectedLocale);
+
+    return `${process.env.NEXT_PUBLIC_CHARIOT_URL}/${detectedLocale}`;
+  }
 
   const buttons: item[] = [
     { libelle: `${t("home")}`, id: "hero" },
@@ -34,10 +47,6 @@ export default function Header() {
     { libelle: `${t("howWorks")}`, id: "how-it-works" },
     { libelle: `${t("features")}`, id: "features" },
   ];
-
-  useEffect(() => {
-    setRegistrationUrl(getRegistrationUrl());
-  }, []);
 
   return (
     <header className="xl:px-15 px-10 py-4 flex items-center justify-between fixed top-0 left-0 right-0 z-50 bg-linear-to-b from-black to-transparent">
@@ -57,13 +66,26 @@ export default function Header() {
         </nav>
       </div>
       <div className="hidden xl:flex gap-2">
-        <Link href={registrationUrl}>
-          <Button variant={"outline"}>{t("registration")}</Button>
-        </Link>
-
-        <Link href={process.env.NEXT_PUBLIC_LOGIN_URL || "#"}>
-          <Button variant={"custom"}>{t("connection")}</Button>
-        </Link>
+        {authenticated ? (
+          // Afficher un avatar simple (exemple générique)
+          <React.Fragment>
+            <Button variant={"outline"} onClick={logout}>
+              {t("logout")}
+            </Button>
+            <Link href={chariotAppUrl()}>
+              <Button variant={"custom"}>{t("myAccount")}</Button>
+            </Link>
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            <Button variant={"outline"} onClick={register}>
+              {t("registration")}
+            </Button>
+            <Button variant={"custom"} onClick={login}>
+              {t("connection")}
+            </Button>
+          </React.Fragment>
+        )}
       </div>
       <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
         <SheetTrigger asChild className="xl:hidden">
@@ -98,13 +120,20 @@ export default function Header() {
             </ul>
             <div className="border-t mx-4"></div>
             <div className="flex flex-row gap-2 px-4 py-2">
-              <Link href={registrationUrl}>
-                <Button variant={"outline"}>{t("registration")}</Button>
-              </Link>
-
-              <Link href={process.env.NEXT_PUBLIC_LOGIN_URL || "#"}>
-                <Button variant={"custom"}>{t("connection")}</Button>
-              </Link>
+              {authenticated ? (
+                <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold">
+                  <span>U</span>
+                </div>
+              ) : (
+                <>
+                  <Button variant={"outline"} onClick={register}>
+                    {t("registration")}
+                  </Button>
+                  <Button variant={"custom"} onClick={login}>
+                    {t("connection")}
+                  </Button>
+                </>
+              )}
             </div>
           </nav>
         </SheetContent>
