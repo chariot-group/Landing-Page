@@ -17,12 +17,23 @@ import Feature from "@/components/Feature";
 import { scrollToSection } from "@/utils/global.util";
 import Link from "next/link";
 import { useKeycloak } from "@/providers/KeycloakProvider";
+import { useEffect, useState } from "react";
+import { fetchStripeProducts, Products } from "@/lib/stripe.service";
 
 export default function Home() {
   const t = useTranslations();
+  const { register } = useKeycloak();
 
-  const { authenticated, login, register } = useKeycloak();
+  const [products, setProducts] = useState<Products>();
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    fetchStripeProducts()
+      .then(setProducts)
+      .finally(() => setLoading(false));
+  }, []);
+
+  // ...existing code...
   return (
     <div className="flex flex-col bg-background">
       {/* Hero Section */}
@@ -54,136 +65,128 @@ export default function Home() {
       </section>
       <Card id="packs" className="p-0">
         <div className="lg:m-26 m-10 md:grid flex flex-col md:grid-cols-2 xl:grid-cols-4 lg:px-0 px-2 sm:px-10 md:gap-4 gap-3 max-w-6xl mx-auto self-center">
-          <Card className="relative justify-between col-span-2 bg-[url('/assets/background/packs.jpg')] bg-cover bg-center bg-no-repeat">
-            <div className="absolute inset-0 bg-black/30 top-0 bottom-0 z-5 rounded-[15px]"></div>
-            <div className="flex flex-col gap-4 z-10">
-              <h2 className="md:text-3xl text-xl font-semibold text-white">
-                {t("packs.custom.name")}
-              </h2>
-              <p className="md:text-sm text-xs text-white sm:w-[60%]">
-                {t("packs.custom.description")}
-              </p>
-            </div>
-            <div className="flex flex-row justify-between items-center z-10">
-              <Button variant={"custom"} className="text-black bg-white">
-                <ShoppingCart fill="true" />{" "}
-                <span className="md:text-sm text-xs">
-                  {t("packs.custom.cta")}
-                </span>
-              </Button>
-              <span className="md:text-sm text-xs items-center flex">
-                2.99€ ={" "}
-                <Image
-                  src={Token}
-                  alt="Coin"
-                  width={15}
-                  height={15}
-                  className="inline-block ml-1"
-                />
-              </span>
-            </div>
-          </Card>
-          <div className="grid md:grid-rows-2 md:grid-cols-1 grid-cols-2 md:gap-4 max-[360px]:grid-cols-1 gap-3">
-            <Link href={"#"}>
-              <Card className="bg-white text-black justify-between hover:bg-white/90 transition-colors duration-300 h-full">
-                <div className="flex flex-col gap-0">
-                  <div className="flex flex-row justify-between">
-                    <h2 className="md:text-3xl text-xl font-semibold w-2/3">
-                      {t("packs.explorator.name")}
-                    </h2>
-                    <ArrowUpRight />
-                  </div>
-
-                  <p className="md:text-sm text-xs text-foreground">
-                    {t("packs.explorator.description")}
-                  </p>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="font-bold md:text-4xl text-xl flex items-center">
-                    5{" "}
-                    <Image
-                      src={Token}
-                      alt="Coin"
-                      className="md:h-6.25 md:w-6.25 h-4 w-4"
-                      width={25}
-                      height={25}
-                    />
-                  </span>
-                  <div className="flex flex-col">
-                    <span className="md:text-sm text-xs">11.99€</span>
-                  </div>
-                </div>
-              </Card>
-            </Link>
-            <Link href={"#"}>
-              <Card className="bg-white text-black justify-between hover:bg-white/90 transition-colors duration-300 h-full">
-                <div className="flex flex-col gap-0">
-                  <div className="flex flex-row justify-between">
-                    <h2 className="text-xl md:text-3xl font-semibold w-2/3">
-                      {t("packs.legendary.name")}
-                    </h2>
-                    <ArrowUpRight />
-                  </div>
-
-                  <p className="md:text-sm text-xs text-foreground">
-                    {t("packs.legendary.description")}
-                  </p>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="font-bold md:text-4xl text-xl flex items-center">
-                    20{" "}
-                    <Image
-                      src={Token}
-                      alt="Coin"
-                      className="md:h-6.25 md:w-6.25 h-4 w-4"
-                      width={25}
-                      height={25}
-                    />
-                  </span>
-                  <div className="flex flex-col">
-                    <span className="md:text-sm text-xs">44.99€</span>
-                  </div>
-                </div>
-              </Card>
-            </Link>
-          </div>
-          <Link href={"#"}>
-            <Card className="relative h-full col-span-1 bg-white text-black justify-between hover:bg-white/90 transition-colors duration-300">
-              <Card className="absolute -top-2 -left-1 bg-primary px-2 py-1 flex flex-row items-center gap-1 rounded-full">
-                <ArrowDown height={15} width={15} />
-                <span className="text-white text-xs font-semibold">
-                  {t("packs.recommended")}
-                </span>
-                <ArrowDown height={15} width={15} />
-              </Card>
-              <div className="flex flex-col gap-3">
-                <div className="flex flex-col gap-0">
-                  <div className="flex flex-row justify-between">
-                    <h2 className="md:text-3xl text-xl font-semibold w-2/3">
-                      {t("packs.aventurer.name")}
-                    </h2>
-                    <ArrowUpRight />
-                  </div>
-
-                  <p className="md:text-sm text-xs text-foreground">
-                    {t("packs.aventurer.description")}
-                  </p>
-                </div>
-                <span className="sm:flex hidden font-bold text-8xl self-center text-primary">
-                  10 <Image src={Token} alt="Coin" width={60} height={60} />
-                </span>
+          {products?.unit && (
+            <Card className="relative justify-between col-span-2 bg-[url('/assets/background/packs.jpg')] bg-cover bg-center bg-no-repeat">
+              <div className="absolute inset-0 bg-black/30 top-0 bottom-0 z-5 rounded-[15px]"></div>
+              <div className="flex flex-col gap-4 z-10">
+                <h2 className="md:text-3xl text-xl font-semibold text-white">
+                  {t(`packs.${products.unit.name}`)}
+                </h2>
+                <p className="md:text-sm text-xs text-white sm:w-[60%]">
+                  {t(`packs.${products.unit.description}`)}
+                </p>
               </div>
-
-              <div className="flex flex-row sm:self-end justify-between items-center">
-                <span className="flex sm:hidden font-bold text-3xl self-center text-primary">
-                  10 <Image src={Token} alt="Coin" width={25} height={25} />
+              <div className="flex flex-row justify-between items-center z-10">
+                <Button variant={"custom"} className="text-black bg-white">
+                  <ShoppingCart fill="true" />{" "}
+                  <span className="md:text-sm text-xs">
+                    {t("packs.custom.cta")}
+                  </span>
+                </Button>
+                <span className="md:text-sm text-xs items-center flex">
+                  {products.unit.prices[0]?.unit_amount
+                    ? (products.unit.prices[0].unit_amount / 100).toFixed(2)
+                    : "N/A"}
+                  €{" "}
+                  <Image
+                    src={Token}
+                    alt="Coin"
+                    width={15}
+                    height={15}
+                    className="inline-block ml-1"
+                  />
                 </span>
-                <div className="flex flex-col">
-                  <span className="md:text-sm text-xs">24.99€</span>
-                </div>
               </div>
             </Card>
-          </Link>
+          )}
+          <div className="grid md:grid-rows-2 md:grid-cols-1 grid-cols-2 md:gap-4 max-[360px]:grid-cols-1 gap-3">
+            {products?.other.map((product, index) => (
+              <Link key={index} href={"#"}>
+                <Card className="bg-white text-black justify-between hover:bg-white/90 transition-colors duration-300 h-full">
+                  <div className="flex flex-col gap-0">
+                    <div className="flex flex-row justify-between">
+                      <h2 className="md:text-3xl text-xl font-semibold w-2/3">
+                        {t(`packs.${product.name}`)}
+                      </h2>
+                      <ArrowUpRight />
+                    </div>
+
+                    <p className="md:text-sm text-xs text-foreground">
+                      {t(`packs.${product.description}`)}
+                    </p>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="font-bold md:text-4xl text-xl flex items-center">
+                      {product.metadata?.token_number}{" "}
+                      <Image
+                        src={Token}
+                        alt="Coin"
+                        className="md:h-6.25 md:w-6.25 h-4 w-4"
+                        width={25}
+                        height={25}
+                      />
+                    </span>
+                    <div className="flex flex-col">
+                      <span className="md:text-sm text-xs">
+                        {product.prices[0]?.unit_amount
+                          ? (product.prices[0].unit_amount / 100).toFixed(2)
+                          : "N/A"}
+                        €
+                      </span>
+                    </div>
+                  </div>
+                </Card>
+              </Link>
+            ))}
+          </div>
+          {products?.recommended && (
+            <Link href={"#"}>
+              <Card className="relative h-full col-span-1 bg-white text-black justify-between hover:bg-white/90 transition-colors duration-300">
+                <Card className="absolute -top-2 -left-1 bg-primary px-2 py-1 flex flex-row items-center gap-1 rounded-full">
+                  <ArrowDown height={15} width={15} />
+                  <span className="text-white text-xs font-semibold">
+                    {t("packs.recommended")}
+                  </span>
+                  <ArrowDown height={15} width={15} />
+                </Card>
+                <div className="flex flex-col gap-3">
+                  <div className="flex flex-col gap-0">
+                    <div className="flex flex-row justify-between">
+                      <h2 className="md:text-3xl text-xl font-semibold w-2/3">
+                        {t(`packs.${products.recommended.name}`)}
+                      </h2>
+                      <ArrowUpRight />
+                    </div>
+
+                    <p className="md:text-sm text-xs text-foreground">
+                      {t(`packs.${products.recommended.description}`)}
+                    </p>
+                  </div>
+                  <span className="sm:flex hidden font-bold text-8xl self-center text-primary">
+                    {products.recommended.metadata?.token_number}{" "}
+                    <Image src={Token} alt="Coin" width={60} height={60} />
+                  </span>
+                </div>
+
+                <div className="flex flex-row sm:self-end justify-between items-center">
+                  <span className="flex sm:hidden font-bold text-3xl self-center text-primary">
+                    {products.recommended.metadata?.token_number}{" "}
+                    <Image src={Token} alt="Coin" width={25} height={25} />
+                  </span>
+                  <div className="flex flex-col">
+                    <span className="md:text-sm text-xs">
+                      {products.recommended.prices[0]?.unit_amount
+                        ? (
+                            products.recommended.prices[0].unit_amount / 100
+                          ).toFixed(2)
+                        : "N/A"}
+                      €
+                    </span>
+                  </div>
+                </div>
+              </Card>
+            </Link>
+          )}
         </div>
 
         <Card
