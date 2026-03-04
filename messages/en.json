@@ -138,7 +138,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "The service offers a freemium version to create, organize, and manage campaigns, as well as paid options with advanced features."
+            "text": "The service offers a freemium version to create, organize, and manage campaigns, as well as one-time Char pack purchases (without subscription or automatic renewal) with advanced features."
           }
         ]
       },
@@ -275,7 +275,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "These General Terms and Conditions of Sale govern the sale of paid services of the Chariot application by CHARIOT."
+            "text": "These General Terms and Conditions of Sale govern the sale of Char packs and related paid services of the Chariot application by CHARIOT."
           }
         ]
       },
@@ -284,11 +284,11 @@
         "content": [
           {
             "type": "list",
-            "text": "Paid offers are described on the website."
+            "text": "Paid offers correspond to 4 Char packs described on the website."
           },
           {
             "type": "list",
-            "text": "Prices are indicated in euros including VAT."
+            "text": "Prices are indicated in euros including VAT, and the quantity of certain packs can be increased at checkout."
           },
           {
             "type": "list",
@@ -301,11 +301,11 @@
         "content": [
           {
             "type": "list",
-            "text": "Orders are placed via the online form."
+            "text": "Orders are placed online via Stripe."
           },
           {
             "type": "list",
-            "text": "Order validation constitutes acceptance of the Terms and Conditions of Sale."
+            "text": "Order validation constitutes acceptance of the Terms and Conditions of Sale and triggers immediate Char crediting."
           }
         ]
       },
@@ -322,20 +322,20 @@
           },
           {
             "type": "list",
-            "text": "Payments are secured."
+            "text": "Payments are secure and charged when the order is validated."
           }
         ]
       },
       {
-        "title": "Article 5 – Duration and Renewal",
+        "title": "Article 5 – Duration and No Renewal",
         "content": [
           {
             "type": "list",
-            "text": "Subscriptions are automatically renewed unless canceled."
+            "text": "Char packs are one-time purchases with no automatic renewal."
           },
           {
             "type": "list",
-            "text": "The user may cancel at any time; cancellation takes effect at the end of the current period."
+            "text": "Credited Chars remain available on the user account as long as they are not consumed and the account remains active."
           }
         ]
       },
@@ -344,12 +344,20 @@
         "content": [
           {
             "type": "list",
-            "text": "In accordance with the law, the right of withdrawal does not apply to fully delivered services upon purchase (digital content)."
+            "text": "A refund request may be submitted within 14 days via the support email."
+          },
+          {
+            "type": "list",
+            "text": "A refund is only possible for purchased and unused packs, provided the user has a sufficient Char balance."
+          },
+          {
+            "type": "list",
+            "text": "Refunds are processed per purchased pack (no recomposition into different packs), and the corresponding Chars are deducted during processing."
           }
         ]
       },
       {
-        "title": "Article 7 – Termination and Suspension",
+        "title": "Article 7 – Termination, Suspension and Access",
         "content": [
           {
             "type": "list",
@@ -357,7 +365,7 @@
           },
           {
             "type": "list",
-            "text": "In case of termination, data may be deleted after a period."
+            "text": "In case of account suspension or deletion, access to unused Chars may be limited or lost depending on applicable legal and technical constraints."
           }
         ]
       },
@@ -401,7 +409,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "Chariot is committed to protecting users’ personal data."
+            "text": "These legal notices describe Chariot’s key legal information and the main data-processing principles related to the service."
           }
         ]
       },
@@ -418,7 +426,11 @@
           },
           {
             "type": "list",
-            "text": "Data related to service usage."
+            "text": "Data related to service usage,"
+          },
+          {
+            "type": "list",
+            "text": "Transaction data related to Char pack purchases and refund requests."
           }
         ]
       },
@@ -432,6 +444,10 @@
           {
             "type": "list",
             "text": "Service delivery,"
+          },
+          {
+            "type": "list",
+            "text": "Management of pack purchases, Char crediting, and eligible refunds,"
           },
           {
             "type": "list",
@@ -452,7 +468,11 @@
           },
           {
             "type": "list",
-            "text": "Compliance with legal obligations."
+            "text": "Retention of transaction records according to accounting and tax legal obligations,"
+          },
+          {
+            "type": "list",
+            "text": "Compliance with other legal obligations."
           }
         ]
       },
@@ -482,7 +502,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "Technical and organizational measures to protect data."
+            "text": "Technical and organizational measures to protect data, with the use of secure payment providers (Stripe)."
           }
         ]
       },
@@ -504,7 +524,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "Email: {e} for any GDPR-related inquiries."
+            "text": "Email: {e} for any legal, GDPR, purchase, or refund-related inquiries."
           }
         ]
       }
@@ -605,7 +625,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "For any information regarding the collection and processing of your personal data, please refer to our Privacy Policy."
+            "text": "For any information regarding the collection and processing of your personal data, including payment data and Char pack purchase history, please refer to our Privacy Policy."
           }
         ]
       }

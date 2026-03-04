@@ -138,7 +138,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "El servicio ofrece una versión freemium para crear, organizar y gestionar campañas, así como opciones de pago con funciones avanzadas."
+            "text": "El servicio ofrece una versión freemium para crear, organizar y gestionar campañas, así como la compra puntual de paquetes de Chars (sin suscripción ni renovación automática) con funciones avanzadas."
           }
         ]
       },
@@ -275,7 +275,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "Estas Condiciones Generales de Venta regulan la venta de servicios de pago de la aplicación Chariot por parte de CHARIOT."
+            "text": "Estas Condiciones Generales de Venta regulan la venta de paquetes de Chars y de los servicios de pago asociados de la aplicación Chariot por parte de CHARIOT."
           }
         ]
       },
@@ -284,11 +284,11 @@
         "content": [
           {
             "type": "list",
-            "text": "Las ofertas de pago se describen en el sitio web."
+            "text": "Las ofertas de pago corresponden a 4 paquetes de Chars descritos en el sitio web."
           },
           {
             "type": "list",
-            "text": "Los precios se indican en euros con IVA incluido."
+            "text": "Los precios se indican en euros con IVA incluido, y la cantidad de ciertos paquetes puede aumentarse durante el pago."
           },
           {
             "type": "list",
@@ -301,11 +301,11 @@
         "content": [
           {
             "type": "list",
-            "text": "El pedido se realiza a través del formulario en línea."
+            "text": "El pedido se realiza en línea a través de Stripe."
           },
           {
             "type": "list",
-            "text": "La validación del pedido implica la aceptación de las Condiciones Generales de Venta."
+            "text": "La validación del pedido implica la aceptación de las Condiciones Generales de Venta y activa el abono inmediato de Chars."
           }
         ]
       },
@@ -322,20 +322,20 @@
           },
           {
             "type": "list",
-            "text": "Los pagos están asegurados."
+            "text": "Los pagos son seguros y se cargan en el momento de validar el pedido."
           }
         ]
       },
       {
-        "title": "Artículo 5 – Duración y renovación",
+        "title": "Artículo 5 – Duración y ausencia de renovación",
         "content": [
           {
             "type": "list",
-            "text": "Las suscripciones se renuevan automáticamente salvo cancelación."
+            "text": "Los paquetes de Chars son compras puntuales sin renovación automática."
           },
           {
             "type": "list",
-            "text": "El usuario puede cancelar en cualquier momento; la cancelación será efectiva al final del período en curso."
+            "text": "Los Chars abonados permanecen disponibles en la cuenta del usuario mientras no se consuman y la cuenta siga activa."
           }
         ]
       },
@@ -344,12 +344,20 @@
         "content": [
           {
             "type": "list",
-            "text": "De acuerdo con la ley, el derecho de desistimiento no se aplica a los servicios completamente ejecutados tras la compra (contenido digital)."
+            "text": "La solicitud de reembolso puede realizarse en un plazo de 14 días por correo electrónico al soporte."
+          },
+          {
+            "type": "list",
+            "text": "El reembolso solo es posible para paquetes comprados y no consumidos, siempre que el usuario disponga de un saldo de Chars suficiente."
+          },
+          {
+            "type": "list",
+            "text": "El reembolso se procesa por paquete comprado (sin recomposición en paquetes distintos) y los Chars correspondientes se deducen durante el tratamiento."
           }
         ]
       },
       {
-        "title": "Artículo 7 – Cancelación y suspensión",
+        "title": "Artículo 7 – Cancelación, suspensión y acceso",
         "content": [
           {
             "type": "list",
@@ -357,7 +365,7 @@
           },
           {
             "type": "list",
-            "text": "En caso de cancelación, los datos pueden eliminarse después de un período de tiempo."
+            "text": "En caso de suspensión o eliminación de la cuenta, el acceso a los Chars no utilizados puede limitarse o perderse según las obligaciones legales y técnicas aplicables."
           }
         ]
       },
@@ -401,7 +409,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "Chariot se compromete a proteger los datos personales de los usuarios."
+            "text": "Estos avisos legales describen la información jurídica principal de Chariot y los principios de tratamiento de datos vinculados al servicio."
           }
         ]
       },
@@ -418,7 +426,11 @@
           },
           {
             "type": "list",
-            "text": "Datos sobre el uso del servicio."
+            "text": "Datos sobre el uso del servicio,"
+          },
+          {
+            "type": "list",
+            "text": "Datos de transacción relacionados con la compra de paquetes de Chars y las solicitudes de reembolso."
           }
         ]
       },
@@ -432,6 +444,10 @@
           {
             "type": "list",
             "text": "Prestación del servicio,"
+          },
+          {
+            "type": "list",
+            "text": "Gestión de compras de paquetes, abono de Chars y reembolsos elegibles,"
           },
           {
             "type": "list",
@@ -452,7 +468,11 @@
           },
           {
             "type": "list",
-            "text": "Cumplimiento de obligaciones legales."
+            "text": "Conservación de justificantes de transacción según las obligaciones legales contables y fiscales,"
+          },
+          {
+            "type": "list",
+            "text": "Cumplimiento de las demás obligaciones legales."
           }
         ]
       },
@@ -482,7 +502,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "Medidas técnicas y organizativas para proteger los datos."
+            "text": "Medidas técnicas y organizativas para proteger los datos, con uso de proveedores de pago seguros (Stripe)."
           }
         ]
       },
@@ -504,7 +524,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "Correo electrónico: {e} para cualquier consulta relacionada con el RGPD."
+            "text": "Correo electrónico: {e} para cualquier consulta jurídica, RGPD o relacionada con compras y reembolsos."
           }
         ]
       }
@@ -605,7 +625,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "Para cualquier información sobre la recopilación y el tratamiento de sus datos personales, consulte nuestra Política de Privacidad."
+            "text": "Para cualquier información sobre la recopilación y el tratamiento de sus datos personales, incluidos los datos de pago y el historial de compra de paquetes de Chars, consulte nuestra Política de Privacidad."
           }
         ]
       }

@@ -138,7 +138,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "Le service propose une version freemium permettant de créer, organiser et gérer des campagnes, ainsi que des options payantes offrant des fonctionnalités avancées."
+            "text": "Le service propose une version freemium permettant de créer, organiser et gérer des campagnes, ainsi que l’achat ponctuel de packs de chars (sans abonnement ni reconduction automatique) offrant des fonctionnalités avancées."
           }
         ]
       },
@@ -275,7 +275,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "Les présentes Conditions Générales de Vente régissent la vente des services payants de l’application Chariot par CHARIOT."
+            "text": "Les présentes Conditions Générales de Vente régissent la vente de packs de chars et des services payants associés de l’application Chariot par CHARIOT."
           }
         ]
       },
@@ -284,11 +284,11 @@
         "content": [
           {
             "type": "list",
-            "text": "Les offres payantes sont décrites sur le site."
+            "text": "Les offres payantes correspondent à 4 packs de chars décrits sur le site."
           },
           {
             "type": "list",
-            "text": "Les prix sont indiqués en euros TTC."
+            "text": "Les prix sont indiqués en euros TTC et la quantité de certains packs peut être augmentée lors du paiement."
           },
           {
             "type": "list",
@@ -301,11 +301,11 @@
         "content": [
           {
             "type": "list",
-            "text": "La commande se fait via le formulaire en ligne."
+            "text": "La commande se fait en ligne via Stripe."
           },
           {
             "type": "list",
-            "text": "La validation de la commande vaut acceptation des CGV."
+            "text": "La validation de la commande vaut acceptation des CGV et déclenche le crédit immédiat des chars."
           }
         ]
       },
@@ -322,20 +322,20 @@
           },
           {
             "type": "list",
-            "text": "Les paiements sont sécurisés."
+            "text": "Les paiements sont sécurisés et débités au moment de la validation de la commande."
           }
         ]
       },
       {
-        "title": "Article 5 – Durée et renouvellement",
+        "title": "Article 5 – Durée et absence de renouvellement",
         "content": [
           {
             "type": "list",
-            "text": "Les abonnements sont renouvelés automatiquement sauf résiliation."
+            "text": "Les packs de chars sont des achats ponctuels sans reconduction automatique."
           },
           {
             "type": "list",
-            "text": "L’utilisateur peut résilier à tout moment, la résiliation prendra effet à la fin de la période en cours."
+            "text": "Les chars crédités restent disponibles sur le compte utilisateur tant qu’ils ne sont pas consommés et que le compte est actif."
           }
         ]
       },
@@ -344,12 +344,20 @@
         "content": [
           {
             "type": "list",
-            "text": "Conformément à la loi, le droit de rétractation ne s’applique pas aux services pleinement exécutés dès l’achat (contenus numériques)."
+            "text": "La demande de remboursement peut être formulée dans un délai de 14 jours via l’email support."
+          },
+          {
+            "type": "list",
+            "text": "Un remboursement n’est possible que pour des packs achetés et non consommés, sous réserve d’un solde de chars suffisant."
+          },
+          {
+            "type": "list",
+            "text": "Le remboursement est effectué par pack acheté (sans recomposition en packs différents) et les chars correspondants sont déduits lors du traitement."
           }
         ]
       },
       {
-        "title": "Article 7 – Résiliation et suspension",
+        "title": "Article 7 – Résiliation, suspension et accès",
         "content": [
           {
             "type": "list",
@@ -357,7 +365,7 @@
           },
           {
             "type": "list",
-            "text": "En cas de résiliation, les données peuvent être supprimées après un délai."
+            "text": "En cas de suspension ou de suppression du compte, l’accès aux chars non utilisés peut être limité ou perdu selon les obligations légales et techniques applicables."
           }
         ]
       },
@@ -401,7 +409,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "Chariot s’engage à protéger les données personnelles des utilisateurs."
+            "text": "Les présentes mentions décrivent les principales informations juridiques de Chariot et les principes de traitement des données liés au service."
           }
         ]
       },
@@ -418,7 +426,11 @@
           },
           {
             "type": "list",
-            "text": "Données relatives à l’usage du service."
+            "text": "Données relatives à l’usage du service,"
+          },
+          {
+            "type": "list",
+            "text": "Données de transaction liées à l’achat de packs de chars et aux demandes de remboursement."
           }
         ]
       },
@@ -432,6 +444,10 @@
           {
             "type": "list",
             "text": "Fourniture du service,"
+          },
+          {
+            "type": "list",
+            "text": "Gestion des achats de packs, du crédit de chars et des remboursements éligibles,"
           },
           {
             "type": "list",
@@ -452,7 +468,11 @@
           },
           {
             "type": "list",
-            "text": "Respect des obligations légales."
+            "text": "Conservation des justificatifs de transaction selon les obligations légales comptables et fiscales,"
+          },
+          {
+            "type": "list",
+            "text": "Respect des autres obligations légales."
           }
         ]
       },
@@ -482,7 +502,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "Mesures techniques et organisationnelles pour protéger les données."
+            "text": "Mesures techniques et organisationnelles pour protéger les données, avec recours à des prestataires de paiement sécurisés (Stripe)."
           }
         ]
       },
@@ -504,7 +524,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "Email : {e} pour toute question RGPD."
+            "text": "Email : {e} pour toute question juridique, RGPD ou liée aux achats et remboursements."
           }
         ]
       }
@@ -525,7 +545,7 @@
           },
           {
             "type": "list",
-            "text": "Statut juridique : En cours d'optention"
+            "text": "Statut juridique : En cours d'obtention"
           },
           {
             "type": "list",
@@ -533,7 +553,7 @@
           },
           {
             "type": "list",
-            "text": "Numéro SIREN / SIRET : En cours d'optention"
+            "text": "Numéro SIREN / SIRET : En cours d'obtention"
           },
           {
             "type": "list",
@@ -605,7 +625,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "Pour toute information concernant la collecte et le traitement de vos données personnelles, veuillez consulter notre Politique de confidentialité."
+            "text": "Pour toute information concernant la collecte et le traitement de vos données personnelles, y compris les données de paiement et d’historique d’achats de packs de chars, veuillez consulter notre Politique de confidentialité."
           }
         ]
       }
