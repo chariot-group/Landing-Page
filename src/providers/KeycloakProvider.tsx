@@ -15,6 +15,7 @@ import {
   detectBrowserLocale,
   saveStoredLocale,
 } from "@/hooks/useLocalPreference";
+import { setKeycloakInstance } from "@/services/api.service";
 
 interface KeycloakContextType {
   keycloak: Keycloak | null;
@@ -25,6 +26,7 @@ interface KeycloakContextType {
   login: () => void;
   logout: () => void;
   register: () => void;
+  userId: string | null;
 }
 
 const KeycloakContext = createContext<KeycloakContextType>({
@@ -36,6 +38,7 @@ const KeycloakContext = createContext<KeycloakContextType>({
   login: () => {},
   logout: () => {},
   register: () => {},
+  userId: null,
 });
 
 export function KeycloakProvider({ children }: { children: ReactNode }) {
@@ -48,6 +51,7 @@ export function KeycloakProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
   const [token, setToken] = useState<string | null>(null);
   const [userTransitioning, setUserTransitioning] = useState(false); // Solution 1
+  const [userId, setUserId] = useState<string | null>(null);
 
   const visibilityHandlerRef = useRef<(() => void) | null>(null);
 
@@ -76,6 +80,7 @@ export function KeycloakProvider({ children }: { children: ReactNode }) {
         // Detect user change and handle cache transition (Solution 5 + Solution 1)
         if (authenticated && kc.tokenParsed?.sub) {
           const currentUserId = kc.tokenParsed.sub;
+          setUserId(currentUserId);
           const storedUserId = localStorage.getItem("chariot_user_id");
 
           if (storedUserId && storedUserId !== currentUserId) {
@@ -107,12 +112,16 @@ export function KeycloakProvider({ children }: { children: ReactNode }) {
           }
         } else if (!authenticated) {
           // User logged out - clear stored ID
+          setUserId(null);
           localStorage.removeItem("chariot_user_id");
         }
 
         setKeycloak(kc);
         setAuthenticated(authenticated);
         setToken(kc.token || null);
+
+        // Pass Keycloak instance to apiClient
+        setKeycloakInstance(kc);
 
         // Configure automatic refresh only if authenticated
         if (authenticated && kc.token) {
@@ -222,6 +231,7 @@ export function KeycloakProvider({ children }: { children: ReactNode }) {
         login,
         logout,
         register,
+        userId,
       }}
     >
       {loading || userTransitioning ? (

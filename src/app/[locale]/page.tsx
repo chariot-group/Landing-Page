@@ -18,20 +18,70 @@ import { chariotAppUrl, scrollToSection } from "@/utils/global.util";
 import Link from "next/link";
 import { useKeycloak } from "@/providers/KeycloakProvider";
 import { useEffect, useState } from "react";
-import { fetchStripeProducts, Products } from "@/lib/stripe.service";
+import { Products } from "@/types/stripe.type";
+import StripeService from "@/services/stripe.service";
+
+type PendingCheckout = {
+  packId: string;
+  displayName: string;
+};
+
+const PENDING_CHECKOUT_KEY = "pending_checkout";
 
 export default function Home() {
   const t = useTranslations();
-  const { authenticated, register } = useKeycloak();
+  const { authenticated, register, login, userId } = useKeycloak();
 
   const [products, setProducts] = useState<Products>();
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchStripeProducts()
-      .then(setProducts)
-      .finally(() => setLoading(false));
+    StripeService.fetchStripeProducts().then(setProducts);
   }, []);
+
+  useEffect(() => {
+    if (!authenticated || !userId) {
+      return;
+    }
+
+    const pendingCheckoutRaw = sessionStorage.getItem(PENDING_CHECKOUT_KEY);
+    if (!pendingCheckoutRaw) {
+      return;
+    }
+
+    try {
+      const pendingCheckout: PendingCheckout = JSON.parse(pendingCheckoutRaw);
+
+      if (!pendingCheckout.packId || !pendingCheckout.displayName) {
+        sessionStorage.removeItem(PENDING_CHECKOUT_KEY);
+        return;
+      }
+
+      sessionStorage.removeItem(PENDING_CHECKOUT_KEY);
+      handleCheckout(pendingCheckout.packId, pendingCheckout.displayName);
+    } catch {
+      sessionStorage.removeItem(PENDING_CHECKOUT_KEY);
+    }
+  }, [authenticated, userId]);
+
+  const handleCheckout = async (packId: string, displayName: string) => {
+    if (!authenticated) {
+      sessionStorage.setItem(
+        PENDING_CHECKOUT_KEY,
+        JSON.stringify({ packId, displayName }),
+      );
+      login();
+      return;
+    }
+    if (!userId) {
+      return;
+    }
+    try {
+      const url = await StripeService.createStripeCheckout(packId, displayName);
+      window.location.href = url;
+    } catch (e: any) {
+      console.error("Erreur lors de la création du checkout Stripe:", e);
+    }
+  };
 
   // ...existing code...
   return (
@@ -83,7 +133,16 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex flex-row justify-between items-center z-10">
-                <Button variant={"custom"} className="text-black bg-white">
+                <Button
+                  onClick={() =>
+                    handleCheckout(
+                      products.unit!.id,
+                      t(`packs.${products.unit!.name}`),
+                    )
+                  }
+                  variant={"custom"}
+                  className="text-black bg-white"
+                >
                   <ShoppingCart fill="true" />{" "}
                   <span className="md:text-sm text-xs">
                     {t("packs.custom.cta")}
@@ -107,91 +166,101 @@ export default function Home() {
           )}
           <div className="grid md:grid-rows-2 md:grid-cols-1 grid-cols-2 md:gap-4 max-[360px]:grid-cols-1 gap-3">
             {products?.other.map((product, index) => (
-              <Link key={index} href={"#"}>
-                <Card className="bg-white text-black justify-between hover:bg-white/90 transition-colors duration-300 h-full">
-                  <div className="flex flex-col gap-0">
-                    <div className="flex flex-row justify-between">
-                      <h2 className="md:text-3xl text-xl font-semibold w-2/3">
-                        {t(`packs.${product.name}`)}
-                      </h2>
-                      <ArrowUpRight />
-                    </div>
+              <Card
+                key={index}
+                onClick={() =>
+                  handleCheckout(product.id, t(`packs.${product.name}`))
+                }
+                className="bg-white cursor-pointer text-black justify-between hover:bg-white/90 transition-colors duration-300 h-full"
+              >
+                <div className="flex flex-col gap-0">
+                  <div className="flex flex-row justify-between">
+                    <h2 className="md:text-3xl text-xl font-semibold w-2/3">
+                      {t(`packs.${product.name}`)}
+                    </h2>
+                    <ArrowUpRight />
+                  </div>
 
-                    <p className="md:text-sm text-xs text-foreground">
-                      {t(`packs.${product.description}`)}
-                    </p>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="font-bold md:text-4xl text-xl flex items-center">
-                      {product.metadata?.token_number}{" "}
-                      <Image
-                        src={Token}
-                        alt="Coin"
-                        className="md:h-6.25 md:w-6.25 h-4 w-4"
-                        width={25}
-                        height={25}
-                      />
-                    </span>
-                    <div className="flex flex-col">
-                      <span className="md:text-sm text-xs">
-                        {product.prices[0]?.unit_amount
-                          ? (product.prices[0].unit_amount / 100).toFixed(2)
-                          : "N/A"}
-                        €
-                      </span>
-                    </div>
-                  </div>
-                </Card>
-              </Link>
-            ))}
-          </div>
-          {products?.recommended && (
-            <Link href={"#"}>
-              <Card className="relative h-full col-span-1 bg-white text-black justify-between hover:bg-white/90 transition-colors duration-300">
-                <Card className="absolute -top-2 -left-1 bg-primary px-2 py-1 flex flex-row items-center gap-1 rounded-full">
-                  <ArrowDown height={15} width={15} />
-                  <span className="text-white text-xs font-semibold">
-                    {t("packs.recommended")}
-                  </span>
-                  <ArrowDown height={15} width={15} />
-                </Card>
-                <div className="flex flex-col gap-3">
-                  <div className="flex flex-col gap-0">
-                    <div className="flex flex-row justify-between">
-                      <h2 className="md:text-3xl text-xl font-semibold w-2/3">
-                        {t(`packs.${products.recommended.name}`)}
-                      </h2>
-                      <ArrowUpRight />
-                    </div>
-
-                    <p className="md:text-sm text-xs text-foreground">
-                      {t(`packs.${products.recommended.description}`)}
-                    </p>
-                  </div>
-                  <span className="sm:flex hidden font-bold text-8xl self-center text-primary">
-                    {products.recommended.metadata?.token_number}{" "}
-                    <Image src={Token} alt="Coin" width={60} height={60} />
-                  </span>
+                  <p className="md:text-sm text-xs text-foreground">
+                    {t(`packs.${product.description}`)}
+                  </p>
                 </div>
-
-                <div className="flex flex-row sm:self-end justify-between items-center">
-                  <span className="flex sm:hidden font-bold text-3xl self-center text-primary">
-                    {products.recommended.metadata?.token_number}{" "}
-                    <Image src={Token} alt="Coin" width={25} height={25} />
+                <div className="flex justify-between items-center">
+                  <span className="font-bold md:text-4xl text-xl flex items-center">
+                    {product.metadata?.token_number}{" "}
+                    <Image
+                      src={Token}
+                      alt="Coin"
+                      className="md:h-6.25 md:w-6.25 h-4 w-4"
+                      width={25}
+                      height={25}
+                    />
                   </span>
                   <div className="flex flex-col">
                     <span className="md:text-sm text-xs">
-                      {products.recommended.prices[0]?.unit_amount
-                        ? (
-                            products.recommended.prices[0].unit_amount / 100
-                          ).toFixed(2)
+                      {product.prices[0]?.unit_amount
+                        ? (product.prices[0].unit_amount / 100).toFixed(2)
                         : "N/A"}
                       €
                     </span>
                   </div>
                 </div>
               </Card>
-            </Link>
+            ))}
+          </div>
+          {products?.recommended && (
+            <Card
+              onClick={() =>
+                handleCheckout(
+                  products.recommended!.id,
+                  t(`packs.${products.recommended!.name}`),
+                )
+              }
+              className="cursor-pointer relative h-full col-span-1 bg-white text-black justify-between hover:bg-white/90 transition-colors duration-300"
+            >
+              <Card className="absolute -top-2 -left-1 bg-primary px-2 py-1 flex flex-row items-center gap-1 rounded-full">
+                <ArrowDown height={15} width={15} />
+                <span className="text-white text-xs font-semibold">
+                  {t("packs.recommended")}
+                </span>
+                <ArrowDown height={15} width={15} />
+              </Card>
+              <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-0">
+                  <div className="flex flex-row justify-between">
+                    <h2 className="md:text-3xl text-xl font-semibold w-2/3">
+                      {t(`packs.${products.recommended.name}`)}
+                    </h2>
+                    <ArrowUpRight />
+                  </div>
+
+                  <p className="md:text-sm text-xs text-foreground">
+                    {t(`packs.${products.recommended.description}`)}
+                  </p>
+                </div>
+                <span className="sm:flex hidden font-bold text-8xl self-center text-primary">
+                  {products.recommended.metadata?.token_number}{" "}
+                  <Image src={Token} alt="Coin" width={60} height={60} />
+                </span>
+              </div>
+
+              <div className="flex flex-row sm:self-end justify-between items-center">
+                <span className="flex sm:hidden font-bold text-3xl self-center text-primary">
+                  {products.recommended.metadata?.token_number}{" "}
+                  <Image src={Token} alt="Coin" width={25} height={25} />
+                </span>
+                <div className="flex flex-col">
+                  <span className="md:text-sm text-xs">
+                    {products.recommended.prices[0]?.unit_amount
+                      ? (
+                          products.recommended.prices[0].unit_amount / 100
+                        ).toFixed(2)
+                      : "N/A"}
+                    €
+                  </span>
+                </div>
+              </div>
+            </Card>
           )}
         </div>
 
