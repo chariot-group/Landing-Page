@@ -12,9 +12,6 @@ import React from "react";
 import { Input } from "@/components/ui/input";
 import { Loader, Send } from "lucide-react";
 
-const HAS_NEWSLETTER_ENABLED =
-  process.env.NEXT_PUBLIC_NEWSLETTER_ENABLED === "true";
-
 export default function CheckoutDisabledNotice() {
   const t = useTranslations();
   const [isSubmittingNewsletter, setIsSubmittingNewsletter] = useState(false);
@@ -77,63 +74,57 @@ export default function CheckoutDisabledNotice() {
           </div>
 
           <div className="flex flex-col gap-2">
-            {HAS_NEWSLETTER_ENABLED && (
-              <form
-                id="form-newsletter"
-                onSubmit={form.handleSubmit(handleNewsletterSubmit)}
-              >
-                <FieldGroup>
-                  <Controller
-                    name="email"
-                    control={form.control}
-                    render={({ field, fieldState }) => (
-                      <Field
-                        data-invalid={fieldState.invalid}
-                        orientation={"vertical"}
-                      >
-                        <Input
-                          type="email"
-                          {...field}
-                          placeholder={t("packs.newsletterPlaceholder")}
-                        />
-                        {fieldState.invalid && (
-                          <FieldError errors={[fieldState.error]} />
-                        )}
-                      </Field>
-                    )}
-                  />
-                </FieldGroup>
-              </form>
-            )}
-            {HAS_NEWSLETTER_ENABLED && (
-              <Field orientation="horizontal">
-                <Button
-                  type="submit"
-                  form="form-newsletter"
-                  className="md:text-sm text-xs"
-                  disabled={isSubmittingNewsletter}
-                >
-                  {isSubmittingNewsletter ? (
-                    <React.Fragment>
-                      <Loader className="animate-spin w-4 h-4 mr-2" />
-                      {t("packs.newsletterSubmitting")}
-                    </React.Fragment>
-                  ) : (
-                    <React.Fragment>
-                      <Send className="w-4 h-4 mr-2" />{" "}
-                      {t("packs.newsletterSubmit")}
-                    </React.Fragment>
+            <form
+              id="form-newsletter"
+              onSubmit={form.handleSubmit(handleNewsletterSubmit)}
+            >
+              <FieldGroup>
+                <Controller
+                  name="email"
+                  control={form.control}
+                  render={({ field, fieldState }) => (
+                    <Field
+                      data-invalid={fieldState.invalid}
+                      orientation={"vertical"}
+                    >
+                      <Input
+                        type="email"
+                        {...field}
+                        placeholder={t("packs.newsletterPlaceholder")}
+                      />
+                      {fieldState.invalid && (
+                        <FieldError errors={[fieldState.error]} />
+                      )}
+                    </Field>
                   )}
-                </Button>
-              </Field>
-            )}
+                />
+              </FieldGroup>
+            </form>
+            <Field orientation="horizontal">
+              <Button
+                type="submit"
+                form="form-newsletter"
+                className="md:text-sm text-xs"
+                disabled={isSubmittingNewsletter}
+              >
+                {isSubmittingNewsletter ? (
+                  <React.Fragment>
+                    <Loader className="animate-spin w-4 h-4 mr-2" />
+                    {t("packs.newsletterSubmitting")}
+                  </React.Fragment>
+                ) : (
+                  <React.Fragment>
+                    <Send className="w-4 h-4 mr-2" />{" "}
+                    {t("packs.newsletterSubmit")}
+                  </React.Fragment>
+                )}
+              </Button>
+            </Field>
           </div>
 
-          {!HAS_NEWSLETTER_ENABLED && (
-            <div className="md:text-sm text-xs text-foreground">
-              {t("packs.prelaunchInfoOnly")}
-            </div>
-          )}
+          <div className="md:text-sm text-xs text-foreground">
+            {t("packs.prelaunchInfoOnly")}
+          </div>
 
           {newsletterFeedback && (
             <div className="md:text-sm text-xs text-foreground">

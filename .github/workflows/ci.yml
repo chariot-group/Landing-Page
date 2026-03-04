@@ -62,7 +62,6 @@ jobs:
             echo "keycloak_url=${{ secrets.PROD_KEYCLOAK_URL }}" >> $GITHUB_OUTPUT
             echo "receiver_email=${{ secrets.PROD_NEXT_PUBLIC_RECEIVER_EMAIL }}" >> $GITHUB_OUTPUT
             echo "disable_checkout=${{ secrets.PROD_NEXT_PUBLIC_DISABLE_CHECKOUT }}" >> $GITHUB_OUTPUT
-            echo "newsletter_enabled=${{ secrets.PROD_NEXT_PUBLIC_NEWSLETTER_ENABLED }}" >> $GITHUB_OUTPUT
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -96,7 +95,6 @@ jobs:
             NEXT_PUBLIC_KEYCLOAK_CLIENT_ID=chariot-app
             NEXT_PUBLIC_RECEIVER_EMAIL=${{ steps.env.outputs.receiver_email }}
             NEXT_PUBLIC_DISABLE_CHECKOUT=${{ steps.env.outputs.disable_checkout }}
-            NEXT_PUBLIC_NEWSLETTER_ENABLED=${{ steps.env.outputs.newsletter_enabled }}
 
       - name: Output image tags
         run: |
