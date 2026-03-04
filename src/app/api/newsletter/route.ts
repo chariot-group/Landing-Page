@@ -13,9 +13,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const webhookUrl =
-      process.env.DISCORD_NEWSLETTER_WEBHOOK_URL ||
-      process.env.NEXT_PUBLIC_NEWSLETTER_WEBHOOK_URL;
+    const webhookUrl = process.env.DISCORD_NEWSLETTER_WEBHOOK_URL;
 
     if (!webhookUrl) {
       return NextResponse.json(

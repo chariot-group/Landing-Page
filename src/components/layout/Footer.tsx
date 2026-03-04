@@ -43,7 +43,7 @@ export default function Footer() {
             <Image src={LogoTypo} alt="Chariot Logo" width={120} height={40} />
           </Link>
           <Link
-            href={`mailto:${process.env.RECEIVER_EMAIL}`}
+            href={`mailto:${process.env.NEXT_PUBLIC_RECEIVER_EMAIL}`}
             className="md:text-sm text-xs hover:underline underline-offset-3"
           >
             {t("contact")}

@@ -16,7 +16,6 @@ services:
       - "3001:3000"
     environment:
       NODE_ENV: development
-      RECEIVER_EMAIL: ${RECEIVER_EMAIL}
       # File watching optimizations (no polling needed on modern Docker Desktop)
       WATCHPACK_POLLING: "false"
       CHOKIDAR_USEPOLLING: "false"

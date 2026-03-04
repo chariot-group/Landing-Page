@@ -12,8 +12,8 @@ import React from "react";
 import { Input } from "@/components/ui/input";
 import { Loader, Send } from "lucide-react";
 
-const NEWSLETTER_WEBHOOK_ENV = process.env.NEXT_PUBLIC_NEWSLETTER_WEBHOOK_URL;
-const HAS_NEWSLETTER_WEBHOOK_ENV = Boolean(NEWSLETTER_WEBHOOK_ENV);
+const HAS_NEWSLETTER_ENABLED =
+  process.env.NEXT_PUBLIC_NEWSLETTER_ENABLED === "true";
 
 export default function CheckoutDisabledNotice() {
   const t = useTranslations();
@@ -77,7 +77,7 @@ export default function CheckoutDisabledNotice() {
           </div>
 
           <div className="flex flex-col gap-2">
-            {HAS_NEWSLETTER_WEBHOOK_ENV && (
+            {HAS_NEWSLETTER_ENABLED && (
               <form
                 id="form-newsletter"
                 onSubmit={form.handleSubmit(handleNewsletterSubmit)}
@@ -105,29 +105,31 @@ export default function CheckoutDisabledNotice() {
                 </FieldGroup>
               </form>
             )}
-            <Field orientation="horizontal">
-              <Button
-                type="submit"
-                form="form-newsletter"
-                className="md:text-sm text-xs"
-                disabled={isSubmittingNewsletter}
-              >
-                {isSubmittingNewsletter ? (
-                  <React.Fragment>
-                    <Loader className="animate-spin w-4 h-4 mr-2" />
-                    {t("packs.newsletterSubmitting")}
-                  </React.Fragment>
-                ) : (
-                  <React.Fragment>
-                    <Send className="w-4 h-4 mr-2" />{" "}
-                    {t("packs.newsletterSubmit")}
-                  </React.Fragment>
-                )}
-              </Button>
-            </Field>
+            {HAS_NEWSLETTER_ENABLED && (
+              <Field orientation="horizontal">
+                <Button
+                  type="submit"
+                  form="form-newsletter"
+                  className="md:text-sm text-xs"
+                  disabled={isSubmittingNewsletter}
+                >
+                  {isSubmittingNewsletter ? (
+                    <React.Fragment>
+                      <Loader className="animate-spin w-4 h-4 mr-2" />
+                      {t("packs.newsletterSubmitting")}
+                    </React.Fragment>
+                  ) : (
+                    <React.Fragment>
+                      <Send className="w-4 h-4 mr-2" />{" "}
+                      {t("packs.newsletterSubmit")}
+                    </React.Fragment>
+                  )}
+                </Button>
+              </Field>
+            )}
           </div>
 
-          {!HAS_NEWSLETTER_WEBHOOK_ENV && (
+          {!HAS_NEWSLETTER_ENABLED && (
             <div className="md:text-sm text-xs text-foreground">
               {t("packs.prelaunchInfoOnly")}
             </div>

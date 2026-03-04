@@ -41,9 +41,9 @@ export function Legals({ name }: LegalsProps) {
                       {content.text.split("{e}")[0]}
                       <a
                         className="hover:underline underline-offset-2"
-                        href={`mailto:${process.env.RECEIVER_EMAIL}`}
+                        href={`mailto:${process.env.NEXT_PUBLIC_RECEIVER_EMAIL}`}
                       >
-                        {process.env.RECEIVER_EMAIL}
+                        {process.env.NEXT_PUBLIC_RECEIVER_EMAIL}
                       </a>
                       {content.text.split("{e}")[1]}
                     </React.Fragment>
@@ -72,9 +72,9 @@ export function Legals({ name }: LegalsProps) {
                     {content.text.split("{e}")[0]}
                     <a
                       className="hover:underline underline-offset-2"
-                      href={`mailto:${process.env.RECEIVER_EMAIL}`}
+                      href={`mailto:${process.env.NEXT_PUBLIC_RECEIVER_EMAIL}`}
                     >
-                      {process.env.RECEIVER_EMAIL}
+                      {process.env.NEXT_PUBLIC_RECEIVER_EMAIL}
                     </a>
                     {content.text.split("{e}")[1]}
                   </React.Fragment>
