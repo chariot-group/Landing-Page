@@ -32,7 +32,9 @@
       "name": "PACK AVENTURIER",
       "description": "Le meilleur pack pour la meilleure expérience. Tout simplement."
     },
-    "recommended": "Recommandé"
+    "recommended": "Recommandé",
+    "unavailableAlert": "Produit indisponible pour le moment",
+    "unavailableButton": "Produit indisponible"
   },
   "howWorks": {
     "title1": "COMMENT MARCHENT",

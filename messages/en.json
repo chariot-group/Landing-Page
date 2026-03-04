@@ -32,7 +32,9 @@
       "name": "ADVENTURER PACK",
       "description": "The best pack for the best experience. Simply."
     },
-    "recommended": "Recommended"
+    "recommended": "Recommended",
+    "unavailableAlert": "Product unavailable at the moment",
+    "unavailableButton": "Product unavailable"
   },
   "howWorks": {
     "title1": "HOW IT WORKS",

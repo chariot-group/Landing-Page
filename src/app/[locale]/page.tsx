@@ -27,18 +27,70 @@ type PendingCheckout = {
 };
 
 const PENDING_CHECKOUT_KEY = "pending_checkout";
+const DISABLE_CHECKOUT_ENV =
+  process.env.NEXT_PUBLIC_DISABLE_CHECKOUT === "true";
+
+const STATIC_PRODUCTS: Products = {
+  unit: {
+    id: "static-unit",
+    name: "custom.name",
+    description: "custom.description",
+    metadata: { type: "unit" },
+    prices: [{ id: "static-unit-price", unit_amount: 199 }],
+  } as any,
+  other: [
+    {
+      id: "static-explorator",
+      name: "explorator.name",
+      description: "explorator.description",
+      metadata: { token_number: "5" },
+      prices: [{ id: "static-explorator-price", unit_amount: 799 }],
+    } as any,
+    {
+      id: "static-legendary",
+      name: "legendary.name",
+      description: "legendary.description",
+      metadata: { token_number: "20" },
+      prices: [{ id: "static-legendary-price", unit_amount: 3999 }],
+    } as any,
+  ],
+  recommended: {
+    id: "static-aventurer",
+    name: "aventurer.name",
+    description: "aventurer.description",
+    metadata: { type: "recommended", token_number: "10" },
+    prices: [{ id: "static-aventurer-price", unit_amount: 1399 }],
+  } as any,
+};
 
 export default function Home() {
   const t = useTranslations();
   const { authenticated, register, login, userId } = useKeycloak();
 
   const [products, setProducts] = useState<Products>();
+  const [isCheckoutDisabled, setIsCheckoutDisabled] =
+    useState(DISABLE_CHECKOUT_ENV);
 
   useEffect(() => {
-    StripeService.fetchStripeProducts().then(setProducts);
+    if (DISABLE_CHECKOUT_ENV) {
+      setProducts(STATIC_PRODUCTS);
+      return;
+    }
+
+    StripeService.fetchStripeProducts()
+      .then(setProducts)
+      .catch(() => {
+        setProducts(STATIC_PRODUCTS);
+        setIsCheckoutDisabled(true);
+      });
   }, []);
 
   useEffect(() => {
+    if (isCheckoutDisabled) {
+      sessionStorage.removeItem(PENDING_CHECKOUT_KEY);
+      return;
+    }
+
     if (!authenticated || !userId) {
       return;
     }
@@ -61,9 +113,14 @@ export default function Home() {
     } catch {
       sessionStorage.removeItem(PENDING_CHECKOUT_KEY);
     }
-  }, [authenticated, userId]);
+  }, [authenticated, isCheckoutDisabled, userId]);
 
   const handleCheckout = async (packId: string, displayName: string) => {
+    if (isCheckoutDisabled) {
+      window.alert(t("packs.unavailableAlert"));
+      return;
+    }
+
     if (!authenticated) {
       sessionStorage.setItem(
         PENDING_CHECKOUT_KEY,
@@ -141,11 +198,13 @@ export default function Home() {
                     )
                   }
                   variant={"custom"}
-                  className="text-black bg-white"
+                  className="text-black bg-white truncate"
                 >
                   <ShoppingCart fill="true" />{" "}
-                  <span className="md:text-sm text-xs">
-                    {t("packs.custom.cta")}
+                  <span className="md:text-sm text-xs truncate">
+                    {isCheckoutDisabled
+                      ? t("packs.unavailableButton")
+                      : t("packs.custom.cta")}
                   </span>
                 </Button>
                 <span className="md:text-sm text-xs items-center flex">

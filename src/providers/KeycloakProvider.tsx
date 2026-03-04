@@ -141,7 +141,8 @@ export function KeycloakProvider({ children }: { children: ReactNode }) {
               .catch(() => {
                 setAuthenticated(false);
                 setToken(null);
-                kc.login();
+                setUserId(null);
+                localStorage.removeItem("chariot_user_id");
               });
           }, 60000); // Check every 60 seconds
         }
@@ -154,10 +155,11 @@ export function KeycloakProvider({ children }: { children: ReactNode }) {
               if (refreshed) setToken(kc.token || null);
             })
             .catch(() => {
-              // Token expiré et refresh token mort → forcer reconnexion
+              // Token expiré et refresh token mort → rester déconnecté
               setAuthenticated(false);
               setToken(null);
-              kc.login();
+              setUserId(null);
+              localStorage.removeItem("chariot_user_id");
             });
         };
 

@@ -32,7 +32,9 @@
       "name": "PAQUETE AVENTURERO",
       "description": "El mejor paquete para la mejor experiencia. Simplemente."
     },
-    "recommended": "Recomendado"
+    "recommended": "Recomendado",
+    "unavailableAlert": "Producto no disponible por el momento",
+    "unavailableButton": "Producto no disponible"
   },
   "howWorks": {
     "title1": "¿CÓMO FUNCIONAN",

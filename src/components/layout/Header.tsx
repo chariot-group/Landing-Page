@@ -108,20 +108,25 @@ export default function Header() {
               ))}
             </ul>
             <div className="border-t mx-4"></div>
-            <div className="flex flex-row gap-2 px-4 py-2">
+            <div className="flex flex-wrap gap-2 px-4 py-2">
               {authenticated ? (
-                <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold">
-                  <span>U</span>
-                </div>
+                <React.Fragment>
+                  <Button variant={"outline"} onClick={logout}>
+                    {t("logout")}
+                  </Button>
+                  <Link href={chariotAppUrl()}>
+                    <Button variant={"custom"}>{t("myAccount")}</Button>
+                  </Link>
+                </React.Fragment>
               ) : (
-                <>
+                <React.Fragment>
                   <Button variant={"outline"} onClick={register}>
                     {t("registration")}
                   </Button>
                   <Button variant={"custom"} onClick={login}>
                     {t("connection")}
                   </Button>
-                </>
+                </React.Fragment>
               )}
             </div>
           </nav>
