@@ -34,7 +34,17 @@
     },
     "recommended": "Recommandé",
     "unavailableAlert": "Produit indisponible pour le moment",
-    "unavailableButton": "Produit indisponible"
+    "unavailableButton": "Produit indisponible",
+    "prelaunchTitle": "Devenez fan de la première heure",
+    "prelaunchDescription": "Inscrivez votre email pour être informé dès le lancement et ne rien rater de l'ouverture.",
+    "newsletterCta": "Être prévenu du lancement",
+    "newsletterPlaceholder": "Votre email",
+    "newsletterSubmit": "Me prévenir",
+    "newsletterSubmitting": "Envoi...",
+    "newsletterSuccess": "Merci ! Vous serez prévenu au lancement.",
+    "newsletterError": "Impossible d'enregistrer votre email pour le moment.",
+    "newsletterInvalidEmail": "Veuillez renseigner un email valide.",
+    "prelaunchInfoOnly": "Les achats sont désactivés temporairement. Revenez bientôt pour l'ouverture."
   },
   "howWorks": {
     "title1": "COMMENT MARCHENT",

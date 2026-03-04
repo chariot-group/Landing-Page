@@ -34,7 +34,17 @@
     },
     "recommended": "Recomendado",
     "unavailableAlert": "Producto no disponible por el momento",
-    "unavailableButton": "Producto no disponible"
+    "unavailableButton": "Producto no disponible",
+    "prelaunchTitle": "Conviértete en fan desde el primer día",
+    "prelaunchDescription": "Registra tu email para recibir el aviso en cuanto lancemos y ser de los primeros en entrar.",
+    "newsletterCta": "Avisarme del lanzamiento",
+    "newsletterPlaceholder": "Tu email",
+    "newsletterSubmit": "Avisarme",
+    "newsletterSubmitting": "Enviando...",
+    "newsletterSuccess": "¡Gracias! Te avisaremos en el lanzamiento.",
+    "newsletterError": "No se pudo guardar tu email por ahora.",
+    "newsletterInvalidEmail": "Por favor, introduce un email válido.",
+    "prelaunchInfoOnly": "Las compras están temporalmente desactivadas. Vuelve pronto."
   },
   "howWorks": {
     "title1": "¿CÓMO FUNCIONAN",

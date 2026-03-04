@@ -34,7 +34,17 @@
     },
     "recommended": "Recommended",
     "unavailableAlert": "Product unavailable at the moment",
-    "unavailableButton": "Product unavailable"
+    "unavailableButton": "Product unavailable",
+    "prelaunchTitle": "Become an early fan",
+    "prelaunchDescription": "Sign up with your email to be notified as soon as we launch and be first in line.",
+    "newsletterCta": "Notify me at launch",
+    "newsletterPlaceholder": "Your email",
+    "newsletterSubmit": "Notify me",
+    "newsletterSubmitting": "Sending...",
+    "newsletterSuccess": "Thanks! We'll notify you at launch.",
+    "newsletterError": "Unable to save your email for now.",
+    "newsletterInvalidEmail": "Please enter a valid email.",
+    "prelaunchInfoOnly": "Purchases are temporarily disabled. Please check back soon."
   },
   "howWorks": {
     "title1": "HOW IT WORKS",

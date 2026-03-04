@@ -20,6 +20,7 @@ import { useKeycloak } from "@/providers/KeycloakProvider";
 import { useEffect, useState } from "react";
 import { Products } from "@/types/stripe.type";
 import StripeService from "@/services/stripe.service";
+import CheckoutDisabledNotice from "@/components/CheckoutDisabledNotice";
 
 type PendingCheckout = {
   packId: string;
@@ -140,7 +141,6 @@ export default function Home() {
     }
   };
 
-  // ...existing code...
   return (
     <div className="flex flex-col bg-background">
       {/* Hero Section */}
@@ -177,7 +177,9 @@ export default function Home() {
         <div className="absolute -z-10 -bottom-5 bg-linear-to-t from-black to-transparent h-15 w-full"></div>
       </section>
       <Card id="packs" className="p-0">
-        <div className="lg:m-26 m-10 md:grid flex flex-col md:grid-cols-2 xl:grid-cols-4 lg:px-0 px-2 sm:px-10 md:gap-4 gap-3 max-w-6xl mx-auto self-center">
+        <div className="relative lg:m-26 m-10 md:grid flex flex-col md:grid-cols-2 xl:grid-cols-4 lg:px-0 px-2 sm:px-10 md:gap-4 gap-3 max-w-6xl mx-auto self-center">
+          {isCheckoutDisabled && <CheckoutDisabledNotice />}
+
           {products?.unit && (
             <Card className="relative justify-between col-span-2 bg-[url('/assets/background/packs.jpg')] bg-cover bg-center bg-no-repeat">
               <div className="absolute inset-0 bg-black/30 top-0 bottom-0 z-5 rounded-[15px]"></div>
