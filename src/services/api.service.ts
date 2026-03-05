@@ -1,4 +1,4 @@
-import axios, { AxiosError, AxiosInstance, InternalAxiosRequestConfig } from "axios";
+import axios, { AxiosInstance } from "axios";
 import Keycloak from "keycloak-js";
 
 let keycloakInstance: Keycloak | null = null;

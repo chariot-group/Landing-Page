@@ -17,10 +17,11 @@ import Feature from "@/components/Feature";
 import { chariotAppUrl, scrollToSection } from "@/utils/global.util";
 import Link from "next/link";
 import { useKeycloak } from "@/providers/KeycloakProvider";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Products } from "@/types/stripe.type";
 import StripeService from "@/services/stripe.service";
 import CheckoutDisabledNotice from "@/components/CheckoutDisabledNotice";
+import { StripeProductWithPrices } from "@/types/stripe.type";
 
 type PendingCheckout = {
   packId: string;
@@ -38,7 +39,7 @@ const STATIC_PRODUCTS: Products = {
     description: "custom.description",
     metadata: { type: "unit" },
     prices: [{ id: "static-unit-price", unit_amount: 199 }],
-  } as any,
+  } as unknown as StripeProductWithPrices,
   other: [
     {
       id: "static-explorator",
@@ -46,14 +47,14 @@ const STATIC_PRODUCTS: Products = {
       description: "explorator.description",
       metadata: { token_number: "5" },
       prices: [{ id: "static-explorator-price", unit_amount: 799 }],
-    } as any,
+    } as unknown as StripeProductWithPrices,
     {
       id: "static-legendary",
       name: "legendary.name",
       description: "legendary.description",
       metadata: { token_number: "20" },
       prices: [{ id: "static-legendary-price", unit_amount: 3999 }],
-    } as any,
+    } as unknown as StripeProductWithPrices,
   ],
   recommended: {
     id: "static-aventurer",
@@ -61,20 +62,21 @@ const STATIC_PRODUCTS: Products = {
     description: "aventurer.description",
     metadata: { type: "recommended", token_number: "10" },
     prices: [{ id: "static-aventurer-price", unit_amount: 1399 }],
-  } as any,
+  } as unknown as StripeProductWithPrices,
 };
 
 export default function Home() {
   const t = useTranslations();
   const { authenticated, register, login, userId } = useKeycloak();
 
-  const [products, setProducts] = useState<Products>();
+  const [products, setProducts] = useState<Products | undefined>(
+    DISABLE_CHECKOUT_ENV ? STATIC_PRODUCTS : undefined,
+  );
   const [isCheckoutDisabled, setIsCheckoutDisabled] =
     useState(DISABLE_CHECKOUT_ENV);
 
   useEffect(() => {
     if (DISABLE_CHECKOUT_ENV) {
-      setProducts(STATIC_PRODUCTS);
       return;
     }
 
@@ -85,6 +87,37 @@ export default function Home() {
         setIsCheckoutDisabled(true);
       });
   }, []);
+
+  const handleCheckout = useCallback(
+    async (packId: string, displayName: string) => {
+      if (isCheckoutDisabled) {
+        window.alert(t("packs.unavailableAlert"));
+        return;
+      }
+
+      if (!authenticated) {
+        sessionStorage.setItem(
+          PENDING_CHECKOUT_KEY,
+          JSON.stringify({ packId, displayName }),
+        );
+        login();
+        return;
+      }
+      if (!userId) {
+        return;
+      }
+      try {
+        const url = await StripeService.createStripeCheckout(
+          packId,
+          displayName,
+        );
+        window.location.href = url;
+      } catch (error: unknown) {
+        console.error("Erreur lors de la création du checkout Stripe:", error);
+      }
+    },
+    [authenticated, isCheckoutDisabled, login, t, userId],
+  );
 
   useEffect(() => {
     if (isCheckoutDisabled) {
@@ -114,32 +147,7 @@ export default function Home() {
     } catch {
       sessionStorage.removeItem(PENDING_CHECKOUT_KEY);
     }
-  }, [authenticated, isCheckoutDisabled, userId]);
-
-  const handleCheckout = async (packId: string, displayName: string) => {
-    if (isCheckoutDisabled) {
-      window.alert(t("packs.unavailableAlert"));
-      return;
-    }
-
-    if (!authenticated) {
-      sessionStorage.setItem(
-        PENDING_CHECKOUT_KEY,
-        JSON.stringify({ packId, displayName }),
-      );
-      login();
-      return;
-    }
-    if (!userId) {
-      return;
-    }
-    try {
-      const url = await StripeService.createStripeCheckout(packId, displayName);
-      window.location.href = url;
-    } catch (e: any) {
-      console.error("Erreur lors de la création du checkout Stripe:", e);
-    }
-  };
+  }, [authenticated, handleCheckout, isCheckoutDisabled, userId]);
 
   return (
     <div className="flex flex-col bg-background">

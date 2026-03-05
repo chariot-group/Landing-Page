@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import Stripe from "stripe";
 
 
@@ -19,7 +19,7 @@ interface StripeProductsResponse {
   products: StripeProductWithPrices[];
 }
 
-export async function GET(req: NextRequest) {
+export async function GET() {
   try {
     const products = await stripe.products.list({ active: true });
     const prices = await stripe.prices.list({ active: true });

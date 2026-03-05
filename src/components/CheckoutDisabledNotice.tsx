@@ -54,6 +54,7 @@ export default function CheckoutDisabledNotice() {
       setNewsletterFeedback(t("packs.newsletterSuccess"));
       form.reset();
     } catch (error) {
+      console.error(error);
       setNewsletterFeedback(t("packs.newsletterError"));
     } finally {
       setIsSubmittingNewsletter(false);
