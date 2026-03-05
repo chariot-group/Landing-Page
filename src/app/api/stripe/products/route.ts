@@ -1,10 +1,17 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 
+function getStripeClient(): Stripe {
+  const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2026-02-25.clover",
-});
+  if (!stripeSecretKey) {
+    throw new Error("Missing STRIPE_SECRET_KEY");
+  }
+
+  return new Stripe(stripeSecretKey, {
+    apiVersion: "2026-02-25.clover",
+  });
+}
 
 // Typage pour un prix Stripe
 type StripePrice = Stripe.Price;
@@ -21,6 +28,7 @@ interface StripeProductsResponse {
 
 export async function GET() {
   try {
+    const stripe = getStripeClient();
     const products = await stripe.products.list({ active: true });
     const prices = await stripe.prices.list({ active: true });
 
