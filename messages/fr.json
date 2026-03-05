@@ -1,131 +1,113 @@
 {
-  "LocaleSwitcher": {
-    "locale": "{locale, select, fr {🇫🇷 Français} en {🇬🇧 Anglais} es {🇪🇸 Espagnol} other {🏴‍☠️ Inconnue}}",
-    "flag": "{locale, select, fr {🇫🇷} en {🇬🇧} es {🇪🇸} other {🏴‍☠️}}"
-  },
   "header": {
-    "subtitle": "Votre outil de gestion de jeu de rôle",
-    "buttons": {
-      "about": "À propos",
-      "pricing": "Nos offres",
-      "team": "L'équipe",
-      "thanks": "Remerciements",
-      "contact": "Contact"
-    }
+    "registration": "Inscription",
+    "connection": "Connexion",
+    "home": "Accueil",
+    "packs": "Nos packs",
+    "howWorks": "Comment ça marche ?",
+    "features": "Fonctionnalités Chariot",
+    "myAccount": "Mon espace",
+    "logout": "Déconnexion"
   },
   "hero": {
-    "title": "Laissez s'épanouir votre créativité, prenez en main vos campagnes et amusez-vous !",
-    "cta": "Découvrez nos offres"
+    "title": "Explorez une toute nouvelle façon de vivre le jeu de rôle !",
+    "packs": "NOS PACKS",
+    "registration": "Créer mon compte"
   },
-  "about": {
-    "title": "À Propos",
-    "description": "Vous en avez marre de jongler entre différents outils pour organiser vos campagnes ?",
-    "content": [
-      "Découvrez CHARIOT, votre nouvel outil de gestion unique pour maître du jeu. Vivez vos campagnes plus intensément grâce à la centralisation des fonctionnalités nécessaires au bon déroulement de celles-ci.",
-      "Grâce à son interface intuitive, CHARIOT vous permet de gérer les personnages, joueurs ou non, d'accéder à leurs statistiques, d'organiser les groupes et les combats d'un simple mouvement, d'optimiser les combats avec l'initiave tracker, et de sauvegarder simplement les PV des personnages pendant et après un combat."
-    ]
-  },
-  "pricing": {
-    "title": "Nos offres",
-    "plans": {
-      "annual": "Plan annuel",
-      "monthly": "Plan mensuel"
+  "packs": {
+    "custom": {
+      "name": "NOS 3 PACKS",
+      "description": "Chacune de nos offres est conçue spécialement pour la plus épique des aventures.",
+      "cta": "Montant personnalisé"
     },
-    "button": {
-      "comingSoon": "Bientôt disponible",
-      "subscribe": "Souscrire à l'offre {name}"
+    "explorator": {
+      "name": "PACK EXPLORATEUR",
+      "description": "Idéal pour les aventuriers débutants."
     },
-    "byYear": "an",
-    "byMonth": "mois"
-  },
-  "team": {
-    "title": "L'équipe",
-    "developer": "Développeur",
-    "description": [
-      "CHARIOT, c'est d'abord deux amis réunis par une passion commune pour les jeux de rôles. Ensembles, nous faisons l'expérience de la difficulté d'organiser des campagnes, en utilisant plusieurs outils, des sites web comme du papier et un crayon. Et puis, un jour, nous nous décidons : nous allons créer notre propre outil pour faciliter l'organisation de nos campagnes. C'est ainsi que né CHARIOT, un outil de gestion unique, créé par des joueurs, pour des joueurs.",
-      "Nous espérons que CHARIOT vous aidera et vous plaira autant qu'à nous.",
-      "Place à l'aventure !"
-    ],
-    "joinUs": "Rejoindre l'aventure CHARIOT"
-  },
-  "thanks": {
-    "title": "Remerciements",
-    "content": [
-      "Rien de tout cela n’aurait été possible sans le talent, l’énergie et la générosité de celles et ceux qui ont contribué, de près ou de loin, à faire grandir ce projet.",
-      "Nous tenons à exprimer notre profonde gratitude à toutes les personnes qui nous ont soutenus, conseillés, challengés ou inspirés. Chaque geste, chaque idée, chaque mot d'encouragement a compté.",
-      "Voici celles et ceux que nous tenons à remercier, sincèrement."
-    ],
-    "jobs": {
-      "developer": "Développeur",
-      "designer": "Concepteur UI/UX",
-      "marketer": "Commercial",
-      "illustrator": "Illustrateur",
-      "graphicDesigner": "Graphiste et Concepteur UI/UX"
+    "legendary": {
+      "name": "PACK LÉGENDAIRE",
+      "description": "Pour les maîtres du jeu aguerris en quête de puissance ultime."
     },
-    "descriptions": {
-      "JL": "Nous avons été accompagnés par Jovis Lélue, qui a contribué aux premières phases de conception et apporté une aide précieuse sur la partie DevOps et la gestion de configurations.",
-      "EC": "Nous avons bénéficié de l’expertise d’Emma Caroff pour le graphisme et la création de maquettes lors des premières itérations du projet.",
-      "MV": "Dans le cadre de la création de premières affiches de publicité, nous avons reçu l’aide de Morgane Vigier pour la création de celles-ci.",
-      "LL": "Afin de créer des illustrations nécessaires à certaines parties de l’application, Léane Loubère nous a apporté une aide significative.",
-      "AB": "Amina nous a apporté une aide précieuse dans l'organisation de la campagne de communication et de marketing.",
-      "RL": "Afin d'assister Amina dans les tâches qui concernent le marketing, Rémi a grandemment apporté au projet.",
-      "GB": "L'arrivée de Gabriel à permis au projet de prendre une tournure professionnelle, d'un point de vue graphique et de conception UI/UX."
-    }
-  },
-  "contact": {
-    "title": "Contact",
-    "errors": {
-      "emailRequired": "Vous devez renseigner un e-mail.",
-      "emailInvalid": "Vous devez renseigner un e-mail valide.",
-      "objectRequired": "Vous devez renseigner un objet. (5 caractères minimum)",
-      "contentRequired": "Votre e-mail doit contenir un message. (25 caractères minimum)",
-      "reCaptchaRequired": "Vous devez valider le reCAPTCHA.",
-      "reCaptchaInvalid": "Échec de la vérification reCAPTCHA.",
-      "serverError": "Impossible d'envoyer le message. Réessayez plus tard."
+    "aventurer": {
+      "name": "PACK AVENTURIER",
+      "description": "Le meilleur pack pour la meilleure expérience. Tout simplement."
     },
-    "success": "Votre message a bien été envoyé. Nous vous répondrons dans les plus brefs délais.",
-    "contactUs": "Nous contacter",
-    "form": {
-      "labels": {
-        "email": "E-mail",
-        "object": "Objet",
-        "content": "Contenu"
-      },
-      "placeholders": {
-        "email": "Votre e-mail",
-        "object": "Objet de votre message",
-        "content": "Votre message"
-      },
-      "submit": "Envoyer",
-      "submitLoading": "Envoi en cours..."
-    },
-    "whatToSay": "Quoi nous dire ?",
-    "whatToSayContent": [
-      "Vous avez une question, une suggestion ou un retour d'expérience ?",
-      "N'hésitez pas à nous contacter, nous sommes là pour vous aider !"
-    ],
-    "responseTime": "Délais de réponse",
-    "responseTimeContent": [
-      "Nous nous efforçons de vous répondre dans les plus brefs délais.",
-      "Cependant, notez qu'il se peut que nous mettions du temps à vous répondre.",
-      "Merci de votre patience !"
-    ]
+    "recommended": "Recommandé",
+    "unavailableAlert": "Produit indisponible pour le moment",
+    "unavailableButton": "Produit indisponible",
+    "prelaunchTitle": "Devenez fan de la première heure",
+    "prelaunchDescription": "Inscrivez votre email pour être informé dès le lancement et ne rien rater de l'ouverture.",
+    "newsletterCta": "Être prévenu du lancement",
+    "newsletterPlaceholder": "Votre email",
+    "newsletterSubmit": "Me prévenir",
+    "newsletterSubmitting": "Envoi...",
+    "newsletterSuccess": "Merci ! Vous serez prévenu au lancement.",
+    "newsletterError": "Impossible d'enregistrer votre email pour le moment.",
+    "newsletterInvalidEmail": "Veuillez renseigner un email valide.",
+    "prelaunchInfoOnly": "Les achats sont désactivés temporairement. Revenez bientôt pour l'ouverture."
   },
-  "success": {
-    "title": "Tout s'est bien passé, bienvenu sur Chariot !",
-    "content": ["Tu vas recevoir un email à ", " pour activer ton compte."],
-    "thanks": "Régale toi avec CHARIOT !"
+  "howWorks": {
+    "title1": "COMMENT MARCHENT",
+    "title2": "LES CHARS",
+    "description1": "Le Char est la monnaie unique de Chariot, elle vous permet d’accéder à toutes les fonctionnalités “in game” de l’application, sur Chariot le principe est simple.",
+    "description2": "Pour lancer une session à 5, vous pourriez très bien dépenser 1 char chacun, ou un joueur pourrait payer 5 chars pour que tout le monde puisse jouer. Sur Chariot, chacun s’organise comme il le veut.",
+    "session": "SESSION"
+  },
+  "features": {
+    "title": "LES FONCTIONNALITÉS",
+    "description": "Tout ce dont vous avez besoin pour vivre une aventure fluide.",
+    "feature1": {
+      "title": "Gestion fluide des joueurs",
+      "description1": "Centralisez fiches de personnages, inventaires, jets et états en un seul espace.",
+      "description2": "Chaque joueur avance sans friction, pendant que la partie reste parfaitement lisible pour tous."
+    },
+    "feature2": {
+      "title": "Boîte à outils narrative pour MJ",
+      "description1": "Créez, organisez et improvisez vos scénarios en temps réel.",
+      "description2": "PNJ, lieux, intrigues et événements sont à portée de clic pour garder le rythme et nourrir l'immersion."
+    },
+    "feature3": {
+      "title": "Initiative et combat simplifiés",
+      "description1": "Automatisez les tours, suivez les actions et visualisez l'ordre de jeu instantanément.",
+      "description2": "Moins de calculs, plus de flow: la mécanique s'efface au profit de l'aventure."
+    },
+    "feature4": {
+      "title": "CODEX - Votre grimoire d'aventure",
+      "description1": "Regroupe, partage et enrichis tes personnages et sorts.",
+      "description2": "Chaque joueur et chaque maître du jeu peut alimenter le CODEX pour en faire une véritable bibliothèque vivante."
+    },
+    "ready": "Prêt à partir à l'aventure ?",
+    "packs": "NOS PACKS",
+    "registration": "Créer mon compte"
   },
   "footer": {
-    "TOU": "CGV",
-    "TOS": "CGU",
+    "mobile": {
+      "tou": "CGU",
+      "tos": "CGV"
+    },
+    "tou": "Conditions générales d'utilisation",
+    "tos": "Conditions générales de vente",
+    "privacyPolicy": "Politique de confidentialité",
     "legalNotice": "Mentions légales",
-    "privacyPolicy": "Politique de confidentialité"
+    "contact": "Nous contacter"
   },
-  "NotFound": {
-    "title": "Échec critique, page introuvable",
-    "description": "Jet de localisation : 1. Le hibours fixe le panneau… mais le panneau ne répond pas.",
-    "backToHome": "Retour à l'accueil"
+  "notFound": {
+    "message": "Page introuvable. Redirection vers l'accueil..."
+  },
+  "error": {
+    "title": "Oups ! Une erreur s'est produite",
+    "description": "Nous avons rencontré une erreur inattendue lors du traitement de votre demande.",
+    "unknownError": "Une erreur inconnue s'est produite",
+    "suggestion": "Voici quelques actions que vous pouvez essayer :",
+    "suggestions": {
+      "refresh": "Actualiser la page",
+      "retry": "Réessayer votre action",
+      "contact": "Contacter le support si le problème persiste"
+    },
+    "actions": {
+      "retry": "Réessayer",
+      "home": "Retour à l'Accueil"
+    }
   },
   "TOU": {
     "sections": [
@@ -156,7 +138,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "Le service propose une version freemium permettant de créer, organiser et gérer des campagnes, ainsi que des options payantes offrant des fonctionnalités avancées."
+            "text": "Le service propose une version freemium permettant de créer, organiser et gérer des campagnes, ainsi que l’achat ponctuel de packs de chars (sans abonnement ni reconduction automatique) offrant des fonctionnalités avancées."
           }
         ]
       },
@@ -293,7 +275,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "Les présentes Conditions Générales de Vente régissent la vente des services payants de l’application Chariot par CHARIOT."
+            "text": "Les présentes Conditions Générales de Vente régissent la vente de packs de chars et des services payants associés de l’application Chariot par CHARIOT."
           }
         ]
       },
@@ -302,11 +284,11 @@
         "content": [
           {
             "type": "list",
-            "text": "Les offres payantes sont décrites sur le site."
+            "text": "Les offres payantes correspondent à 4 packs de chars décrits sur le site."
           },
           {
             "type": "list",
-            "text": "Les prix sont indiqués en euros TTC."
+            "text": "Les prix sont indiqués en euros TTC et la quantité de certains packs peut être augmentée lors du paiement."
           },
           {
             "type": "list",
@@ -319,11 +301,11 @@
         "content": [
           {
             "type": "list",
-            "text": "La commande se fait via le formulaire en ligne."
+            "text": "La commande se fait en ligne via Stripe."
           },
           {
             "type": "list",
-            "text": "La validation de la commande vaut acceptation des CGV."
+            "text": "La validation de la commande vaut acceptation des CGV et déclenche le crédit immédiat des chars."
           }
         ]
       },
@@ -340,20 +322,20 @@
           },
           {
             "type": "list",
-            "text": "Les paiements sont sécurisés."
+            "text": "Les paiements sont sécurisés et débités au moment de la validation de la commande."
           }
         ]
       },
       {
-        "title": "Article 5 – Durée et renouvellement",
+        "title": "Article 5 – Durée et absence de renouvellement",
         "content": [
           {
             "type": "list",
-            "text": "Les abonnements sont renouvelés automatiquement sauf résiliation."
+            "text": "Les packs de chars sont des achats ponctuels sans reconduction automatique."
           },
           {
             "type": "list",
-            "text": "L’utilisateur peut résilier à tout moment, la résiliation prendra effet à la fin de la période en cours."
+            "text": "Les chars crédités restent disponibles sur le compte utilisateur tant qu’ils ne sont pas consommés et que le compte est actif."
           }
         ]
       },
@@ -362,12 +344,20 @@
         "content": [
           {
             "type": "list",
-            "text": "Conformément à la loi, le droit de rétractation ne s’applique pas aux services pleinement exécutés dès l’achat (contenus numériques)."
+            "text": "La demande de remboursement peut être formulée dans un délai de 14 jours via l’email support."
+          },
+          {
+            "type": "list",
+            "text": "Un remboursement n’est possible que pour des packs achetés et non consommés, sous réserve d’un solde de chars suffisant."
+          },
+          {
+            "type": "list",
+            "text": "Le remboursement est effectué par pack acheté (sans recomposition en packs différents) et les chars correspondants sont déduits lors du traitement."
           }
         ]
       },
       {
-        "title": "Article 7 – Résiliation et suspension",
+        "title": "Article 7 – Résiliation, suspension et accès",
         "content": [
           {
             "type": "list",
@@ -375,7 +365,7 @@
           },
           {
             "type": "list",
-            "text": "En cas de résiliation, les données peuvent être supprimées après un délai."
+            "text": "En cas de suspension ou de suppression du compte, l’accès aux chars non utilisés peut être limité ou perdu selon les obligations légales et techniques applicables."
           }
         ]
       },
@@ -419,7 +409,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "Chariot s’engage à protéger les données personnelles des utilisateurs."
+            "text": "Les présentes mentions décrivent les principales informations juridiques de Chariot et les principes de traitement des données liés au service."
           }
         ]
       },
@@ -436,7 +426,11 @@
           },
           {
             "type": "list",
-            "text": "Données relatives à l’usage du service."
+            "text": "Données relatives à l’usage du service,"
+          },
+          {
+            "type": "list",
+            "text": "Données de transaction liées à l’achat de packs de chars et aux demandes de remboursement."
           }
         ]
       },
@@ -450,6 +444,10 @@
           {
             "type": "list",
             "text": "Fourniture du service,"
+          },
+          {
+            "type": "list",
+            "text": "Gestion des achats de packs, du crédit de chars et des remboursements éligibles,"
           },
           {
             "type": "list",
@@ -470,7 +468,11 @@
           },
           {
             "type": "list",
-            "text": "Respect des obligations légales."
+            "text": "Conservation des justificatifs de transaction selon les obligations légales comptables et fiscales,"
+          },
+          {
+            "type": "list",
+            "text": "Respect des autres obligations légales."
           }
         ]
       },
@@ -500,7 +502,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "Mesures techniques et organisationnelles pour protéger les données."
+            "text": "Mesures techniques et organisationnelles pour protéger les données, avec recours à des prestataires de paiement sécurisés (Stripe)."
           }
         ]
       },
@@ -522,7 +524,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "Email : {e} pour toute question RGPD."
+            "text": "Email : {e} pour toute question juridique, RGPD ou liée aux achats et remboursements."
           }
         ]
       }
@@ -543,7 +545,7 @@
           },
           {
             "type": "list",
-            "text": "Statut juridique : En cours d'optention"
+            "text": "Statut juridique : En cours d'obtention"
           },
           {
             "type": "list",
@@ -551,7 +553,7 @@
           },
           {
             "type": "list",
-            "text": "Numéro SIREN / SIRET : En cours d'optention"
+            "text": "Numéro SIREN / SIRET : En cours d'obtention"
           },
           {
             "type": "list",
@@ -623,10 +625,14 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "Pour toute information concernant la collecte et le traitement de vos données personnelles, veuillez consulter notre Politique de confidentialité."
+            "text": "Pour toute information concernant la collecte et le traitement de vos données personnelles, y compris les données de paiement et d’historique d’achats de packs de chars, veuillez consulter notre Politique de confidentialité."
           }
         ]
       }
     ]
+  },
+  "auth": {
+    "loading": "Chargement...",
+    "pleaseWait": "Veuillez patienter pendant la vérification de votre session"
   }
 }

@@ -1,131 +1,113 @@
 {
-  "LocaleSwitcher": {
-    "locale": "{locale, select, fr {🇫🇷 French} en {🇬🇧 English} es {🇪🇸 Spanish} other {🏴‍☠️ Unknown}}",
-    "flag": "{locale, select, fr {🇫🇷} en {🇬🇧} es {🇪🇸} other {🏴‍☠️}}"
-  },
   "header": {
-    "subtitle": "Your role-play management tool",
-    "buttons": {
-      "about": "About",
-      "pricing": "Our offers",
-      "team": "The team",
-      "thanks": "Thanks",
-      "contact": "Contact"
-    }
+    "registration": "Registration",
+    "connection": "Connection",
+    "home": "Home",
+    "packs": "Our packs",
+    "howWorks": "How it works?",
+    "features": "Chariot features",
+    "myAccount": "My account",
+    "logout": "Logout"
   },
   "hero": {
-    "title": "Let your creativity flow, take charge of your campaigns and have fun!",
-    "cta": "Discover our offers"
+    "title": "Discover a new way to live the role-playing game!",
+    "packs": "OUR PACKS",
+    "registration": "Create my account"
   },
-  "about": {
-    "title": "About",
-    "description": "Tired of juggling different tools to organize your campaigns?",
-    "content": [
-      "Discover CHARIOT, your new one-stop management tool. Experience your campaigns more intensely, thanks to the centralization of the functionalities you need to run them smoothly.",
-      "Thanks to its intuitive interface, CHARIOT lets you manage both player and non-player characters, access their stats, organize groups and battles with a simple move, optimize battles with the initiave tracker, and simply save character HP during and after a battle."
-    ]
-  },
-  "pricing": {
-    "title": "Our offers",
-    "plans": {
-      "annual": "Annual plan",
-      "monthly": "Monthly plan"
+  "packs": {
+    "custom": {
+      "name": "OUR 3 PACKS",
+      "description": "Each of our offers is specially designed for the most epic adventures.",
+      "cta": "Custom amount"
     },
-    "button": {
-      "comingSoon": "Coming soon",
-      "subscribe": "Subscribe to {name} offer"
+    "explorator": {
+      "name": "EXPLORATOR PACK",
+      "description": "Ideal for beginner adventurers."
     },
-    "byYear": "year",
-    "byMonth": "month"
-  },
-  "team": {
-    "title": "The team",
-    "developer": "Developer",
-    "description": [
-      "CHARIOT is first and foremost two friends brought together by a shared passion for role-playing games. Together, we experienced the difficulties of organizing campaigns, using a variety of tools, from websites to paper and pencil. And then, one day, we made up our minds: we were going to create our own tool to facilitate the organization of our campaigns. And so CHARIOT was born, a unique management tool created by gamers, for gamers.",
-      "We hope CHARIOT will help you and please you as much as we do.",
-      "Time for adventure!"
-    ],
-    "joinUs": "Join the CHARIOT adventure"
-  },
-  "thanks": {
-    "title": "Thanks",
-    "content": [
-      "None of this would have been possible without the talent, energy and generosity of all those who have contributed, in one way or another, to making this project a reality.",
-      "We'd like to express our deepest gratitude to everyone who supported, advised, challenged or inspired us. Every gesture, every idea, every word of encouragement counted.",
-      "We'd like to express our sincere thanks to all those involved."
-    ],
-    "jobs": {
-      "developer": "Developer",
-      "designer": "UI/UX Designer",
-      "marketer": "Marketing",
-      "illustrator": "Illustrator",
-      "graphicDesigner": "Graphic Designer & UI/UX Designer"
+    "legendary": {
+      "name": "LEGENDARY PACK",
+      "description": "For experienced game masters seeking maximum power."
     },
-    "descriptions": {
-      "JL": "We were supported by Jovis Lélue, who contributed to the initial design phases and provided invaluable assistance with DevOps and configuration management.",
-      "EC": "We benefited from Emma Caroff's expertise in graphic design and mock-up creation during the first iterations of the project.",
-      "MV": "Morgane Vigier helped us create our first advertising posters.",
-      "LL": "Léane Loubère was a great help in creating the illustrations needed for certain parts of the application.",
-      "AB": "Amina provided invaluable help in organizing the communications and marketing campaign.",
-      "RL": "To assist Amina in marketing-related tasks, Rémi has made a major contribution to the project.",
-      "GB": "Gabriel's arrival enabled the project to take a professional turn, from a graphic and UI/UX design point of view."
-    }
-  },
-  "contact": {
-    "title": "Contact",
-    "errors": {
-      "emailRequired": "You must enter an e-mail address.",
-      "emailInvalid": "You must enter a valid e-mail address.",
-      "objectRequired": "You must enter a subject. (5 characters minimum)",
-      "contentRequired": "Your e-mail must contain a message. (25 characters minimum)",
-      "reCaptchaRequired": "You must validate the reCAPTCHA",
-      "reCaptchaInvalid": "reCAPTCHA verification failed.",
-      "serverError": "Unable to send message. Please try again later."
+    "aventurer": {
+      "name": "ADVENTURER PACK",
+      "description": "The best pack for the best experience. Simply."
     },
-    "success": "Your message has been sent. We will reply as soon as possible.",
-    "contactUs": "Contact us",
-    "form": {
-      "labels": {
-        "email": "E-mail",
-        "object": "Object",
-        "content": "Content"
-      },
-      "placeholders": {
-        "email": "Yout e-mail",
-        "object": "Subject of your message",
-        "content": "Your message"
-      },
-      "submit": "Send",
-      "submitLoading": "Sending..."
-    },
-    "whatToSay": "What to tell us?",
-    "whatToSayContent": [
-      "Do you have a question, suggestion or feedback?",
-      "Don't hesitate to contact us - we're here to help!"
-    ],
-    "responseTime": "Response times",
-    "responseTimeContent": [
-      "We'll do our best to get back to you as soon as possible.",
-      "Please note, however, that it may take us some time to get back to you.",
-      "Thank you for your patience!"
-    ]
+    "recommended": "Recommended",
+    "unavailableAlert": "Product unavailable at the moment",
+    "unavailableButton": "Product unavailable",
+    "prelaunchTitle": "Become an early fan",
+    "prelaunchDescription": "Sign up with your email to be notified as soon as we launch and be first in line.",
+    "newsletterCta": "Notify me at launch",
+    "newsletterPlaceholder": "Your email",
+    "newsletterSubmit": "Notify me",
+    "newsletterSubmitting": "Sending...",
+    "newsletterSuccess": "Thanks! We'll notify you at launch.",
+    "newsletterError": "Unable to save your email for now.",
+    "newsletterInvalidEmail": "Please enter a valid email.",
+    "prelaunchInfoOnly": "Purchases are temporarily disabled. Please check back soon."
   },
-  "success": {
-    "title": "Everything went well, welcome to Chariot!",
-    "content": ["You will receive an email at ", " to activate your account."],
-    "thanks": "Enjoy CHARIOT!"
+  "howWorks": {
+    "title1": "HOW IT WORKS",
+    "title2": "THE CHARS",
+    "description1": "The Char is the unique currency of Chariot, which allows you to access all the features “inside the game” of the application. On Chariot, the principle is simple.",
+    "description2": "To run a 5-player session, you could spend 1 char each, or one player could pay 5 chars so everyone can play. On Chariot, everyone organizes themselves as they wish.",
+    "session": "SESSION"
+  },
+  "features": {
+    "title": "THE FEATURES",
+    "description": "Everything you need to live a smooth adventure.",
+    "feature1": {
+      "title": "Smooth player management",
+      "description1": "Centralize character cards, inventories, rolls and states in a single space.",
+      "description2": "Each player advances without friction, while the game remains perfectly readable for everyone."
+    },
+    "feature2": {
+      "title": "Narrative toolkit for GMs",
+      "description1": "Create, organize and improvise your scenarios in real time.",
+      "description2": "NPCs, locations, plots and events are at a click's reach to maintain pace and feed immersion."
+    },
+    "feature3": {
+      "title": "Simplified initiative and combat",
+      "description1": "Automate turns, follow actions and visualize the game order instantly.",
+      "description2": "Less calculations, more flow: the mechanics fade in favor of the adventure."
+    },
+    "feature4": {
+      "title": "CODEX - Your adventure grimoire",
+      "description1": "Gather, share and enhance your characters and spells.",
+      "description2": "Each player and each game master can feed the CODEX to turn it into a truly living library."
+    },
+    "ready": "Ready to set off on an adventure?",
+    "packs": "OUR PACKS",
+    "registration": "Create my account"
   },
   "footer": {
-    "TOU": "TOU",
-    "TOS": "TOS",
-    "legalNotice": "Legal Notice",
-    "privacyPolicy": "Privacy Policy"
+    "mobile": {
+      "tou": "TOU",
+      "tos": "TOS"
+    },
+    "tou": "Terms of use",
+    "tos": "Terms of sale",
+    "privacyPolicy": "Privacy policy",
+    "legalNotice": "Legal notices",
+    "contact": "Contact us"
   },
-  "NotFound": {
-    "title": "Critical failure, page not found",
-    "description": "Location roll: 1. The owlbear stares at the sign... but the sign doesn't respond.",
-    "backToHome": "Back to home page"
+  "notFound": {
+    "message": "Page not found. Redirecting to home..."
+  },
+  "error": {
+    "title": "Oops! Something went wrong",
+    "description": "We encountered an unexpected error while processing your request.",
+    "unknownError": "An unknown error occurred",
+    "suggestion": "Here are some things you can try:",
+    "suggestions": {
+      "refresh": "Refresh the page",
+      "retry": "Try your action again",
+      "contact": "Contact support if the problem persists"
+    },
+    "actions": {
+      "retry": "Try Again",
+      "home": "Back to Home"
+    }
   },
   "TOU": {
     "sections": [
@@ -156,7 +138,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "The service offers a freemium version to create, organize, and manage campaigns, as well as paid options with advanced features."
+            "text": "The service offers a freemium version to create, organize, and manage campaigns, as well as one-time Char pack purchases (without subscription or automatic renewal) with advanced features."
           }
         ]
       },
@@ -293,7 +275,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "These General Terms and Conditions of Sale govern the sale of paid services of the Chariot application by CHARIOT."
+            "text": "These General Terms and Conditions of Sale govern the sale of Char packs and related paid services of the Chariot application by CHARIOT."
           }
         ]
       },
@@ -302,11 +284,11 @@
         "content": [
           {
             "type": "list",
-            "text": "Paid offers are described on the website."
+            "text": "Paid offers correspond to 4 Char packs described on the website."
           },
           {
             "type": "list",
-            "text": "Prices are indicated in euros including VAT."
+            "text": "Prices are indicated in euros including VAT, and the quantity of certain packs can be increased at checkout."
           },
           {
             "type": "list",
@@ -319,11 +301,11 @@
         "content": [
           {
             "type": "list",
-            "text": "Orders are placed via the online form."
+            "text": "Orders are placed online via Stripe."
           },
           {
             "type": "list",
-            "text": "Order validation constitutes acceptance of the Terms and Conditions of Sale."
+            "text": "Order validation constitutes acceptance of the Terms and Conditions of Sale and triggers immediate Char crediting."
           }
         ]
       },
@@ -340,20 +322,20 @@
           },
           {
             "type": "list",
-            "text": "Payments are secured."
+            "text": "Payments are secure and charged when the order is validated."
           }
         ]
       },
       {
-        "title": "Article 5 – Duration and Renewal",
+        "title": "Article 5 – Duration and No Renewal",
         "content": [
           {
             "type": "list",
-            "text": "Subscriptions are automatically renewed unless canceled."
+            "text": "Char packs are one-time purchases with no automatic renewal."
           },
           {
             "type": "list",
-            "text": "The user may cancel at any time; cancellation takes effect at the end of the current period."
+            "text": "Credited Chars remain available on the user account as long as they are not consumed and the account remains active."
           }
         ]
       },
@@ -362,12 +344,20 @@
         "content": [
           {
             "type": "list",
-            "text": "In accordance with the law, the right of withdrawal does not apply to fully delivered services upon purchase (digital content)."
+            "text": "A refund request may be submitted within 14 days via the support email."
+          },
+          {
+            "type": "list",
+            "text": "A refund is only possible for purchased and unused packs, provided the user has a sufficient Char balance."
+          },
+          {
+            "type": "list",
+            "text": "Refunds are processed per purchased pack (no recomposition into different packs), and the corresponding Chars are deducted during processing."
           }
         ]
       },
       {
-        "title": "Article 7 – Termination and Suspension",
+        "title": "Article 7 – Termination, Suspension and Access",
         "content": [
           {
             "type": "list",
@@ -375,7 +365,7 @@
           },
           {
             "type": "list",
-            "text": "In case of termination, data may be deleted after a period."
+            "text": "In case of account suspension or deletion, access to unused Chars may be limited or lost depending on applicable legal and technical constraints."
           }
         ]
       },
@@ -419,7 +409,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "Chariot is committed to protecting users’ personal data."
+            "text": "These legal notices describe Chariot’s key legal information and the main data-processing principles related to the service."
           }
         ]
       },
@@ -436,7 +426,11 @@
           },
           {
             "type": "list",
-            "text": "Data related to service usage."
+            "text": "Data related to service usage,"
+          },
+          {
+            "type": "list",
+            "text": "Transaction data related to Char pack purchases and refund requests."
           }
         ]
       },
@@ -450,6 +444,10 @@
           {
             "type": "list",
             "text": "Service delivery,"
+          },
+          {
+            "type": "list",
+            "text": "Management of pack purchases, Char crediting, and eligible refunds,"
           },
           {
             "type": "list",
@@ -470,7 +468,11 @@
           },
           {
             "type": "list",
-            "text": "Compliance with legal obligations."
+            "text": "Retention of transaction records according to accounting and tax legal obligations,"
+          },
+          {
+            "type": "list",
+            "text": "Compliance with other legal obligations."
           }
         ]
       },
@@ -500,7 +502,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "Technical and organizational measures to protect data."
+            "text": "Technical and organizational measures to protect data, with the use of secure payment providers (Stripe)."
           }
         ]
       },
@@ -522,7 +524,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "Email: {e} for any GDPR-related inquiries."
+            "text": "Email: {e} for any legal, GDPR, purchase, or refund-related inquiries."
           }
         ]
       }
@@ -623,10 +625,14 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "For any information regarding the collection and processing of your personal data, please refer to our Privacy Policy."
+            "text": "For any information regarding the collection and processing of your personal data, including payment data and Char pack purchase history, please refer to our Privacy Policy."
           }
         ]
       }
     ]
+  },
+  "auth": {
+    "loading": "Loading...",
+    "pleaseWait": "Please wait while we verify your session"
   }
 }

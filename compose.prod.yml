@@ -1,24 +1,38 @@
+name: chariot-showcase-prod
+
 services:
-  frontend:
-    build:
-      context: .
-      dockerfile: Dockerfile.prod
-    container_name: showcase-chariot-prod
+
+  chariot-showcase:
+    image: ghcr.io/chariot-group/chariot-showcase-production:latest
+    container_name: chariot-showcase-prod
+    restart: unless-stopped
     working_dir: /app
+    env_file:
+      - .env
     ports:
-      - "1000:1000"
+      - "3000"
     environment:
-      - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY}
-      - NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=${NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY}
-      - NEXT_PUBLIC_RECAPTCHA_SITE_KEY=${NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-      - RECAPTCHA_SECRET_KEY=${RECAPTCHA_SECRET_KEY}
-      - SMTP_HOST=${SMTP_HOST}
-      - SMTP_PORT=${SMTP_PORT}
-      - SMTP_USER=${SMTP_USER}
-      - SMTP_PASS=${SMTP_PASS}
-      - RECEIVER_EMAIL=${RECEIVER_EMAIL}
-      - NEXT_PUBLIC_APP_URL=${NEXT_PUBLIC_APP_URL}
-      - NEXT_PUBLIC_STATE=${NEXT_PUBLIC_STATE}
-      - PORT=${PORT}
-      - NODE_ENV=${NODE_ENV}
-    command: ["npm", "start", "--", "-p", "1000"]
+      NODE_ENV: production
+      NEXT_PUBLIC_RECEIVER_EMAIL: ${NEXT_PUBLIC_RECEIVER_EMAIL}
+      NEXT_PUBLIC_CHARIOT_URL: ${NEXT_PUBLIC_CHARIOT_URL}
+      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL}
+      NEXT_PUBLIC_KEYCLOAK_URL: ${NEXT_PUBLIC_KEYCLOAK_URL}
+      NEXT_PUBLIC_KEYCLOAK_REALM: ${NEXT_PUBLIC_KEYCLOAK_REALM}
+      NEXT_PUBLIC_KEYCLOAK_CLIENT_ID: ${NEXT_PUBLIC_KEYCLOAK_CLIENT_ID}
+      NEXT_PUBLIC_DISABLE_CHECKOUT: ${NEXT_PUBLIC_DISABLE_CHECKOUT}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY}
+      DISCORD_NEWSLETTER_WEBHOOK_URL: ${DISCORD_NEWSLETTER_WEBHOOK_URL}
+    networks:
+      - traefik-public
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.chariot-showcase-prod.rule=Host(`${SHOWCASE_HOST}`)"
+      - "traefik.http.routers.chariot-showcase-prod.entrypoints=websecure"
+      - "traefik.http.routers.chariot-showcase-prod.tls.certresolver=letsencrypt"
+      - "traefik.http.services.chariot-showcase-prod.loadbalancer.server.port=3000"
+      - "traefik.http.routers.chariot-showcase-prod.service=chariot-showcase-prod"
+      - "traefik.docker.network=traefik-public"
+
+networks:
+  traefik-public:
+    external: true

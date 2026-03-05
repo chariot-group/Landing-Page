@@ -1,8 +1,8 @@
-import { Legals } from "@/components/modules/Legals";
+import { Legals } from "@/components/Legals";
 
 export default function legalNotice() {
   return (
-    <div className="flex flex-col items-center h-full w-full">
+    <div className="flex flex-col items-center">
       <Legals name="legalNotice" />
     </div>
   );
