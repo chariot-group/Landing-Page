@@ -158,6 +158,9 @@ export default function HomePageClient() {
     }
   };
 
+  const unit = products?.unit;
+  const recommended = products?.recommended;
+
   return (
     <main className="flex flex-col bg-background">
       <section
@@ -200,25 +203,22 @@ export default function HomePageClient() {
         <div className="relative lg:m-26 m-10 md:grid flex flex-col md:grid-cols-2 xl:grid-cols-4 lg:px-0 px-2 sm:px-10 md:gap-4 gap-3 max-w-6xl mx-auto self-center">
           {isCheckoutDisabled && <CheckoutDisabledNotice />}
 
-          {products?.unit && (
+          {unit && (
             <Card className="relative justify-between col-span-2 bg-[url('/assets/background/packs.jpg')] bg-cover bg-center bg-no-repeat">
               <div className="absolute inset-0 bg-black/30 top-0 bottom-0 z-5 rounded-[15px]"></div>
               <div className="flex flex-col gap-4 z-10">
                 <h2 className="md:text-3xl text-xl font-semibold text-white">
-                  {t(`packs.${products.unit.name}`)}
+                  {t(`packs.${unit.name}`)}
                 </h2>
                 <p className="md:text-sm text-xs text-white sm:w-[60%]">
-                  {t(`packs.${products.unit.description}`)}
+                  {t(`packs.${unit.description}`)}
                 </p>
               </div>
               <div className="flex flex-row justify-between items-center z-10">
                 <Button
                   type="button"
                   onClick={() =>
-                    handleCheckout(
-                      products.unit.id,
-                      t(`packs.${products.unit.name}`),
-                    )
+                    handleCheckout(unit.id, t(`packs.${unit.name}`))
                   }
                   variant={"custom"}
                   className="text-black bg-white truncate"
@@ -231,8 +231,8 @@ export default function HomePageClient() {
                   </span>
                 </Button>
                 <span className="md:text-sm text-xs items-center flex">
-                  {products.unit.prices[0]?.unit_amount
-                    ? (products.unit.prices[0].unit_amount / 100).toFixed(2)
+                  {unit.prices[0]?.unit_amount
+                    ? (unit.prices[0].unit_amount / 100).toFixed(2)
                     : "N/A"}
                   €{" "}
                   <Image
@@ -297,19 +297,16 @@ export default function HomePageClient() {
               </Card>
             ))}
           </div>
-          {products?.recommended && (
+          {recommended && (
             <Card
               onClick={() =>
-                handleCheckout(
-                  products.recommended.id,
-                  t(`packs.${products.recommended.name}`),
-                )
+                handleCheckout(recommended.id, t(`packs.${recommended.name}`))
               }
               onKeyDown={(event) =>
                 handleCardKeyDown(event, () =>
                   handleCheckout(
-                    products.recommended.id,
-                    t(`packs.${products.recommended.name}`),
+                    recommended.id,
+                    t(`packs.${recommended.name}`),
                   ),
                 )
               }
@@ -328,32 +325,30 @@ export default function HomePageClient() {
                 <div className="flex flex-col gap-0">
                   <div className="flex flex-row justify-between">
                     <h2 className="md:text-3xl text-xl font-semibold w-2/3">
-                      {t(`packs.${products.recommended.name}`)}
+                      {t(`packs.${recommended.name}`)}
                     </h2>
                     <ArrowUpRight aria-hidden="true" />
                   </div>
 
                   <p className="md:text-sm text-xs text-foreground">
-                    {t(`packs.${products.recommended.description}`)}
+                    {t(`packs.${recommended.description}`)}
                   </p>
                 </div>
                 <span className="sm:flex hidden font-bold text-8xl self-center text-primary">
-                  {products.recommended.metadata?.token_number}{" "}
+                  {recommended.metadata?.token_number}{" "}
                   <Image src={Token} alt="Char token" width={60} height={60} />
                 </span>
               </div>
 
               <div className="flex flex-row sm:self-end justify-between items-center">
                 <span className="flex sm:hidden font-bold text-3xl self-center text-primary">
-                  {products.recommended.metadata?.token_number}{" "}
+                  {recommended.metadata?.token_number}{" "}
                   <Image src={Token} alt="Char token" width={25} height={25} />
                 </span>
                 <div className="flex flex-col">
                   <span className="md:text-sm text-xs">
-                    {products.recommended.prices[0]?.unit_amount
-                      ? (
-                          products.recommended.prices[0].unit_amount / 100
-                        ).toFixed(2)
+                    {recommended.prices[0]?.unit_amount
+                      ? (recommended.prices[0].unit_amount / 100).toFixed(2)
                       : "N/A"}
                     €
                   </span>
@@ -389,8 +384,16 @@ export default function HomePageClient() {
               <p className="md:text-sm text-xs">{t("howWorks.description2")}</p>
             </div>
           </div>
-          <div className="relative bg-[url('/assets/background/explication.jpeg')] bg-cover bg-center bg-no-repeat w-full md:h-[50vh] h-[25vh]">
-            <div className="absolute inset-0 bg-black/30 top-0 bottom-0 z-0 rounded-[15px]"></div>
+          <div className="relative w-full md:h-[50vh] h-[25vh]">
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat blur-[2px]"
+              style={{
+                backgroundImage: `url('/assets/background/explication.jpeg')`,
+                opacity: 0.9,
+              }}
+            ></div>
+            <div className="absolute inset-0 bg-black/60 top-0 bottom-0"></div>
+
             <div className="max-w-7xl mx-auto h-full flex items-center justify-center">
               <span className="md:text-6xl text-2xl text-white font-bold flex items-center gap-2 z-10">
                 <span className="flex gap-2 items-center">

@@ -11,7 +11,7 @@ export default function Feature({ title, description, url }: FeatureProps) {
     <Card className="relative justify-between p-0 overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat blur-[2px] scale-105"
-        style={{ backgroundImage: `url('${url}')` }}
+        style={{ backgroundImage: `url('${url}')`, opacity: 0.7 }}
       ></div>
       <div className="absolute top-0 left-0 right-0 h-1/2 bg-linear-to-b from-black/70 to-transparent"></div>
       <h3 className="text-white text-2xl font-semibold self-center text-center z-10 p-6">

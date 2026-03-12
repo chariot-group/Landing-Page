@@ -14,6 +14,7 @@ interface LegalsProps {
 }
 export function Legals({ name }: LegalsProps) {
   const t = useTranslations(name);
+  const appUrl = process.env.NEXT_PUBLIC_CHARIOT_URL || "https://chariot.tools";
 
   return (
     <section className="container px-6 w-full mx-auto mt-20 mb-20" id="contact">
@@ -29,9 +30,9 @@ export function Legals({ name }: LegalsProps) {
                       {content.text.split("{a}")[0]}
                       <a
                         className="hover:underline underline-offset-2"
-                        href={process.env.NEXT_PUBLIC_APP_URL}
+                        href={appUrl}
                       >
-                        {process.env.NEXT_PUBLIC_APP_URL}
+                        {appUrl}
                       </a>
                       {content.text.split("{a}")[1]}
                     </React.Fragment>
@@ -60,9 +61,9 @@ export function Legals({ name }: LegalsProps) {
                     {content.text.split("{a}")[0]}
                     <a
                       className="hover:underline underline-offset-2"
-                      href={process.env.NEXT_PUBLIC_APP_URL}
+                      href={appUrl}
                     >
-                      {process.env.NEXT_PUBLIC_APP_URL}
+                      {appUrl}
                     </a>
                     {content.text.split("{a}")[1]}
                   </React.Fragment>
