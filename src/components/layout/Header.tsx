@@ -40,6 +40,62 @@ export default function Header() {
   return (
     <header className="xl:px-15 px-10 py-4 flex items-center justify-between fixed top-0 left-0 right-0 z-50 bg-linear-to-b from-black to-transparent">
       <div className="flex items-center gap-15">
+        <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+          <SheetTrigger asChild className="xl:hidden">
+            <MenuIcon />
+          </SheetTrigger>
+          <SheetContent side="left">
+            <SheetHeader>
+              <SheetTitle></SheetTitle>
+              <Link href="/">
+                <Image
+                  src={LogoTypo}
+                  alt="Chariot Logo"
+                  width={120}
+                  height={40}
+                />
+              </Link>
+            </SheetHeader>
+            <nav className="flex flex-col gap-5">
+              <ul className="flex flex-col gap-2">
+                {buttons.map((item, index) => (
+                  <li
+                    key={index}
+                    className="h-9 px-4 py-2 cursor-pointer hover:text-primary transition-colors duration-300"
+                    onClick={() => {
+                      scrollToSection(item.id);
+                      setIsSheetOpen(false);
+                    }}
+                  >
+                    {item.libelle}
+                  </li>
+                ))}
+              </ul>
+              <div className="border-t mx-4"></div>
+              <div className="flex flex-wrap gap-2 px-4 py-2">
+                {authenticated ? (
+                  <React.Fragment>
+                    <Button variant={"outline"} onClick={logout}>
+                      {t("logout")}
+                    </Button>
+                    <Link href={chariotAppUrl()}>
+                      <Button variant={"custom"}>{t("myAccount")}</Button>
+                    </Link>
+                  </React.Fragment>
+                ) : (
+                  <React.Fragment>
+                    <Button variant={"outline"} onClick={register}>
+                      {t("registration")}
+                    </Button>
+                    <Button variant={"custom"} onClick={login}>
+                      {t("connection")}
+                    </Button>
+                  </React.Fragment>
+                )}
+              </div>
+            </nav>
+          </SheetContent>
+        </Sheet>
         <Link href="/" className="flex">
           <Image src={LogoTypo} alt="Chariot Logo" width={120} height={40} />
         </Link>
@@ -76,62 +132,6 @@ export default function Header() {
           </React.Fragment>
         )}
       </div>
-      <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
-        <SheetTrigger asChild className="xl:hidden">
-          <MenuIcon />
-        </SheetTrigger>
-        <SheetContent side="left">
-          <SheetHeader>
-            <SheetTitle></SheetTitle>
-            <Link href="/">
-              <Image
-                src={LogoTypo}
-                alt="Chariot Logo"
-                width={120}
-                height={40}
-              />
-            </Link>
-          </SheetHeader>
-          <nav className="flex flex-col gap-5">
-            <ul className="flex flex-col gap-2">
-              {buttons.map((item, index) => (
-                <li
-                  key={index}
-                  className="h-9 px-4 py-2 cursor-pointer hover:text-primary transition-colors duration-300"
-                  onClick={() => {
-                    scrollToSection(item.id);
-                    setIsSheetOpen(false);
-                  }}
-                >
-                  {item.libelle}
-                </li>
-              ))}
-            </ul>
-            <div className="border-t mx-4"></div>
-            <div className="flex flex-wrap gap-2 px-4 py-2">
-              {authenticated ? (
-                <React.Fragment>
-                  <Button variant={"outline"} onClick={logout}>
-                    {t("logout")}
-                  </Button>
-                  <Link href={chariotAppUrl()}>
-                    <Button variant={"custom"}>{t("myAccount")}</Button>
-                  </Link>
-                </React.Fragment>
-              ) : (
-                <React.Fragment>
-                  <Button variant={"outline"} onClick={register}>
-                    {t("registration")}
-                  </Button>
-                  <Button variant={"custom"} onClick={login}>
-                    {t("connection")}
-                  </Button>
-                </React.Fragment>
-              )}
-            </div>
-          </nav>
-        </SheetContent>
-      </Sheet>
     </header>
   );
 }
