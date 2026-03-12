@@ -6,7 +6,7 @@ export const locales = ["fr", "en", "es"] as const;
 export type Locale = (typeof locales)[number];
 
 // Default locale
-export const defaultLocale: Locale = "en";
+export const defaultLocale: Locale = "fr";
 
 export default getRequestConfig(async ({ requestLocale }) => {
     // Get locale from request parameters
