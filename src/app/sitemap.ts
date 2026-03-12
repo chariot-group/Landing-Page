@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { locales } from "@/i18n/request";
+import { defaultLocale, locales } from "@/i18n/request";
 import { getSiteBaseUrl } from "@/lib/seo";
 
 const localizedPaths = ["", "/TOU", "/TOS", "/privacyPolicy", "/legalNotice"];
@@ -14,11 +14,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       alternates: {
         languages: Object.fromEntries(
-          locales.map((altLocale) => [altLocale, `${siteUrl.origin}/${altLocale}${path}`]),
+          locales.map((altLocale) => [
+            altLocale,
+            `${siteUrl.origin}/${altLocale}${path}`,
+          ]),
         ),
       },
       changeFrequency: path === "" ? "weekly" : "monthly",
-      priority: path === "" ? 1 : 0.5,
+      priority:
+        locale === defaultLocale
+          ? path === ""
+            ? 1
+            : 0.6
+          : path === ""
+            ? 0.85
+            : 0.45,
     })),
   );
 }

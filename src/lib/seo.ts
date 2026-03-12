@@ -3,8 +3,23 @@ import { defaultLocale, Locale, locales } from "@/i18n/request";
 
 const APP_NAME = "CHARIOT";
 const DEFAULT_BASE_URL = "https://chariot.tools";
+const OG_IMAGE_SIZE = { width: 1200, height: 630 };
+const TWITTER_IMAGE_SIZE = { width: 1200, height: 600 };
 
-const SEO_BY_LOCALE: Record<Locale, { title: string; description: string; keywords: string[]; ogLocale: string }> = {
+const SEO_BY_LOCALE: Record<
+  Locale,
+  {
+    title: string;
+    description: string;
+    keywords: string[];
+    ogLocale: string;
+    socialEyebrow: string;
+    socialSubtitle: string;
+    softwareFeatures: string[];
+    category: string;
+    classification: string;
+  }
+> = {
   fr: {
     title: "CHARIOT | Outil MJ pour Donjons & Dragons et JDR",
     description:
@@ -17,8 +32,21 @@ const SEO_BY_LOCALE: Record<Locale, { title: string; description: string; keywor
       "gestion campagne D&D",
       "suivi combats JDR",
       "initiative tracker Donjons et Dragons",
+      "outil maître du jeu Donjons et Dragons",
+      "application campagne jeu de rôle",
     ],
     ogLocale: "fr_FR",
+    socialEyebrow: "Application web pour MJ",
+    socialSubtitle:
+      "Campagnes, combats, initiative tracker et codex pour Donjons & Dragons et autres JDR.",
+    softwareFeatures: [
+      "Gestion de campagnes de jeu de rôle",
+      "Suivi d'initiative et de combats",
+      "Outils narratifs pour maîtres du jeu",
+      "Codex partagé pour personnages et sorts",
+    ],
+    category: "Logiciel de jeu de role",
+    classification: "Outil pour maitres du jeu et campagnes D&D",
   },
   en: {
     title: "CHARIOT | Game Master Tool for D&D and TTRPG",
@@ -32,8 +60,21 @@ const SEO_BY_LOCALE: Record<Locale, { title: string; description: string; keywor
       "battle tracker",
       "initiative tracker",
       "DnD campaign manager",
+      "virtual gm assistant",
+      "tabletop roleplaying campaign tool",
     ],
     ogLocale: "en_US",
+    socialEyebrow: "Web app for game masters",
+    socialSubtitle:
+      "Campaign management, combat tracking, initiative and codex tools for D&D and other TTRPGs.",
+    softwareFeatures: [
+      "TTRPG campaign management",
+      "Combat and initiative tracking",
+      "Narrative tools for game masters",
+      "Shared codex for characters and spells",
+    ],
+    category: "Role-playing game software",
+    classification: "Game master software for D&D and TTRPG campaigns",
   },
   es: {
     title: "CHARIOT | Herramienta para directores de juego de D&D",
@@ -45,8 +86,21 @@ const SEO_BY_LOCALE: Record<Locale, { title: string; description: string; keywor
       "herramienta director de juego",
       "seguimiento combates D&D",
       "gestión de campañas D&D",
+      "app para director de juego",
+      "herramienta campañas rol de mesa",
     ],
     ogLocale: "es_ES",
+    socialEyebrow: "Aplicacion web para directores de juego",
+    socialSubtitle:
+      "Gestiona campañas, combates, iniciativa y codex para D&D y otros juegos de rol de mesa.",
+    softwareFeatures: [
+      "Gestión de campañas de rol",
+      "Seguimiento de combate e iniciativa",
+      "Herramientas narrativas para MJ",
+      "Codex compartido de personajes y conjuros",
+    ],
+    category: "Software de juego de rol",
+    classification: "Herramienta para directores de juego y campañas de D&D",
   },
 };
 
@@ -104,6 +158,14 @@ export function getSiteBaseUrl() {
   }
 }
 
+function resolveLocale(locale: string): Locale {
+  return locale in SEO_BY_LOCALE ? (locale as Locale) : defaultLocale;
+}
+
+function getLocalizedUrl(locale: string, pathname = "") {
+  return `/${resolveLocale(locale)}${pathname}`;
+}
+
 function getLocaleAlternates(pathname = "") {
   const alternates = locales.reduce<Record<string, string>>((acc, locale) => {
     acc[locale] = `/${locale}${pathname}`;
@@ -126,22 +188,72 @@ export function getSharedMetadata(): Metadata {
 }
 
 export function getLocaleSeo(locale: string) {
-  if (locale in SEO_BY_LOCALE) {
-    return SEO_BY_LOCALE[locale as Locale];
-  }
+  return SEO_BY_LOCALE[resolveLocale(locale)];
+}
 
-  return SEO_BY_LOCALE.fr;
+function getSocialImageUrl(
+  locale: string,
+  kind: "opengraph-image" | "twitter-image",
+) {
+  return getLocalizedUrl(locale, `/${kind}`);
+}
+
+function getSocialImages(locale: string, pageTitle: string) {
+  const seo = getLocaleSeo(locale);
+
+  return {
+    openGraph: [
+      {
+        url: getSocialImageUrl(locale, "opengraph-image"),
+        width: OG_IMAGE_SIZE.width,
+        height: OG_IMAGE_SIZE.height,
+        alt: `${pageTitle} - ${seo.socialSubtitle}`,
+      },
+    ],
+    twitter: [
+      {
+        url: getSocialImageUrl(locale, "twitter-image"),
+        width: TWITTER_IMAGE_SIZE.width,
+        height: TWITTER_IMAGE_SIZE.height,
+        alt: `${pageTitle} - ${seo.socialSubtitle}`,
+      },
+    ],
+  };
+}
+
+export function getSocialImageContent(locale: string) {
+  const resolvedLocale = resolveLocale(locale);
+  const seo = SEO_BY_LOCALE[resolvedLocale];
+
+  return {
+    locale: resolvedLocale,
+    eyebrow: seo.socialEyebrow,
+    title: seo.title.replace("CHARIOT | ", ""),
+    subtitle: seo.socialSubtitle,
+  };
 }
 
 export function getHomepageMetadata(locale: string): Metadata {
   const seo = getLocaleSeo(locale);
-  const resolvedLocale = locale in SEO_BY_LOCALE ? (locale as Locale) : "fr";
+  const resolvedLocale = resolveLocale(locale);
+  const socialImages = getSocialImages(locale, seo.title);
 
   return {
-    ...getSharedMetadata(),
     title: seo.title,
     description: seo.description,
-    robots: { index: true, follow: true },
+    category: seo.category,
+    classification: seo.classification,
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
+    },
     keywords: seo.keywords,
     alternates: {
       canonical: `/${resolvedLocale}`,
@@ -154,12 +266,14 @@ export function getHomepageMetadata(locale: string): Metadata {
       siteName: APP_NAME,
       locale: seo.ogLocale,
       alternateLocale: getAlternateOgLocales(resolvedLocale),
-      url: `/${resolvedLocale}`,
+      url: getLocalizedUrl(locale),
+      images: socialImages.openGraph,
     },
     twitter: {
       card: "summary_large_image",
       title: seo.title,
       description: seo.description,
+      images: socialImages.twitter,
     },
   };
 }
@@ -179,13 +293,15 @@ export function getLegalMetadata(
 ): Metadata {
   const baseSeo = getLocaleSeo(locale);
   const pageTitle = getLegalPageTitle(locale, page);
-  const resolvedLocale = locale in SEO_BY_LOCALE ? (locale as Locale) : "fr";
+  const resolvedLocale = resolveLocale(locale);
+  const socialImages = getSocialImages(locale, `${pageTitle} | CHARIOT`);
 
   return {
-    ...getSharedMetadata(),
     title: `${pageTitle} | CHARIOT`,
     description: `${pageTitle} - ${baseSeo.description}`,
     keywords: baseSeo.keywords,
+    category: baseSeo.category,
+    classification: baseSeo.classification,
     alternates: {
       canonical: `/${resolvedLocale}${pathname}`,
       languages: getLocaleAlternates(pathname),
@@ -197,8 +313,83 @@ export function getLegalMetadata(
       siteName: APP_NAME,
       locale: baseSeo.ogLocale,
       alternateLocale: getAlternateOgLocales(resolvedLocale),
-      url: `/${resolvedLocale}${pathname}`,
+      url: getLocalizedUrl(locale, pathname),
+      images: socialImages.openGraph,
     },
-    robots: { index: true, follow: true },
+    twitter: {
+      card: "summary_large_image",
+      title: `${pageTitle} | CHARIOT`,
+      description: `${pageTitle} - ${baseSeo.description}`,
+      images: socialImages.twitter,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
+    },
   };
+}
+
+export function getHomepageStructuredData(locale: string) {
+  const resolvedLocale = resolveLocale(locale);
+  const seo = getLocaleSeo(locale);
+  const siteUrl = getSiteBaseUrl().origin;
+  const localizedUrl = `${siteUrl}${getLocalizedUrl(locale)}`;
+  const logoUrl = `${siteUrl}/logo.svg`;
+  const receiverEmail = process.env.NEXT_PUBLIC_RECEIVER_EMAIL;
+
+  const organizationSchema: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${siteUrl}#organization`,
+    name: APP_NAME,
+    url: siteUrl,
+    logo: logoUrl,
+    description: seo.description,
+  };
+
+  if (receiverEmail) {
+    organizationSchema.email = receiverEmail;
+  }
+
+  return [
+    organizationSchema,
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": `${siteUrl}#website`,
+      url: localizedUrl,
+      name: APP_NAME,
+      inLanguage: resolvedLocale,
+      description: seo.description,
+      publisher: {
+        "@id": `${siteUrl}#organization`,
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      name: APP_NAME,
+      applicationCategory: "GameApplication",
+      operatingSystem: "Web",
+      browserRequirements: "Requires JavaScript. Requires HTML5.",
+      isAccessibleForFree: true,
+      inLanguage: resolvedLocale,
+      availableLanguage: locales,
+      url: localizedUrl,
+      image: `${siteUrl}${getSocialImageUrl(locale, "opengraph-image")}`,
+      description: seo.description,
+      featureList: seo.softwareFeatures,
+      genre: ["Tabletop role-playing game", "Dungeons & Dragons"],
+      publisher: {
+        "@id": `${siteUrl}#organization`,
+      },
+    },
+  ];
 }

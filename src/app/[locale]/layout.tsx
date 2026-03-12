@@ -8,24 +8,14 @@ import { locales } from "@/i18n/request";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { KeycloakProvider } from "@/providers/KeycloakProvider";
-import { getHomepageMetadata, getSharedMetadata } from "@/lib/seo";
+import { getSharedMetadata } from "@/lib/seo";
 
 const interTight = Inter_Tight({
   variable: "--font-inter-tight",
   subsets: ["latin"],
 });
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  return {
-    ...getSharedMetadata(),
-    ...getHomepageMetadata(locale),
-  };
-}
+export const metadata: Metadata = getSharedMetadata();
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
