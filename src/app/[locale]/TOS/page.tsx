@@ -1,6 +1,10 @@
 import { Legals } from "@/components/Legals";
 import type { Metadata } from "next";
-import { getLegalMetadata, getLegalPageTitle } from "@/lib/seo";
+import {
+  getLegalMetadata,
+  getLegalPageTitle,
+  getLegalStructuredData,
+} from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -17,13 +21,23 @@ export default async function TOS({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  const structuredData = getLegalStructuredData(locale, "tos", "/TOS");
 
   return (
-    <div className="flex flex-col items-center">
-      <h1 className="container px-6 w-full mx-auto mt-25 text-3xl font-bold">
-        {getLegalPageTitle(locale, "tos")}
-      </h1>
-      <Legals name="TOS" />
-    </div>
+    <>
+      {structuredData.map((schema, index) => (
+        <script
+          key={`structured-data-${index}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+      <div className="flex flex-col items-center">
+        <h1 className="container px-6 w-full mx-auto mt-25 text-3xl font-bold">
+          {getLegalPageTitle(locale, "tos")}
+        </h1>
+        <Legals name="TOS" />
+      </div>
+    </>
   );
 }

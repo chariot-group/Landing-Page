@@ -1,11 +1,20 @@
+import fs from "fs";
+import path from "path";
 import { ImageResponse } from "next/og";
 import { getSocialImageContent } from "@/lib/seo";
+
+function getLogoDataUrl() {
+  const logoPath = path.join(process.cwd(), "public", "logo.svg");
+  const logoBuffer = fs.readFileSync(logoPath);
+  return `data:image/svg+xml;base64,${Buffer.from(logoBuffer).toString("base64")}`;
+}
 
 export function createSocialImage(
   locale: string,
   size: { width: number; height: number },
 ) {
   const content = getSocialImageContent(locale);
+  const logoDataUrl = getLogoDataUrl();
 
   return new ImageResponse(
     <div
@@ -76,12 +85,22 @@ export function createSocialImage(
         <div
           style={{
             display: "flex",
-            fontSize: 34,
-            fontWeight: 700,
-            letterSpacing: 6,
+            alignItems: "center",
+            gap: "16px",
           }}
         >
-          CHARIOT
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={logoDataUrl} width={44} height={44} alt="CHARIOT logo" />
+          <div
+            style={{
+              display: "flex",
+              fontSize: 34,
+              fontWeight: 700,
+              letterSpacing: 6,
+            }}
+          >
+            CHARIOT
+          </div>
         </div>
         <div
           style={{

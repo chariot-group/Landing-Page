@@ -336,6 +336,53 @@ export function getLegalMetadata(
   };
 }
 
+export function getLegalStructuredData(
+  locale: string,
+  page: "tou" | "tos" | "privacyPolicy" | "legalNotice",
+  pathname: string,
+) {
+  const resolvedLocale = resolveLocale(locale);
+  const seo = getLocaleSeo(locale);
+  const pageTitle = getLegalPageTitle(locale, page);
+  const fullTitle = `${pageTitle} | ${APP_NAME}`;
+  const siteUrl = getSiteBaseUrl().origin;
+  const pageUrl = `${siteUrl}/${resolvedLocale}${pathname}`;
+
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": `${pageUrl}#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: APP_NAME,
+          item: `${siteUrl}/${resolvedLocale}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: pageTitle,
+          item: pageUrl,
+        },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": pageUrl,
+      url: pageUrl,
+      name: fullTitle,
+      description: `${pageTitle} - ${seo.description}`,
+      inLanguage: resolvedLocale,
+      isPartOf: { "@id": `${siteUrl}#website` },
+      publisher: { "@id": `${siteUrl}#organization` },
+      breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
+    },
+  ];
+}
+
 export function getHomepageStructuredData(locale: string) {
   const resolvedLocale = resolveLocale(locale);
   const seo = getLocaleSeo(locale);
