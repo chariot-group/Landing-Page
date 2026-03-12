@@ -150,7 +150,7 @@ const SHARED_METADATA: Metadata = {
 };
 
 export function getSiteBaseUrl() {
-  const rawUrl = process.env.NEXT_PUBLIC_APP_URL || DEFAULT_BASE_URL;
+  const rawUrl = process.env.NEXT_PUBLIC_CHARIOT_URL || DEFAULT_BASE_URL;
   try {
     return new URL(rawUrl);
   } catch {

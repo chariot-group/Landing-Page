@@ -38,7 +38,7 @@ export default function proxy(request: NextRequest) {
   if (preferredLocale && request.nextUrl.pathname === "/") {
     const url = request.nextUrl.clone();
     url.pathname = `/${preferredLocale}`;
-    return Response.redirect(url);
+    return Response.redirect(url, 308);
   }
 
   return intlProxy(request);
