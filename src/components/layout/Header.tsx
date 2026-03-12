@@ -16,7 +16,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { MenuIcon } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import React from "react";
 
 interface item {
@@ -28,6 +28,7 @@ export default function Header() {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
 
   const t = useTranslations("header");
+  const locale = useLocale();
   const { authenticated, login, register, logout } = useKeycloak();
 
   const buttons: item[] = [
@@ -42,12 +43,14 @@ export default function Header() {
       <div className="flex items-center gap-15">
         <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
           <SheetTrigger asChild className="xl:hidden">
-            <MenuIcon />
+            <Button variant="outline" aria-label="Open menu">
+              <MenuIcon />
+            </Button>
           </SheetTrigger>
           <SheetContent side="left">
             <SheetHeader>
-              <SheetTitle></SheetTitle>
-              <Link href="/">
+              <SheetTitle className="sr-only">Menu</SheetTitle>
+              <Link href={`/${locale}`}>
                 <Image
                   src={LogoTypo}
                   alt="Chariot Logo"
@@ -59,15 +62,17 @@ export default function Header() {
             <nav className="flex flex-col gap-5">
               <ul className="flex flex-col gap-2">
                 {buttons.map((item, index) => (
-                  <li
-                    key={index}
-                    className="h-9 px-4 py-2 cursor-pointer hover:text-primary transition-colors duration-300"
-                    onClick={() => {
-                      scrollToSection(item.id);
-                      setIsSheetOpen(false);
-                    }}
-                  >
-                    {item.libelle}
+                  <li key={index}>
+                    <button
+                      type="button"
+                      className="h-9 px-4 py-2 cursor-pointer hover:text-primary transition-colors duration-300 text-left w-full"
+                      onClick={() => {
+                        scrollToSection(item.id);
+                        setIsSheetOpen(false);
+                      }}
+                    >
+                      {item.libelle}
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -96,15 +101,21 @@ export default function Header() {
             </nav>
           </SheetContent>
         </Sheet>
-        <Link href="/" className="flex">
+        <Link href={`/${locale}`} className="flex">
           <Image src={LogoTypo} alt="Chariot Logo" width={120} height={40} />
         </Link>
         <h1 className="sr-only">Chariot</h1>
         <nav className="hidden xl:flex">
           <ul className="flex gap-2 mt-2">
             {buttons.map((button) => (
-              <li key={button.id} onClick={() => scrollToSection(button.id)}>
-                <Button variant="outline">{button.libelle}</Button>
+              <li key={button.id}>
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={() => scrollToSection(button.id)}
+                >
+                  {button.libelle}
+                </Button>
               </li>
             ))}
           </ul>

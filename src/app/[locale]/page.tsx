@@ -17,7 +17,7 @@ import Feature from "@/components/Feature";
 import { chariotAppUrl, scrollToSection } from "@/utils/global.util";
 import Link from "next/link";
 import { useKeycloak } from "@/providers/KeycloakProvider";
-import { useCallback, useEffect, useState } from "react";
+import { KeyboardEvent, useCallback, useEffect, useState } from "react";
 import { Products } from "@/types/stripe.type";
 import StripeService from "@/services/stripe.service";
 import CheckoutDisabledNotice from "@/components/CheckoutDisabledNotice";
@@ -149,15 +149,29 @@ export default function Home() {
     }
   }, [authenticated, handleCheckout, isCheckoutDisabled, userId]);
 
+  const handleCardKeyDown = (
+    event: KeyboardEvent<HTMLDivElement>,
+    callback: () => void,
+  ) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      callback();
+    }
+  };
+
   return (
     <div className="flex flex-col bg-background">
       {/* Hero Section */}
       <section
         id="hero"
+        aria-labelledby="hero-title"
         className="relative h-[90vh] bg-[url('/background.svg')] xl:bg-size-[60%] lg:bg-size-[80%] bg-cover bg-center bg-no-repeat"
       >
         <div className="flex flex-col h-[70vh] justify-end xl:max-w-5xl sm:px-10 px-2 mx-auto gap-5">
-          <h1 className="lg:text-6xl text-4xl font-medium text-center text-shadow-sm text-shadow-white">
+          <h1
+            id="hero-title"
+            className="lg:text-6xl text-4xl font-medium text-center text-shadow-sm text-shadow-white"
+          >
             {t("hero.title")}
           </h1>
           <div className="flex sm:gap-4 gap-2 justify-center">
@@ -201,6 +215,7 @@ export default function Home() {
               </div>
               <div className="flex flex-row justify-between items-center z-10">
                 <Button
+                  type="button"
                   onClick={() =>
                     handleCheckout(
                       products.unit!.id,
@@ -210,7 +225,7 @@ export default function Home() {
                   variant={"custom"}
                   className="text-black bg-white truncate"
                 >
-                  <ShoppingCart fill="true" />{" "}
+                  <ShoppingCart aria-hidden="true" />{" "}
                   <span className="md:text-sm text-xs truncate">
                     {isCheckoutDisabled
                       ? t("packs.unavailableButton")
@@ -224,7 +239,7 @@ export default function Home() {
                   €{" "}
                   <Image
                     src={Token}
-                    alt="Coin"
+                    alt="Char token"
                     width={15}
                     height={15}
                     className="inline-block ml-1"
@@ -240,6 +255,13 @@ export default function Home() {
                 onClick={() =>
                   handleCheckout(product.id, t(`packs.${product.name}`))
                 }
+                onKeyDown={(event) =>
+                  handleCardKeyDown(event, () =>
+                    handleCheckout(product.id, t(`packs.${product.name}`)),
+                  )
+                }
+                tabIndex={0}
+                role="button"
                 className="bg-white cursor-pointer text-black justify-between hover:bg-white/90 transition-colors duration-300 h-full"
               >
                 <div className="flex flex-col gap-0">
@@ -247,7 +269,7 @@ export default function Home() {
                     <h2 className="md:text-3xl text-xl font-semibold w-2/3">
                       {t(`packs.${product.name}`)}
                     </h2>
-                    <ArrowUpRight />
+                    <ArrowUpRight aria-hidden="true" />
                   </div>
 
                   <p className="md:text-sm text-xs text-foreground">
@@ -259,7 +281,7 @@ export default function Home() {
                     {product.metadata?.token_number}{" "}
                     <Image
                       src={Token}
-                      alt="Coin"
+                      alt="Char token"
                       className="md:h-6.25 md:w-6.25 h-4 w-4"
                       width={25}
                       height={25}
@@ -285,6 +307,16 @@ export default function Home() {
                   t(`packs.${products.recommended!.name}`),
                 )
               }
+              onKeyDown={(event) =>
+                handleCardKeyDown(event, () =>
+                  handleCheckout(
+                    products.recommended!.id,
+                    t(`packs.${products.recommended!.name}`),
+                  ),
+                )
+              }
+              tabIndex={0}
+              role="button"
               className="cursor-pointer relative h-full col-span-1 bg-white text-black justify-between hover:bg-white/90 transition-colors duration-300"
             >
               <Card className="absolute -top-2 -left-1 bg-primary px-2 py-1 flex flex-row items-center gap-1 rounded-full">
@@ -300,7 +332,7 @@ export default function Home() {
                     <h2 className="md:text-3xl text-xl font-semibold w-2/3">
                       {t(`packs.${products.recommended.name}`)}
                     </h2>
-                    <ArrowUpRight />
+                    <ArrowUpRight aria-hidden="true" />
                   </div>
 
                   <p className="md:text-sm text-xs text-foreground">
@@ -309,14 +341,14 @@ export default function Home() {
                 </div>
                 <span className="sm:flex hidden font-bold text-8xl self-center text-primary">
                   {products.recommended.metadata?.token_number}{" "}
-                  <Image src={Token} alt="Coin" width={60} height={60} />
+                  <Image src={Token} alt="Char token" width={60} height={60} />
                 </span>
               </div>
 
               <div className="flex flex-row sm:self-end justify-between items-center">
                 <span className="flex sm:hidden font-bold text-3xl self-center text-primary">
                   {products.recommended.metadata?.token_number}{" "}
-                  <Image src={Token} alt="Coin" width={25} height={25} />
+                  <Image src={Token} alt="Char token" width={25} height={25} />
                 </span>
                 <div className="flex flex-col">
                   <span className="md:text-sm text-xs">
@@ -346,7 +378,7 @@ export default function Home() {
                   <Image
                     src={Token}
                     className="md:h-11.25 md:w-11.25 h-6 w-6"
-                    alt="Coin"
+                    alt="Char token"
                     width={45}
                     height={45}
                   />{" "}
@@ -368,7 +400,7 @@ export default function Home() {
                   <Image
                     src={Token}
                     className="md:h-11.25 md:w-11.25 h-6 w-6"
-                    alt="Coin"
+                    alt="Char token"
                     width={40}
                     height={40}
                   />
@@ -441,6 +473,7 @@ export default function Home() {
                 </h2>
                 <div className="flex md:gap-4 gap-2 justify-center">
                   <Button
+                    type="button"
                     className="md:text-sm text-xs"
                     onClick={() => scrollToSection("packs")}
                   >

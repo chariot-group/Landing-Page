@@ -14,9 +14,9 @@ export default function Feature({ title, description, url }: FeatureProps) {
         style={{ backgroundImage: `url('${url}')` }}
       ></div>
       <div className="absolute top-0 left-0 right-0 h-1/2 bg-linear-to-b from-black/70 to-transparent"></div>
-      <h2 className="text-white text-2xl font-semibold self-center text-center z-10 p-6">
+      <h3 className="text-white text-2xl font-semibold self-center text-center z-10 p-6">
         {title}
-      </h2>
+      </h3>
       <div className="flex flex-col gap-2 z-10 bg-linear-to-t from-black rounded-b-[24px] to-transparent p-6">
         {description.map((desc, index) => (
           <p key={index} className="text-white md:text-sm text-xs ">
