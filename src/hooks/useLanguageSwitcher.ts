@@ -3,35 +3,28 @@ import { saveStoredLocale } from "@/hooks/useLocalPreference";
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 
-const localeToRegion: Record<Locale, string> = {
-  fr: "FR",
-  en: "GB",
-  es: "ES",
-};
-
 const localeToFlag: Record<Locale, string> = {
   fr: "🇫🇷",
   en: "🇬🇧",
   es: "🇪🇸",
 };
 
-const localeNameFallback: Record<Locale, Record<Locale, string>> = {
-  fr: { fr: "France", en: "Royaume-Uni", es: "Espagne" },
-  en: { fr: "France", en: "United Kingdom", es: "Spain" },
-  es: { fr: "Francia", en: "Reino Unido", es: "España" },
+const languageNameFallback: Record<Locale, Record<Locale, string>> = {
+  fr: { fr: "Français", en: "Anglais", es: "Espagnol" },
+  en: { fr: "French", en: "English", es: "Spanish" },
+  es: { fr: "Francés", en: "Inglés", es: "Español" },
 };
 
 function getLocaleLabel(loc: Locale, currentLocale: Locale) {
-  const region = localeToRegion[loc];
-  const countryDisplayNames =
+  const languageDisplayNames =
     typeof Intl !== "undefined" && "DisplayNames" in Intl
-      ? new Intl.DisplayNames([currentLocale], { type: "region" })
+      ? new Intl.DisplayNames([currentLocale], { type: "language" })
       : null;
 
-  const countryName =
-    countryDisplayNames?.of(region) ?? localeNameFallback[currentLocale][loc];
+  const languageName =
+    languageDisplayNames?.of(loc) ?? languageNameFallback[currentLocale][loc];
 
-  return `${localeToFlag[loc]} ${countryName}`;
+  return `${localeToFlag[loc]} ${languageName}`;
 }
 
 export function useLanguageSwitcher() {
