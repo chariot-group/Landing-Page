@@ -10,7 +10,7 @@
     "logout": "Cerrar sesión"
   },
   "hero": {
-    "title": "¡Descubre una nueva forma de vivir el juego de rol!",
+    "title": "¡Gestiona tus campañas de Dungeons & Dragons y juego de rol como nunca antes!",
     "packs": "NUESTROS PAQUETES",
     "registration": "Crear mi cuenta"
   },
@@ -22,15 +22,15 @@
     },
     "explorator": {
       "name": "PAQUETE EXPLORADOR",
-      "description": "Ideal para aventureros principiantes."
+      "description": "Ideal para Maestros del Juego que empiezan con Dungeons & Dragons."
     },
     "legendary": {
       "name": "PAQUETE LÉGENDARIO",
-      "description": "Para los maestros del juego experimentados en busca de poder máximo."
+      "description": "Para los Maestros del Juego experimentados que buscan el máximo poder en sus campañas de D&D."
     },
     "aventurer": {
       "name": "PAQUETE AVENTURERO",
-      "description": "El mejor paquete para la mejor experiencia. Simplemente."
+      "description": "El mejor paquete para la mejor experiencia de juego de rol de mesa. Simplemente."
     },
     "recommended": "Recomendado",
     "unavailableAlert": "Producto no disponible por el momento",
@@ -49,25 +49,25 @@
   "howWorks": {
     "title1": "¿CÓMO FUNCIONAN",
     "title2": "LOS CHARS",
-    "description1": "El Char es la moneda única de Chariot, que le permite acceder a todas las funciones «dentro del juego» de la aplicación. En Chariot, el principio es sencillo.",
+    "description1": "El Char es la moneda única de Chariot, la aplicación para Maestros del Juego de rol de mesa y Dungeons & Dragons. En Chariot, el principio es sencillo.",
     "description2": "Para luchar una sesión de 5, podrías gastar 1 char cada uno, o un jugador podría pagar 5 chars para que todos puedan jugar. En Chariot, cada uno se organiza como quiera.",
     "session": "SESIÓN"
   },
   "features": {
     "title": "LAS FUNCIONALIDADES",
-    "description": "Todo lo que necesitas para vivir una aventura fluida.",
+    "description": "Todo lo que un Maestro del Juego necesita para dirigir sus campañas de D&D y juegos de rol sin problemas.",
     "feature1": {
-      "title": "Gestión fluida de jugadores",
+      "title": "Gestión de jugadores y fichas de personajes",
       "description1": "Centraliza fichas de personajes, inventarios, jets y estados en un solo espacio.",
       "description2": "Cada jugador avanza sin fricción, mientras la partida permanece perfectamente legible para todos."
     },
     "feature2": {
-      "title": "Caja de herramientas narrativas para MJ",
+      "title": "Caja de herramientas narrativas para Maestro del Juego",
       "description1": "Crea, organiza e improvisa tus guiones en tiempo real.",
       "description2": "Los PNJ, los lugares, las tramas y los acontecimientos están al alcance de un clic para mantener el ritmo y alimentar la inmersión."
     },
     "feature3": {
-      "title": "Iniciativa y combate simplificados",
+      "title": "Rastreador de iniciativa y gestión del combate D&D",
       "description1": "Automatiza los turnos, sigue las acciones y visualiza el orden de juego instantáneamente.",
       "description2": "Menos cálculos, más flow: la mecánica se desvanece a favor de la aventura."
     },

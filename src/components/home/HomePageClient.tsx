@@ -9,7 +9,7 @@ import {
   ShoppingCart,
   UserRound,
 } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 
 import Token from "@public/assets/token.svg";
@@ -21,6 +21,7 @@ import { KeyboardEvent, useCallback, useEffect, useState } from "react";
 import { Products, StripeProductWithPrices } from "@/types/stripe.type";
 import StripeService from "@/services/stripe.service";
 import CheckoutDisabledNotice from "@/components/CheckoutDisabledNotice";
+import { Locale } from "@/i18n/request";
 
 type PendingCheckout = {
   packId: string;
@@ -66,6 +67,7 @@ const STATIC_PRODUCTS: Products = {
 
 export default function HomePageClient() {
   const t = useTranslations();
+  const locale = useLocale() as Locale;
   const { authenticated, register, login, userId } = useKeycloak();
 
   const [products, setProducts] = useState<Products | undefined>(
@@ -183,7 +185,7 @@ export default function HomePageClient() {
               <ArrowRight /> {t("hero.packs")}
             </Button>
             {authenticated ? (
-              <Link href={chariotAppUrl()}>
+              <Link href={chariotAppUrl(locale)}>
                 <Button variant={"custom"}>{t("header.myAccount")}</Button>
               </Link>
             ) : (
@@ -480,7 +482,7 @@ export default function HomePageClient() {
                     <ArrowRight /> {t("features.packs")}
                   </Button>
                   {authenticated ? (
-                    <Link href={chariotAppUrl()}>
+                    <Link href={chariotAppUrl(locale)}>
                       <Button variant={"custom"}>
                         {t("header.myAccount")}
                       </Button>

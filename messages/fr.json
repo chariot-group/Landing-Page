@@ -10,7 +10,7 @@
     "logout": "Déconnexion"
   },
   "hero": {
-    "title": "Explorez une toute nouvelle façon de vivre le jeu de rôle !",
+    "title": "Gérez vos campagnes Donjons & Dragons et jeux de rôle comme jamais auparavant !",
     "packs": "NOS PACKS",
     "registration": "Créer mon compte"
   },
@@ -22,15 +22,15 @@
     },
     "explorator": {
       "name": "PACK EXPLORATEUR",
-      "description": "Idéal pour les aventuriers débutants."
+      "description": "Idéal pour les Maîtres du Jeu qui débutent en Donjons & Dragons."
     },
     "legendary": {
       "name": "PACK LÉGENDAIRE",
-      "description": "Pour les maîtres du jeu aguerris en quête de puissance ultime."
+      "description": "Pour les Maîtres du Jeu aguerris en quête de la puissance ultime pour leurs campagnes D&D."
     },
     "aventurer": {
       "name": "PACK AVENTURIER",
-      "description": "Le meilleur pack pour la meilleure expérience. Tout simplement."
+      "description": "Le meilleur pack pour une expérience de jeu de rôle optimale. Tout simplement."
     },
     "recommended": "Recommandé",
     "unavailableAlert": "Produit indisponible pour le moment",
@@ -49,25 +49,25 @@
   "howWorks": {
     "title1": "COMMENT MARCHENT",
     "title2": "LES CHARS",
-    "description1": "Le Char est la monnaie unique de Chariot, elle vous permet d’accéder à toutes les fonctionnalités “in game” de l’application, sur Chariot le principe est simple.",
+    "description1": "Le Char est la monnaie unique de Chariot, l'application dédiée aux Maîtres du Jeu de jeux de rôle et Donjons & Dragons. Sur Chariot, le principe est simple.",
     "description2": "Pour lancer une session à 5, vous pourriez très bien dépenser 1 char chacun, ou un joueur pourrait payer 5 chars pour que tout le monde puisse jouer. Sur Chariot, chacun s’organise comme il le veut.",
     "session": "SESSION"
   },
   "features": {
     "title": "LES FONCTIONNALITÉS",
-    "description": "Tout ce dont vous avez besoin pour vivre une aventure fluide.",
+    "description": "Tout ce dont un Maître du Jeu a besoin pour mener ses campagnes D&D et jeux de rôle sans friction.",
     "feature1": {
-      "title": "Gestion fluide des joueurs",
+      "title": "Gestion des joueurs et fiches de personnages",
       "description1": "Centralisez fiches de personnages, inventaires, jets et états en un seul espace.",
       "description2": "Chaque joueur avance sans friction, pendant que la partie reste parfaitement lisible pour tous."
     },
     "feature2": {
-      "title": "Boîte à outils narrative pour MJ",
+      "title": "Boîte à outils narrative pour Maître du Jeu",
       "description1": "Créez, organisez et improvisez vos scénarios en temps réel.",
       "description2": "PNJ, lieux, intrigues et événements sont à portée de clic pour garder le rythme et nourrir l'immersion."
     },
     "feature3": {
-      "title": "Initiative et combat simplifiés",
+      "title": "Tracker d'initiative et gestion des combats D&D",
       "description1": "Automatisez les tours, suivez les actions et visualisez l'ordre de jeu instantanément.",
       "description2": "Moins de calculs, plus de flow: la mécanique s'efface au profit de l'aventure."
     },
