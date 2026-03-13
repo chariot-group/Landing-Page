@@ -64,7 +64,7 @@ jobs:
             echo "disable_checkout=${{ secrets.PROD_NEXT_PUBLIC_DISABLE_CHECKOUT }}" >> $GITHUB_OUTPUT
 
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
+        uses: docker/setup-qemu-action@v4
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v4
