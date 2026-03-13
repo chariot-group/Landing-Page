@@ -15,6 +15,12 @@ const languageNameFallback: Record<Locale, Record<Locale, string>> = {
   es: { fr: "Francés", en: "Inglés", es: "Español" },
 };
 
+function uppercaseFirstLetter(value: string) {
+  if (!value) return value;
+
+  return value.charAt(0).toLocaleUpperCase() + value.slice(1);
+}
+
 function getLocaleLabel(loc: Locale, currentLocale: Locale) {
   const languageDisplayNames =
     typeof Intl !== "undefined" && "DisplayNames" in Intl
@@ -24,7 +30,7 @@ function getLocaleLabel(loc: Locale, currentLocale: Locale) {
   const languageName =
     languageDisplayNames?.of(loc) ?? languageNameFallback[currentLocale][loc];
 
-  return `${localeToFlag[loc]} ${languageName}`;
+  return `${localeToFlag[loc]} ${uppercaseFirstLetter(languageName)}`;
 }
 
 export function useLanguageSwitcher() {
