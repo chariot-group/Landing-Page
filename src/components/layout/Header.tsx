@@ -16,8 +16,17 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { MenuIcon } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import React from "react";
+import { useLanguageSwitcher } from "@/hooks/useLanguageSwitcher";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../ui/select";
 
 interface item {
   libelle: string;
@@ -28,7 +37,7 @@ export default function Header() {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
 
   const t = useTranslations("header");
-  const locale = useLocale();
+  const { locale, languageOptions, switchLocale } = useLanguageSwitcher();
   const { authenticated, login, register, logout } = useKeycloak();
 
   const buttons: item[] = [
@@ -78,25 +87,41 @@ export default function Header() {
               </ul>
               <div className="border-t mx-4"></div>
               <div className="flex flex-wrap gap-2 px-4 py-2">
-                {authenticated ? (
-                  <React.Fragment>
-                    <Button variant={"outline"} onClick={logout}>
-                      {t("logout")}
-                    </Button>
-                    <Link href={chariotAppUrl()}>
-                      <Button variant={"custom"}>{t("myAccount")}</Button>
-                    </Link>
-                  </React.Fragment>
-                ) : (
-                  <React.Fragment>
-                    <Button variant={"outline"} onClick={register}>
-                      {t("registration")}
-                    </Button>
-                    <Button variant={"custom"} onClick={login}>
-                      {t("connection")}
-                    </Button>
-                  </React.Fragment>
-                )}
+                <Select value={locale} onValueChange={switchLocale}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select a langue" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectGroup>
+                      {languageOptions.map((language) => (
+                        <SelectItem key={language.value} value={language.value}>
+                          {language.label}
+                        </SelectItem>
+                      ))}
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
+                <div className="flex gap-2">
+                  {authenticated ? (
+                    <React.Fragment>
+                      <Button variant={"outline"} onClick={logout}>
+                        {t("logout")}
+                      </Button>
+                      <Link href={chariotAppUrl(locale)}>
+                        <Button variant={"custom"}>{t("myAccount")}</Button>
+                      </Link>
+                    </React.Fragment>
+                  ) : (
+                    <React.Fragment>
+                      <Button variant={"outline"} onClick={register}>
+                        {t("registration")}
+                      </Button>
+                      <Button variant={"custom"} onClick={login}>
+                        {t("connection")}
+                      </Button>
+                    </React.Fragment>
+                  )}
+                </div>
               </div>
             </nav>
           </SheetContent>
@@ -121,27 +146,43 @@ export default function Header() {
           </ul>
         </nav>
       </div>
-      <div className="hidden xl:flex gap-2">
-        {authenticated ? (
-          // Afficher un avatar simple (exemple générique)
-          <React.Fragment>
-            <Button variant={"outline"} onClick={logout}>
-              {t("logout")}
-            </Button>
-            <Link href={chariotAppUrl()}>
-              <Button variant={"custom"}>{t("myAccount")}</Button>
-            </Link>
-          </React.Fragment>
-        ) : (
-          <React.Fragment>
-            <Button variant={"outline"} onClick={register}>
-              {t("registration")}
-            </Button>
-            <Button variant={"custom"} onClick={login}>
-              {t("connection")}
-            </Button>
-          </React.Fragment>
-        )}
+      <div className="hidden xl:flex gap-5">
+        <Select value={locale} onValueChange={switchLocale}>
+          <SelectTrigger>
+            <SelectValue placeholder="Select a langue" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              {languageOptions.map((language) => (
+                <SelectItem key={language.value} value={language.value}>
+                  {language.label}
+                </SelectItem>
+              ))}
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+        <div className="flex gap-2">
+          {authenticated ? (
+            // Afficher un avatar simple (exemple générique)
+            <React.Fragment>
+              <Button variant={"outline"} onClick={logout}>
+                {t("logout")}
+              </Button>
+              <Link href={chariotAppUrl(locale)}>
+                <Button variant={"custom"}>{t("myAccount")}</Button>
+              </Link>
+            </React.Fragment>
+          ) : (
+            <React.Fragment>
+              <Button variant={"outline"} onClick={register}>
+                {t("registration")}
+              </Button>
+              <Button variant={"custom"} onClick={login}>
+                {t("connection")}
+              </Button>
+            </React.Fragment>
+          )}
+        </div>
       </div>
     </header>
   );

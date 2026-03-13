@@ -27,11 +27,13 @@ export function useLocalePreference() {
 
     localStorage.setItem(LOCALE_STORAGE_KEY, preferredLocale);
     setCookie(LOCALE_STORAGE_KEY, preferredLocale);
+    setCookie("NEXT_LOCALE", preferredLocale);
   }, [preferredLocale]);
 
   const saveLocalePreference = (locale: Locale) => {
     localStorage.setItem(LOCALE_STORAGE_KEY, locale);
     setCookie(LOCALE_STORAGE_KEY, locale);
+    setCookie("NEXT_LOCALE", locale);
     setPreferredLocale(locale);
   };
 
@@ -93,6 +95,7 @@ export function saveStoredLocale(locale: Locale): void {
   if (typeof window === "undefined") return;
   localStorage.setItem(LOCALE_STORAGE_KEY, locale);
   setCookie(LOCALE_STORAGE_KEY, locale);
+  setCookie("NEXT_LOCALE", locale);
 }
 
 /**

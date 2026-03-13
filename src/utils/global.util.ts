@@ -1,4 +1,4 @@
-import { detectBrowserLocale, saveStoredLocale } from "@/hooks/useLocalPreference";
+import { defaultLocale, Locale } from "@/i18n/request";
 
 export function scrollToSection(
   section: string,
@@ -15,9 +15,6 @@ export function scrollToSection(
   }
 }
 
-export function chariotAppUrl(): string {
-  const detectedLocale = detectBrowserLocale();
-  saveStoredLocale(detectedLocale);
-
-  return `${process.env.NEXT_PUBLIC_CHARIOT_URL}/${detectedLocale}`;
+export function chariotAppUrl(locale: Locale = defaultLocale): string {
+  return `${process.env.NEXT_PUBLIC_CHARIOT_URL}/${locale}`;
 }

@@ -10,7 +10,7 @@
     "logout": "Logout"
   },
   "hero": {
-    "title": "Discover a new way to live the role-playing game!",
+    "title": "Manage your Dungeons & Dragons and TTRPG campaigns like never before!",
     "packs": "OUR PACKS",
     "registration": "Create my account"
   },
@@ -22,15 +22,15 @@
     },
     "explorator": {
       "name": "EXPLORATOR PACK",
-      "description": "Ideal for beginner adventurers."
+      "description": "Ideal for Game Masters just starting out with Dungeons & Dragons."
     },
     "legendary": {
       "name": "LEGENDARY PACK",
-      "description": "For experienced game masters seeking maximum power."
+      "description": "For experienced Game Masters seeking maximum power for their D&D campaigns."
     },
     "aventurer": {
       "name": "ADVENTURER PACK",
-      "description": "The best pack for the best experience. Simply."
+      "description": "The best pack for the ultimate tabletop RPG experience. Simply."
     },
     "recommended": "Recommended",
     "unavailableAlert": "Product unavailable at the moment",
@@ -49,25 +49,25 @@
   "howWorks": {
     "title1": "HOW IT WORKS",
     "title2": "THE CHARS",
-    "description1": "The Char is the unique currency of Chariot, which allows you to access all the features “inside the game” of the application. On Chariot, the principle is simple.",
+    "description1": "The Char is the unique currency of Chariot, the app dedicated to tabletop RPG and D&D Game Masters. On Chariot, the principle is simple.",
     "description2": "To run a 5-player session, you could spend 1 char each, or one player could pay 5 chars so everyone can play. On Chariot, everyone organizes themselves as they wish.",
     "session": "SESSION"
   },
   "features": {
     "title": "THE FEATURES",
-    "description": "Everything you need to live a smooth adventure.",
+    "description": "Everything a Game Master needs to run smooth D&D and TTRPG campaigns.",
     "feature1": {
-      "title": "Smooth player management",
+      "title": "Player and character sheet management",
       "description1": "Centralize character cards, inventories, rolls and states in a single space.",
       "description2": "Each player advances without friction, while the game remains perfectly readable for everyone."
     },
     "feature2": {
-      "title": "Narrative toolkit for GMs",
+      "title": "Narrative toolkit for Game Masters",
       "description1": "Create, organize and improvise your scenarios in real time.",
       "description2": "NPCs, locations, plots and events are at a click's reach to maintain pace and feed immersion."
     },
     "feature3": {
-      "title": "Simplified initiative and combat",
+      "title": "Initiative tracker and D&D combat management",
       "description1": "Automate turns, follow actions and visualize the game order instantly.",
       "description2": "Less calculations, more flow: the mechanics fade in favor of the adventure."
     },
