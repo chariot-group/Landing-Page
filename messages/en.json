@@ -12,7 +12,8 @@
   "hero": {
     "title": "Manage your Dungeons & Dragons and TTRPG campaigns like never before!",
     "packs": "OUR PACKS",
-    "registration": "Create my account"
+    "registration": "Create my account",
+    "freeTokenOffer": "Create your account. Get your 1st token free"
   },
   "packs": {
     "custom": {

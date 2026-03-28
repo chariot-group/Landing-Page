@@ -205,6 +205,21 @@ export default function HomePageClient() {
         <div className="relative lg:m-26 m-10 md:grid flex flex-col md:grid-cols-2 xl:grid-cols-4 lg:px-0 px-2 sm:px-10 md:gap-4 gap-3 max-w-6xl mx-auto self-center">
           {isCheckoutDisabled && <CheckoutDisabledNotice />}
 
+          {!authenticated && (
+            <div className="z-10 md:col-span-2 xl:col-span-4 flex justify-center">
+              <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-medium text-black shadow-sm">
+                <Image
+                  src={Token}
+                  alt="Char token"
+                  width={18}
+                  height={18}
+                  className="h-4.5 w-4.5"
+                />
+                <span>{t("hero.freeTokenOffer")}</span>
+              </div>
+            </div>
+          )}
+
           {unit && (
             <Card className="relative justify-between col-span-2 bg-[url('/assets/background/packs.jpg')] bg-cover bg-center bg-no-repeat">
               <div className="absolute inset-0 bg-black/30 top-0 bottom-0 z-5 rounded-[15px]"></div>
@@ -397,6 +412,7 @@ export default function HomePageClient() {
             <div className="absolute inset-0 bg-black/60 top-0 bottom-0"></div>
 
             <div className="max-w-7xl mx-auto h-full flex items-center justify-center">
+              <div className="flex flex-col items-center gap-4 z-10">
               <span className="md:text-6xl text-2xl text-white font-bold flex items-center gap-2 z-10">
                 <span className="flex gap-2 items-center">
                   1{" "}
@@ -419,6 +435,19 @@ export default function HomePageClient() {
                   />
                 </span>
               </span>
+              {!authenticated && (
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-4 py-2 text-xs md:text-sm font-medium text-white backdrop-blur-xs">
+                  <Image
+                    src={Token}
+                    alt="Char token"
+                    width={16}
+                    height={16}
+                    className="h-4 w-4"
+                  />
+                  <span>{t("hero.freeTokenOffer")}</span>
+                </div>
+              )}
+              </div>
             </div>
           </div>
           <Card id="features" className="-translate-y-5 rounded-b-none p-0">

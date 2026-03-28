@@ -12,7 +12,8 @@
   "hero": {
     "title": "Gérez vos campagnes Donjons & Dragons et jeux de rôle comme jamais auparavant !",
     "packs": "NOS PACKS",
-    "registration": "Créer mon compte"
+    "registration": "Créer mon compte",
+    "freeTokenOffer": "Crée ton compte, ton 1er token est offert"
   },
   "packs": {
     "custom": {
