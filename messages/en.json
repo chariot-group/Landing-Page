@@ -521,6 +521,23 @@
         ]
       },
       {
+        "title": "In-app image credits",
+        "content": [
+          {
+            "type": "list",
+            "text": "Campaign image: designed by liuzishan - Freepik.com"
+          },
+          {
+            "type": "list",
+            "text": "Character image: designed by Freepik"
+          },
+          {
+            "type": "list",
+            "text": "Session image: designed by upklyak - Freepik.com"
+          }
+        ]
+      },
+      {
         "title": "Contact",
         "content": [
           {

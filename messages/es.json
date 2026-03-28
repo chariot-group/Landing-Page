@@ -521,6 +521,23 @@
         ]
       },
       {
+        "title": "Créditos de imágenes dentro de la aplicación",
+        "content": [
+          {
+            "type": "list",
+            "text": "Imagen de campaña: designed by liuzishan - Freepik.com"
+          },
+          {
+            "type": "list",
+            "text": "Imagen de personaje: designed by Freepik"
+          },
+          {
+            "type": "list",
+            "text": "Imagen de sesión: designed by upklyak - Freepik.com"
+          }
+        ]
+      },
+      {
         "title": "Contacto",
         "content": [
           {
