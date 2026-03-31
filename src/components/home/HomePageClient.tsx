@@ -150,6 +150,33 @@ export default function HomePageClient() {
     }
   }, [authenticated, handleCheckout, isCheckoutDisabled, userId]);
 
+  useEffect(() => {
+    const section = window.location.hash.replace("#", "");
+
+    if (!section) {
+      return;
+    }
+
+    const frameId = window.requestAnimationFrame(() => {
+      const target = document.getElementById(section);
+
+      if (!target) {
+        return;
+      }
+
+      const targetTop = target.getBoundingClientRect().top;
+      const expectedOffset = window.innerWidth < 1280 ? 96 : 80;
+
+      if (Math.abs(targetTop - expectedOffset) <= 16) {
+        return;
+      }
+
+      scrollToSection(section, "auto");
+    });
+
+    return () => window.cancelAnimationFrame(frameId);
+  }, []);
+
   const handleCardKeyDown = (
     event: KeyboardEvent<HTMLDivElement>,
     callback: () => void,
@@ -168,7 +195,7 @@ export default function HomePageClient() {
       <section
         id="hero"
         aria-labelledby="hero-title"
-        className="relative h-[90vh] bg-[url('/background.svg')] xl:bg-size-[60%] lg:bg-size-[80%] bg-cover bg-center bg-no-repeat"
+        className="relative h-[90vh] scroll-mt-24 xl:scroll-mt-20 bg-[url('/background.svg')] xl:bg-size-[60%] lg:bg-size-[80%] bg-cover bg-center bg-no-repeat"
       >
         <div className="flex flex-col h-[70vh] justify-end xl:max-w-5xl sm:px-10 px-2 mx-auto gap-5">
           <h1
@@ -201,7 +228,7 @@ export default function HomePageClient() {
         </div>
         <div className="absolute -z-10 -bottom-5 bg-linear-to-t from-black to-transparent h-15 w-full"></div>
       </section>
-      <Card id="packs" className="p-0">
+      <Card id="packs" className="scroll-mt-24 xl:scroll-mt-20 p-0">
         <div className="relative lg:m-26 m-10 md:grid flex flex-col md:grid-cols-2 xl:grid-cols-4 lg:px-0 px-2 sm:px-10 md:gap-4 gap-3 max-w-6xl mx-auto self-center">
           {isCheckoutDisabled && <CheckoutDisabledNotice />}
 
@@ -377,7 +404,7 @@ export default function HomePageClient() {
 
         <Card
           id="how-it-works"
-          className="bg-white p-0 text-black gap-0 rounded-b-none"
+          className="scroll-mt-24 xl:scroll-mt-20 bg-white p-0 text-black gap-0 rounded-b-none"
         >
           <div className="xl:m-26 lg:m-15 m-10 flex flex-col gap-5 lg:grid grid-cols-1 lg:grid-cols-2 max-w-6xl mx-auto items-center self-center">
             <div className="justify-center items-center flex md:px-10 px-2">
@@ -450,7 +477,7 @@ export default function HomePageClient() {
               </div>
             </div>
           </div>
-          <Card id="features" className="-translate-y-5 rounded-b-none p-0">
+          <Card id="features" className="scroll-mt-24 xl:scroll-mt-20 -translate-y-5 rounded-b-none p-0">
             <div className="max-w-6xl w-full xl:px-0 md:px-10 p-2 xl:m-17 m-10 mx-auto flex flex-col gap-10 self-center">
               <div className="self-start flex flex-col gap-2">
                 <h2 className="md:text-4xl text-xl font-bold">

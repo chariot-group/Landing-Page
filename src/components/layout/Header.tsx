@@ -48,7 +48,10 @@ export default function Header() {
   ];
 
   return (
-    <header className="xl:px-15 px-10 py-4 flex items-center justify-between fixed top-0 left-0 right-0 z-50 bg-linear-to-b from-black to-transparent">
+    <header
+      id="site-header"
+      className="xl:px-15 px-10 py-4 flex items-center justify-between fixed top-0 left-0 right-0 z-50 bg-linear-to-b from-black to-transparent"
+    >
       <div className="flex items-center gap-15">
         <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
           <SheetTrigger asChild className="xl:hidden">
@@ -76,8 +79,10 @@ export default function Header() {
                       type="button"
                       className="h-9 px-4 py-2 cursor-pointer hover:text-primary transition-colors duration-300 text-left w-full"
                       onClick={() => {
-                        scrollToSection(item.id);
-                        setIsSheetOpen(false);
+                          setIsSheetOpen(false);
+                          window.setTimeout(() => {
+                            scrollToSection(item.id);
+                          }, 0);
                       }}
                     >
                       {item.libelle}
