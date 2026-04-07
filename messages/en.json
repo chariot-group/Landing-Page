@@ -48,9 +48,9 @@
   },
   "howWorks": {
     "title1": "HOW IT WORKS",
-    "title2": "THE CHARS",
-    "description1": "The Char is the unique currency of Chariot, the app dedicated to tabletop RPG and D&D Game Masters. On Chariot, the principle is simple.",
-    "description2": "To run a 5-player session, you could spend 1 char each, or one player could pay 5 chars so everyone can play. On Chariot, everyone organizes themselves as they wish.",
+    "title2": "THE WHEELS",
+    "description1": "The Wheel is the unique currency of Chariot, the app dedicated to tabletop RPG and D&D Game Masters. On Chariot, the principle is simple.",
+    "description2": "To run a 5-player session, you could spend 1 Wheel each, or one player could pay 5 Wheels so everyone can play. On Chariot, everyone organizes themselves as they wish.",
     "session": "SESSION"
   },
   "features": {
@@ -84,8 +84,8 @@
     "title": "FAQ",
     "q1": "Which game systems do you support?",
     "a1": "For now, we only support Dungeons & Dragons 5th edition, but we plan to support other game systems in the future. Feel free to share your suggestions!",
-    "q2": "How long does a token last?",
-    "a2": "A token lasts 8 hours once consumed, but as long as it is not spent, you can keep it forever!",
+    "q2": "How long does a Wheel last?",
+    "a2": "A Wheel lasts 8 hours once consumed, but as long as it is not spent, you can keep it forever!",
     "q3": "What new features can we expect?",
     "a3": "We are currently working on sessions, a module that will let you interact with all your players in real time. It will include the real-time combat manager, player character sheet management by the GM during the session, and in-game actions: casting a spell, using an ability (rage, bardic inspiration, etc.), resting, and more."
   },
@@ -147,7 +147,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "The service offers a freemium version to create, organize, and manage campaigns, as well as one-time Char pack purchases (without subscription or automatic renewal) with advanced features."
+            "text": "The service offers a freemium version to create, organize, and manage campaigns, as well as one-time Wheel pack purchases (without subscription or automatic renewal) with advanced features."
           }
         ]
       },
@@ -284,7 +284,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "These General Terms and Conditions of Sale govern the sale of Char packs and related paid services of the Chariot application by CHARIOT."
+            "text": "These General Terms and Conditions of Sale govern the sale of Wheel packs and related paid services of the Chariot application by CHARIOT."
           }
         ]
       },
@@ -293,7 +293,7 @@
         "content": [
           {
             "type": "list",
-            "text": "Paid offers correspond to 4 Char packs described on the website."
+            "text": "Paid offers correspond to 4 Wheel packs described on the website."
           },
           {
             "type": "list",
@@ -314,7 +314,7 @@
           },
           {
             "type": "list",
-            "text": "Order validation constitutes acceptance of the Terms and Conditions of Sale and triggers immediate Char crediting."
+            "text": "Order validation constitutes acceptance of the Terms and Conditions of Sale and triggers immediate Wheel crediting."
           }
         ]
       },
@@ -340,11 +340,11 @@
         "content": [
           {
             "type": "list",
-            "text": "Char packs are one-time purchases with no automatic renewal."
+            "text": "Wheel packs are one-time purchases with no automatic renewal."
           },
           {
             "type": "list",
-            "text": "Credited Chars remain available on the user account as long as they are not consumed and the account remains active."
+            "text": "Credited Wheels remain available on the user account as long as they are not consumed and the account remains active."
           }
         ]
       },
@@ -357,11 +357,11 @@
           },
           {
             "type": "list",
-            "text": "A refund is only possible for purchased and unused packs, provided the user has a sufficient Char balance."
+            "text": "A refund is only possible for purchased and unused packs, provided the user has a sufficient Wheel balance."
           },
           {
             "type": "list",
-            "text": "Refunds are processed per purchased pack (no recomposition into different packs), and the corresponding Chars are deducted during processing."
+            "text": "Refunds are processed per purchased pack (no recomposition into different packs), and the corresponding Wheels are deducted during processing."
           }
         ]
       },
@@ -374,7 +374,7 @@
           },
           {
             "type": "list",
-            "text": "In case of account suspension or deletion, access to unused Chars may be limited or lost depending on applicable legal and technical constraints."
+            "text": "In case of account suspension or deletion, access to unused Wheels may be limited or lost depending on applicable legal and technical constraints."
           }
         ]
       },
@@ -439,7 +439,7 @@
           },
           {
             "type": "list",
-            "text": "Transaction data related to Char pack purchases and refund requests."
+            "text": "Transaction data related to Wheel pack purchases and refund requests."
           }
         ]
       },
@@ -456,7 +456,7 @@
           },
           {
             "type": "list",
-            "text": "Management of pack purchases, Char crediting, and eligible refunds,"
+            "text": "Management of pack purchases, Wheel crediting, and eligible refunds,"
           },
           {
             "type": "list",
@@ -634,7 +634,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "For any information regarding the collection and processing of your personal data, including payment data and Char pack purchase history, please refer to our Privacy Policy."
+            "text": "For any information regarding the collection and processing of your personal data, including payment data and Wheel pack purchase history, please refer to our Privacy Policy."
           }
         ]
       }

@@ -71,9 +71,9 @@ const SEO_BY_LOCALE: Record<
           "Pour le moment, nous supportons uniquement Donjons & Dragons 5ème édition, mais nous avons pour ambition de supporter d'autres systèmes de jeu à l'avenir. N'hésitez pas à nous faire part de vos suggestions !",
       },
       {
-        question: "Combien de temps dure un token ?",
+        question: "Combien de temps dure un Wheel ?",
         answer:
-          "Un token dure 8h une fois consommé, mais tant qu'il n'est pas dépensé vous pouvez le garder à vie !",
+          "Un Wheel dure 8h une fois consommé, mais tant qu'il n'est pas dépensé vous pouvez le garder à vie !",
       },
       {
         question: "Quelles sont les nouveautés à attendre ?",
@@ -129,9 +129,9 @@ const SEO_BY_LOCALE: Record<
           "For now, we only support Dungeons & Dragons 5th edition, but we plan to support other game systems in the future. Feel free to share your suggestions!",
       },
       {
-        question: "How long does a token last?",
+        question: "How long does a Wheel last?",
         answer:
-          "A token lasts 8 hours once consumed, but as long as it is not spent, you can keep it forever!",
+          "A Wheel lasts 8 hours once consumed, but as long as it is not spent, you can keep it forever!",
       },
       {
         question: "What new features can we expect?",
@@ -178,9 +178,9 @@ const SEO_BY_LOCALE: Record<
           "Por ahora, solo soportamos Dungeons & Dragons 5ª edición, pero tenemos la ambición de soportar otros sistemas de juego en el futuro. ¡No dudes en hacernos llegar tus sugerencias!",
       },
       {
-        question: "¿Cuánto dura un token?",
+        question: "¿Cuánto dura un Wheel?",
         answer:
-          "Un token dura 8 horas una vez consumido, ¡pero mientras no lo gastes, puedes guardarlo de por vida!",
+          "Un Wheel dura 8 horas una vez consumido, ¡pero mientras no lo gastes, puedes guardarlo de por vida!",
       },
       {
         question: "¿Qué novedades podemos esperar?",

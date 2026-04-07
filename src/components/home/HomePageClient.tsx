@@ -245,7 +245,7 @@ export default function HomePageClient() {
                   €{" "}
                   <Image
                     src={Token}
-                    alt="Char token"
+                    alt="Wheel token"
                     width={15}
                     height={15}
                     className="inline-block ml-1"
@@ -287,7 +287,7 @@ export default function HomePageClient() {
                     {product.metadata?.token_number}{" "}
                     <Image
                       src={Token}
-                      alt="Char token"
+                      alt="Wheel token"
                       className="md:h-6.25 md:w-6.25 h-4 w-4"
                       width={25}
                       height={25}
@@ -344,14 +344,14 @@ export default function HomePageClient() {
                 </div>
                 <span className="sm:flex hidden font-bold text-8xl self-center text-primary">
                   {recommended.metadata?.token_number}{" "}
-                  <Image src={Token} alt="Char token" width={60} height={60} />
+                  <Image src={Token} alt="Wheel token" width={60} height={60} />
                 </span>
               </div>
 
               <div className="flex flex-row sm:self-end justify-between items-center">
                 <span className="flex sm:hidden font-bold text-3xl self-center text-primary">
                   {recommended.metadata?.token_number}{" "}
-                  <Image src={Token} alt="Char token" width={25} height={25} />
+                  <Image src={Token} alt="Wheel token" width={25} height={25} />
                 </span>
                 <div className="flex flex-col">
                   <span className="md:text-sm text-xs">
@@ -379,7 +379,7 @@ export default function HomePageClient() {
                   <Image
                     src={Token}
                     className="md:h-11.25 md:w-11.25 h-6 w-6"
-                    alt="Char token"
+                    alt="Wheel token"
                     width={45}
                     height={45}
                   />{" "}
@@ -409,7 +409,7 @@ export default function HomePageClient() {
                   <Image
                     src={Token}
                     className="md:h-11.25 md:w-11.25 h-6 w-6"
-                    alt="Char token"
+                    alt="Wheel token"
                     width={40}
                     height={40}
                   />
