@@ -228,6 +228,138 @@ export default function HomePageClient() {
         </div>
         <div className="absolute -z-10 -bottom-5 bg-linear-to-t from-black to-transparent h-15 w-full"></div>
       </section>
+      <Card
+        id="features"
+        className="scroll-mt-24 xl:scroll-mt-20 bg-white p-0 text-black gap-0 rounded-b-none"
+      >
+        <div className="max-w-6xl w-full xl:px-0 md:px-10 p-2 xl:m-17 m-10 mx-auto flex flex-col gap-10 self-center">
+          <div className="self-start flex flex-col gap-2">
+            <h2 className="md:text-4xl text-xl font-bold">
+              {t("features.title")}
+            </h2>
+            <p className="md:text-sm text-xs text-foreground">
+              {t("features.description")}
+            </p>
+          </div>
+          <div className="flex flex-col gap-2 w-full mx-auto self-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 max-w-4xl mx-auto gap-2">
+              <Feature
+                title={t("features.feature1.title")}
+                description={[
+                  t("features.feature1.description1"),
+                  t("features.feature1.description2"),
+                ]}
+                url={"/assets/background/gestion_joueur.svg"}
+              />
+              <Feature
+                title={t("features.feature2.title")}
+                description={[
+                  t("features.feature2.description1"),
+                  t("features.feature2.description2"),
+                ]}
+                url={"/assets/background/mj.svg"}
+              />
+              <Feature
+                title={t("features.feature3.title")}
+                description={[
+                  t("features.feature3.description1"),
+                  t("features.feature3.description2"),
+                ]}
+                url={"/assets/background/initiative.svg"}
+              />
+              <Feature
+                title={t("features.feature4.title")}
+                description={[
+                  t("features.feature4.description1"),
+                  t("features.feature4.description2"),
+                ]}
+                url={"/assets/background/codex.svg"}
+              />
+            </div>
+          </div>
+        </div>
+      </Card>
+
+      <Card
+        id="how-it-works"
+        className="scroll-mt-24 xl:scroll-mt-20 bg-card p-0 text-white gap-0 rounded-b-none"
+      >
+        <div className="xl:m-26 lg:m-15 m-10 flex flex-col gap-5 lg:grid grid-cols-1 lg:grid-cols-2 max-w-6xl mx-auto items-center self-center">
+          <div className="justify-center items-center flex md:px-10 px-2">
+            <h2 className="font-bold flex items-center justify-center lg:justify-start gap-2 flex-wrap xl:text-4xl md:text-3xl text-xl">
+              <span>{t("howWorks.title1")}</span>
+              <div className="flex flex-row gap-2 items-center">
+                <span>{t("howWorks.title2")}</span>
+                <Image
+                  src={Token}
+                  className="md:h-11.25 md:w-11.25 h-6 w-6"
+                  alt="Char token"
+                  width={45}
+                  height={45}
+                />{" "}
+                <span>?</span>
+              </div>
+            </h2>
+          </div>
+          <div className="flex flex-col gap-4 md:px-10 px-2">
+            <p className="md:text-sm text-xs text-white/80">
+              {t("howWorks.description1")}
+            </p>
+            <p className="md:text-sm text-xs text-white/80">
+              {t("howWorks.description2")}
+            </p>
+          </div>
+        </div>
+        <div className="relative w-full md:h-[50vh] h-[25vh]">
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat blur-[2px]"
+            style={{
+              backgroundImage: `url('/assets/background/explication.jpeg')`,
+              opacity: 0.9,
+            }}
+          ></div>
+          <div className="absolute inset-0 bg-black/60 top-0 bottom-0"></div>
+
+          <div className="max-w-7xl mx-auto h-full flex items-center justify-center">
+            <div className="flex flex-col items-center gap-4 z-10">
+              <span className="md:text-6xl text-2xl text-white font-bold flex items-center gap-2 z-10">
+                <span className="flex gap-2 items-center">
+                  1{" "}
+                  <Image
+                    src={Token}
+                    className="md:h-11.25 md:w-11.25 h-6 w-6"
+                    alt="Char token"
+                    width={40}
+                    height={40}
+                  />
+                </span>
+                <span> = 1 {t("howWorks.session")} = </span>
+                <span className="flex gap-1 items-center">
+                  1{" "}
+                  <UserRound
+                    className="md:h-12.5 md:w-12.5 h-6 w-6"
+                    width={50}
+                    height={50}
+                    strokeWidth={2}
+                  />
+                </span>
+              </span>
+              {!authenticated && (
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-4 py-2 text-xs md:text-sm font-medium text-white backdrop-blur-xs">
+                  <Image
+                    src={Token}
+                    alt="Char token"
+                    width={16}
+                    height={16}
+                    className="h-4 w-4"
+                  />
+                  <span>{t("hero.freeTokenOffer")}</span>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </Card>
       <Card id="packs" className="scroll-mt-24 xl:scroll-mt-20 p-0">
         <div className="relative lg:m-26 m-10 md:grid flex flex-col md:grid-cols-2 xl:grid-cols-4 lg:px-0 px-2 sm:px-10 md:gap-4 gap-3 max-w-6xl mx-auto self-center">
           {isCheckoutDisabled && <CheckoutDisabledNotice />}
@@ -248,8 +380,8 @@ export default function HomePageClient() {
           )}
 
           {unit && (
-            <Card className="relative justify-between col-span-2 bg-[url('/assets/background/packs.jpg')] bg-cover bg-center bg-no-repeat">
-              <div className="absolute inset-0 bg-black/30 top-0 bottom-0 z-5 rounded-[15px]"></div>
+            <Card className="relative overflow-hidden justify-between col-span-2 bg-[url('/assets/background/packs.jpg')] bg-cover bg-center bg-no-repeat">
+              <div className="absolute inset-0 bg-black/30 top-0 bottom-0 z-5 rounded-[24px]"></div>
               <div className="flex flex-col gap-4 z-10">
                 <h2 className="md:text-3xl text-xl font-semibold text-white">
                   {t(`packs.${unit.name}`)}
@@ -401,163 +533,37 @@ export default function HomePageClient() {
             </Card>
           )}
         </div>
-
-        <Card
-          id="how-it-works"
-          className="scroll-mt-24 xl:scroll-mt-20 bg-white p-0 text-black gap-0 rounded-b-none"
-        >
-          <div className="xl:m-26 lg:m-15 m-10 flex flex-col gap-5 lg:grid grid-cols-1 lg:grid-cols-2 max-w-6xl mx-auto items-center self-center">
-            <div className="justify-center items-center flex md:px-10 px-2">
-              <h2 className="font-bold flex items-center justify-center lg:justify-start gap-2 flex-wrap xl:text-4xl md:text-3xl text-xl">
-                <span>{t("howWorks.title1")}</span>
-                <div className="flex flex-row gap-2 items-center">
-                  <span>{t("howWorks.title2")}</span>
-                  <Image
-                    src={Token}
-                    className="md:h-11.25 md:w-11.25 h-6 w-6"
-                    alt="Char token"
-                    width={45}
-                    height={45}
-                  />{" "}
-                  <span>?</span>
-                </div>
-              </h2>
-            </div>
-            <div className="flex flex-col gap-4 md:px-10 px-2">
-              <p className="md:text-sm text-xs">{t("howWorks.description1")}</p>
-              <p className="md:text-sm text-xs">{t("howWorks.description2")}</p>
-            </div>
-          </div>
-          <div className="relative w-full md:h-[50vh] h-[25vh]">
-            <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat blur-[2px]"
-              style={{
-                backgroundImage: `url('/assets/background/explication.jpeg')`,
-                opacity: 0.9,
-              }}
-            ></div>
-            <div className="absolute inset-0 bg-black/60 top-0 bottom-0"></div>
-
-            <div className="max-w-7xl mx-auto h-full flex items-center justify-center">
-              <div className="flex flex-col items-center gap-4 z-10">
-              <span className="md:text-6xl text-2xl text-white font-bold flex items-center gap-2 z-10">
-                <span className="flex gap-2 items-center">
-                  1{" "}
-                  <Image
-                    src={Token}
-                    className="md:h-11.25 md:w-11.25 h-6 w-6"
-                    alt="Char token"
-                    width={40}
-                    height={40}
-                  />
-                </span>
-                <span> = 1 {t("howWorks.session")} = </span>
-                <span className="flex gap-1 items-center">
-                  1{" "}
-                  <UserRound
-                    className="md:h-12.5 md:w-12.5 h-6 w-6"
-                    width={50}
-                    height={50}
-                    strokeWidth={2}
-                  />
-                </span>
-              </span>
-              {!authenticated && (
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-4 py-2 text-xs md:text-sm font-medium text-white backdrop-blur-xs">
-                  <Image
-                    src={Token}
-                    alt="Char token"
-                    width={16}
-                    height={16}
-                    className="h-4 w-4"
-                  />
-                  <span>{t("hero.freeTokenOffer")}</span>
-                </div>
-              )}
-              </div>
-            </div>
-          </div>
-          <Card id="features" className="scroll-mt-24 xl:scroll-mt-20 -translate-y-5 rounded-b-none p-0">
-            <div className="max-w-6xl w-full xl:px-0 md:px-10 p-2 xl:m-17 m-10 mx-auto flex flex-col gap-10 self-center">
-              <div className="self-start flex flex-col gap-2">
-                <h2 className="md:text-4xl text-xl font-bold">
-                  {t("features.title")}
-                </h2>
-                <p className="md:text-sm text-xs text-foreground">
-                  {t("features.description")}
-                </p>
-              </div>
-              <div className="flex flex-col gap-2 w-full mx-auto self-center">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 max-w-4xl mx-auto gap-2">
-                  <Feature
-                    title={t("features.feature1.title")}
-                    description={[
-                      t("features.feature1.description1"),
-                      t("features.feature1.description2"),
-                    ]}
-                    url={"/assets/background/gestion_joueur.svg"}
-                  />
-                  <Feature
-                    title={t("features.feature2.title")}
-                    description={[
-                      t("features.feature2.description1"),
-                      t("features.feature2.description2"),
-                    ]}
-                    url={"/assets/background/mj.svg"}
-                  />
-                  <Feature
-                    title={t("features.feature3.title")}
-                    description={[
-                      t("features.feature3.description1"),
-                      t("features.feature3.description2"),
-                    ]}
-                    url={"/assets/background/initiative.svg"}
-                  />
-                  <Feature
-                    title={t("features.feature4.title")}
-                    description={[
-                      t("features.feature4.description1"),
-                      t("features.feature4.description2"),
-                    ]}
-                    url={"/assets/background/codex.svg"}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="bg-linear-to-t from-black to-transparent md:py-20 pb-10 pt-5">
-              <div className="flex flex-col gap-4">
-                <h2 className="md:text-5xl text-2xl font-bold text-center">
-                  {t("features.ready")}
-                </h2>
-                <div className="flex md:gap-4 gap-2 justify-center">
-                  <Button
-                    type="button"
-                    className="md:text-sm text-xs"
-                    onClick={() => scrollToSection("packs")}
-                  >
-                    <ArrowRight /> {t("features.packs")}
-                  </Button>
-                  {authenticated ? (
-                    <Link href={chariotAppUrl(locale)}>
-                      <Button variant={"custom"}>
-                        {t("header.myAccount")}
-                      </Button>
-                    </Link>
-                  ) : (
-                    <Button
-                      onClick={register}
-                      className="md:text-sm text-xs"
-                      variant={"outline"}
-                    >
-                      {t("hero.registration")}
-                    </Button>
-                  )}
-                </div>
-              </div>
-            </div>
-          </Card>
-        </Card>
       </Card>
+
+      <section className="bg-linear-to-b from-[#d5d5d5] via-[#7d7d7d] to-black md:py-20 pb-12 pt-8">
+        <div className="flex flex-col gap-4 max-w-6xl mx-auto px-2 sm:px-10">
+          <h2 className="md:text-5xl text-2xl font-bold text-center text-black">
+            {t("features.ready")}
+          </h2>
+          <div className="flex md:gap-4 gap-2 justify-center">
+            <Button
+              type="button"
+              className="md:text-sm text-xs"
+              onClick={() => scrollToSection("packs")}
+            >
+              <ArrowRight /> {t("features.packs")}
+            </Button>
+            {authenticated ? (
+              <Link href={chariotAppUrl(locale)}>
+                <Button variant={"custom"}>{t("header.myAccount")}</Button>
+              </Link>
+            ) : (
+              <Button
+                onClick={register}
+                className="md:text-sm text-xs"
+                variant={"outline"}
+              >
+                {t("hero.registration")}
+              </Button>
+            )}
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

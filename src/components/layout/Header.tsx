@@ -42,9 +42,9 @@ export default function Header() {
 
   const buttons: item[] = [
     { libelle: `${t("home")}`, id: "hero" },
-    { libelle: `${t("packs")}`, id: "packs" },
-    { libelle: `${t("howWorks")}`, id: "how-it-works" },
     { libelle: `${t("features")}`, id: "features" },
+    { libelle: `${t("howWorks")}`, id: "how-it-works" },
+    { libelle: `${t("packs")}`, id: "packs" },
   ];
 
   return (
