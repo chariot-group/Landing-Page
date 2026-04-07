@@ -18,12 +18,13 @@ const SEO_BY_LOCALE: Record<
     softwareFeatures: string[];
     category: string;
     classification: string;
+    alternativeNames: string[];
   }
 > = {
   fr: {
-    title: "CHARIOT | Outil MJ pour Donjons & Dragons et JDR",
+    title: "CHARIOT | Outil & App Jeu de Rôle pour Donjons et Dragons (DnD)",
     description:
-      "Chariot est l'application web dédiée aux Maîtres du Jeu pour Donjons & Dragons et autres jeux de rôle : campagnes, combats, initiatives et sessions simplifiés.",
+      "Chariot est le site et l'application jeu de rôle pour Donjons et Dragons (DnD). Outil MJ pour gérer campagnes, combats, initiatives et sessions de JDR.",
     keywords: [
       "Chariot",
       "jeu de rôle",
@@ -34,11 +35,19 @@ const SEO_BY_LOCALE: Record<
       "initiative tracker Donjons et Dragons",
       "outil maître du jeu Donjons et Dragons",
       "application campagne jeu de rôle",
+      "chariot donjons et dragons",
+      "chariot dnd",
+      "chariot jeu de rôle",
+      "outil jeu de rôle",
+      "app jeu de rôle",
+      "application jeu de rôle",
+      "site jeu de rôle",
+      "chariot app",
     ],
     ogLocale: "fr_FR",
-    socialEyebrow: "Application web pour MJ",
+    socialEyebrow: "Application & site jeu de rôle pour MJ",
     socialSubtitle:
-      "Campagnes, combats, initiative tracker et codex pour Donjons & Dragons et autres JDR.",
+      "Outil jeu de rôle : campagnes, combats, initiative et codex pour Donjons et Dragons (DnD) et autres JDR.",
     softwareFeatures: [
       "Gestion de campagnes de jeu de rôle",
       "Suivi d'initiative et de combats",
@@ -47,11 +56,18 @@ const SEO_BY_LOCALE: Record<
     ],
     category: "Logiciel de jeu de role",
     classification: "Outil pour maitres du jeu et campagnes D&D",
+    alternativeNames: [
+      "Chariot",
+      "Chariot DnD",
+      "Chariot Donjons et Dragons",
+      "Chariot Jeu de Rôle",
+      "Chariot App",
+    ],
   },
   en: {
-    title: "CHARIOT | Game Master Tool for D&D and TTRPG",
+    title: "CHARIOT | TTRPG Tools & D&D App for Game Masters",
     description:
-      "Chariot helps game masters run Dungeons & Dragons and other TTRPG sessions with campaign management, combat tracking and initiative tools.",
+      "Chariot Tools is the TTRPG app for game masters. Manage Dungeons & Dragons campaigns, track combat and initiative for D&D and tabletop RPG sessions.",
     keywords: [
       "Chariot",
       "TTRPG tool",
@@ -62,11 +78,17 @@ const SEO_BY_LOCALE: Record<
       "DnD campaign manager",
       "virtual gm assistant",
       "tabletop roleplaying campaign tool",
+      "chariot app",
+      "chariot tools",
+      "chariot tool",
+      "ttrpg tools",
+      "ttrpg app",
+      "website app",
     ],
     ogLocale: "en_US",
-    socialEyebrow: "Web app for game masters",
+    socialEyebrow: "TTRPG tools & app for game masters",
     socialSubtitle:
-      "Campaign management, combat tracking, initiative and codex tools for D&D and other TTRPGs.",
+      "Chariot Tools: campaign management, combat tracking, initiative and codex app for D&D and other TTRPGs.",
     softwareFeatures: [
       "TTRPG campaign management",
       "Combat and initiative tracking",
@@ -75,6 +97,13 @@ const SEO_BY_LOCALE: Record<
     ],
     category: "Role-playing game software",
     classification: "Game master software for D&D and TTRPG campaigns",
+    alternativeNames: [
+      "Chariot",
+      "Chariot Tools",
+      "Chariot App",
+      "Chariot DnD",
+      "Chariot TTRPG",
+    ],
   },
   es: {
     title: "CHARIOT | Herramienta para directores de juego de D&D",
@@ -101,6 +130,12 @@ const SEO_BY_LOCALE: Record<
     ],
     category: "Software de juego de rol",
     classification: "Herramienta para directores de juego y campañas de D&D",
+    alternativeNames: [
+      "Chariot",
+      "Chariot App",
+      "Chariot DnD",
+      "Chariot Rol de Mesa",
+    ],
   },
 };
 
@@ -396,6 +431,7 @@ export function getHomepageStructuredData(locale: string) {
     "@type": "Organization",
     "@id": `${siteUrl}#organization`,
     name: APP_NAME,
+    alternateName: seo.alternativeNames,
     url: siteUrl,
     logo: logoUrl,
     description: seo.description,
@@ -423,6 +459,7 @@ export function getHomepageStructuredData(locale: string) {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       name: APP_NAME,
+      alternateName: seo.alternativeNames,
       applicationCategory: "GameApplication",
       operatingSystem: "Web",
       browserRequirements: "Requires JavaScript. Requires HTML5.",
