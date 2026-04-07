@@ -19,6 +19,7 @@ const SEO_BY_LOCALE: Record<
     category: string;
     classification: string;
     alternativeNames: string[];
+    faqItems: { question: string; answer: string }[];
   }
 > = {
   fr: {
@@ -63,6 +64,23 @@ const SEO_BY_LOCALE: Record<
       "Chariot Jeu de Rôle",
       "Chariot App",
     ],
+    faqItems: [
+      {
+        question: "Quel système de jeu supportez-vous ?",
+        answer:
+          "Pour le moment, nous supportons uniquement Donjons & Dragons 5ème édition, mais nous avons pour ambition de supporter d'autres systèmes de jeu à l'avenir. N'hésitez pas à nous faire part de vos suggestions !",
+      },
+      {
+        question: "Combien de temps dure un token ?",
+        answer:
+          "Un token dure 8h une fois consommé, mais tant qu'il n'est pas dépensé vous pouvez le garder à vie !",
+      },
+      {
+        question: "Quelles sont les nouveautés à attendre ?",
+        answer:
+          "Nous travaillons actuellement sur les sessions, un module qui vous permettra d'interagir avec tous les joueurs de votre partie en temps réel. Ce module intégrera le gestionnaire de combat en temps réel, la gestion des fiches personnages des joueurs par le MJ durant la partie ainsi que les actions de partie : lancer un sort, utiliser une compétence (rage, inspiration bardique, etc.), repos, etc.",
+      },
+    ],
   },
   en: {
     title: "CHARIOT | TTRPG Tools & D&D App for Game Masters",
@@ -104,6 +122,23 @@ const SEO_BY_LOCALE: Record<
       "Chariot DnD",
       "Chariot TTRPG",
     ],
+    faqItems: [
+      {
+        question: "Which game systems do you support?",
+        answer:
+          "For now, we only support Dungeons & Dragons 5th edition, but we plan to support other game systems in the future. Feel free to share your suggestions!",
+      },
+      {
+        question: "How long does a token last?",
+        answer:
+          "A token lasts 8 hours once consumed, but as long as it is not spent, you can keep it forever!",
+      },
+      {
+        question: "What new features can we expect?",
+        answer:
+          "We are currently working on sessions, a module that will let you interact with all your players in real time. It will include the real-time combat manager, player character sheet management by the GM during the session, and in-game actions: casting a spell, using an ability (rage, bardic inspiration, etc.), resting, and more.",
+      },
+    ],
   },
   es: {
     title: "CHARIOT | Herramienta para directores de juego de D&D",
@@ -135,6 +170,23 @@ const SEO_BY_LOCALE: Record<
       "Chariot App",
       "Chariot DnD",
       "Chariot Rol de Mesa",
+    ],
+    faqItems: [
+      {
+        question: "¿Qué sistemas de juego soportaís?",
+        answer:
+          "Por ahora, solo soportamos Dungeons & Dragons 5ª edición, pero tenemos la ambición de soportar otros sistemas de juego en el futuro. ¡No dudes en hacernos llegar tus sugerencias!",
+      },
+      {
+        question: "¿Cuánto dura un token?",
+        answer:
+          "Un token dura 8 horas una vez consumido, ¡pero mientras no lo gastes, puedes guardarlo de por vida!",
+      },
+      {
+        question: "¿Qué novedades podemos esperar?",
+        answer:
+          "Actualmente estamos trabajando en las sesiones, un módulo que te permitirá interactuar con todos los jugadores de tu partida en tiempo real. Incluirá el gestor de combate en tiempo real, la gestión de las fichas de personaje por el MJ durante la partida, y las acciones de partida: lanzar un hechizo, usar una habilidad (furia, inspiración bárdica, etc.), descanso, etc.",
+      },
     ],
   },
 };
@@ -474,6 +526,20 @@ export function getHomepageStructuredData(locale: string) {
       publisher: {
         "@id": `${siteUrl}#organization`,
       },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": `${localizedUrl}#faq`,
+      inLanguage: resolvedLocale,
+      mainEntity: seo.faqItems.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
     },
   ];
 }

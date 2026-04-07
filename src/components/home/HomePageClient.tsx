@@ -22,6 +22,12 @@ import { Products, StripeProductWithPrices } from "@/types/stripe.type";
 import StripeService from "@/services/stripe.service";
 import CheckoutDisabledNotice from "@/components/CheckoutDisabledNotice";
 import { Locale } from "@/i18n/request";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
 
 type PendingCheckout = {
   packId: string;
@@ -421,7 +427,10 @@ export default function HomePageClient() {
               </span>
             </div>
           </div>
-          <Card id="features" className="-translate-y-5 rounded-b-none p-0">
+          <Card
+            id="features"
+            className="-translate-y-5 gap-0 rounded-b-none p-0"
+          >
             <div className="max-w-6xl w-full xl:px-0 md:px-10 p-2 xl:m-17 m-10 mx-auto flex flex-col gap-10 self-center">
               <div className="self-start flex flex-col gap-2">
                 <h2 className="md:text-4xl text-xl font-bold">
@@ -499,6 +508,29 @@ export default function HomePageClient() {
                 </div>
               </div>
             </div>
+            <Card id="faq" className="bg-white p-0 text-black rounded-b-none ">
+              <div className="xl:m-26 lg:m-15 m-10 flex flex-col gap-5 mx-auto items-center">
+                <div className="self-start flex flex-col gap-2">
+                  <h2 className="md:text-4xl text-xl font-bold">
+                    {t("faq.title")}
+                  </h2>
+                </div>
+                <Accordion type="multiple" className="w-full">
+                  <AccordionItem value="item-1">
+                    <AccordionTrigger>{t("faq.q1")}</AccordionTrigger>
+                    <AccordionContent>{t("faq.a1")}</AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-2">
+                    <AccordionTrigger>{t("faq.q2")}</AccordionTrigger>
+                    <AccordionContent>{t("faq.a2")}</AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-3">
+                    <AccordionTrigger>{t("faq.q3")}</AccordionTrigger>
+                    <AccordionContent>{t("faq.a3")}</AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              </div>
+            </Card>
           </Card>
         </Card>
       </Card>

@@ -80,6 +80,15 @@
     "packs": "NOS PACKS",
     "registration": "Créer mon compte"
   },
+  "faq": {
+    "title": "FAQ",
+    "q1": "Quel système de jeu supportez-vous ?",
+    "a1": "Pour le moment, nous supportons uniquement Donjons & Dragons 5ème édition, mais nous avons pour ambition de supporter d'autres systèmes de jeu à l'avenir. N'hésitez pas à nous faire part de vos suggestions !",
+    "q2": "Combien de temps dure un token ?",
+    "a2": "Un token dure 8h une fois consommé, mais tant qu'il n'est pas dépensé vous pouvez le garder à vie !",
+    "q3": "Quelles sont les nouveautés à attendre ?",
+    "a3": "Nous travaillons actuellement sur les sessions, un module qui vous permettra d'interagir avec tous les joueurs de votre partie en temps réel. Ce module intégrera le gestionnaire de combat en temps réel, la gestion des fiches personnages des joueurs par le MJ durant la partie ainsi que les actions de partie : lancer un sort, utiliser une compétence (rage, inspiration bardique, etc.), repos, etc."
+  },
   "footer": {
     "mobile": {
       "tou": "CGU",

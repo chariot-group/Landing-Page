@@ -80,6 +80,15 @@
     "packs": "OUR PACKS",
     "registration": "Create my account"
   },
+  "faq": {
+    "title": "FAQ",
+    "q1": "Which game systems do you support?",
+    "a1": "For now, we only support Dungeons & Dragons 5th edition, but we plan to support other game systems in the future. Feel free to share your suggestions!",
+    "q2": "How long does a token last?",
+    "a2": "A token lasts 8 hours once consumed, but as long as it is not spent, you can keep it forever!",
+    "q3": "What new features can we expect?",
+    "a3": "We are currently working on sessions, a module that will let you interact with all your players in real time. It will include the real-time combat manager, player character sheet management by the GM during the session, and in-game actions: casting a spell, using an ability (rage, bardic inspiration, etc.), resting, and more."
+  },
   "footer": {
     "mobile": {
       "tou": "TOU",
