@@ -5,6 +5,7 @@
     "home": "Accueil",
     "packs": "Nos packs",
     "howWorks": "Comment ça marche ?",
+    "faq": "FAQ",
     "features": "Fonctionnalités Chariot",
     "myAccount": "Mon espace",
     "logout": "Déconnexion"
@@ -12,7 +13,8 @@
   "hero": {
     "title": "Gérez vos campagnes Donjons & Dragons et jeux de rôle comme jamais auparavant !",
     "packs": "NOS PACKS",
-    "registration": "Créer mon compte"
+    "registration": "Créer mon compte",
+    "freeTokenOffer": "Crée ton compte, ton premier Wheel est offert !"
   },
   "packs": {
     "custom": {
@@ -22,11 +24,11 @@
     },
     "explorator": {
       "name": "PACK EXPLORATEUR",
-      "description": "Idéal pour les Maîtres du Jeu qui débutent en Donjons & Dragons."
+      "description": "Idéal pour les joueurs qui débutent en Donjons & Dragons."
     },
     "legendary": {
       "name": "PACK LÉGENDAIRE",
-      "description": "Pour les Maîtres du Jeu aguerris en quête de la puissance ultime pour leurs campagnes D&D."
+      "description": "Pour les joueurs aguerris en quête de la puissance ultime pour leurs campagnes D&D."
     },
     "aventurer": {
       "name": "PACK AVENTURIER",
@@ -48,9 +50,9 @@
   },
   "howWorks": {
     "title1": "COMMENT MARCHENT",
-    "title2": "LES CHARS",
-    "description1": "Le Char est la monnaie unique de Chariot, l'application dédiée aux Maîtres du Jeu de jeux de rôle et Donjons & Dragons. Sur Chariot, le principe est simple.",
-    "description2": "Pour lancer une session à 5, vous pourriez très bien dépenser 1 char chacun, ou un joueur pourrait payer 5 chars pour que tout le monde puisse jouer. Sur Chariot, chacun s’organise comme il le veut.",
+    "title2": "LES WHEELS",
+    "description1": "Le Wheel est la monnaie unique de Chariot, l'application dédiée aux Maîtres du Jeu de jeux de rôle et Donjons & Dragons. Sur Chariot, le principe est simple.",
+    "description2": "Pour lancer une session à 5, vous pourriez très bien dépenser 1 Wheel chacun, ou un joueur pourrait payer 5 Wheels pour que tout le monde puisse jouer. Sur Chariot, chacun s’organise comme il le veut.",
     "session": "SESSION"
   },
   "features": {
@@ -79,6 +81,18 @@
     "ready": "Prêt à partir à l'aventure ?",
     "packs": "NOS PACKS",
     "registration": "Créer mon compte"
+  },
+  "faq": {
+    "title": "FAQ",
+    "q1": "Quel système de jeu supportez-vous ?",
+    "a1": "Pour le moment, nous supportons uniquement Donjons & Dragons 5ème édition, mais nous avons pour ambition de supporter d'autres systèmes de jeu à l'avenir. N'hésitez pas à nous faire part de vos suggestions !",
+    "q2": "Combien de temps dure un Wheel ?",
+    "a2": "Un Wheel dure 8h une fois consommé, mais tant qu'il n'est pas dépensé vous pouvez le garder à vie !",
+    "q3": "Quelles sont les nouveautés à attendre ?",
+    "a3": "Nous travaillons actuellement sur les sessions, un module qui vous permettra d'interagir avec tous les joueurs de votre partie en temps réel. Ce module intégrera le gestionnaire de combat en temps réel, la gestion des fiches personnages des joueurs par le MJ durant la partie ainsi que les actions de partie : lancer un sort, utiliser une compétence (rage, inspiration bardique, etc.), repos, etc.",
+    "contactTitle": "Vous ne trouvez pas votre réponse ?",
+    "contactDescription": "On se fera un plaisir de vous aider par mail",
+    "contactCta": "Nous contacter"
   },
   "footer": {
     "mobile": {
@@ -138,7 +152,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "Le service propose une version freemium permettant de créer, organiser et gérer des campagnes, ainsi que l’achat ponctuel de packs de chars (sans abonnement ni reconduction automatique) offrant des fonctionnalités avancées."
+            "text": "Le service propose une version freemium permettant de créer, organiser et gérer des campagnes, ainsi que l’achat ponctuel de packs de Wheels (sans abonnement ni reconduction automatique) offrant des fonctionnalités avancées."
           }
         ]
       },
@@ -275,7 +289,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "Les présentes Conditions Générales de Vente régissent la vente de packs de chars et des services payants associés de l’application Chariot par CHARIOT."
+            "text": "Les présentes Conditions Générales de Vente régissent la vente de packs de Wheels et des services payants associés de l’application Chariot par CHARIOT."
           }
         ]
       },
@@ -284,7 +298,7 @@
         "content": [
           {
             "type": "list",
-            "text": "Les offres payantes correspondent à 4 packs de chars décrits sur le site."
+            "text": "Les offres payantes correspondent à 4 packs de Wheels décrits sur le site."
           },
           {
             "type": "list",
@@ -305,7 +319,7 @@
           },
           {
             "type": "list",
-            "text": "La validation de la commande vaut acceptation des CGV et déclenche le crédit immédiat des chars."
+            "text": "La validation de la commande vaut acceptation des CGV et déclenche le crédit immédiat des Wheels."
           }
         ]
       },
@@ -331,11 +345,11 @@
         "content": [
           {
             "type": "list",
-            "text": "Les packs de chars sont des achats ponctuels sans reconduction automatique."
+            "text": "Les packs de Wheels sont des achats ponctuels sans reconduction automatique."
           },
           {
             "type": "list",
-            "text": "Les chars crédités restent disponibles sur le compte utilisateur tant qu’ils ne sont pas consommés et que le compte est actif."
+            "text": "Les Wheels crédités restent disponibles sur le compte utilisateur tant qu’ils ne sont pas consommés et que le compte est actif."
           }
         ]
       },
@@ -348,11 +362,11 @@
           },
           {
             "type": "list",
-            "text": "Un remboursement n’est possible que pour des packs achetés et non consommés, sous réserve d’un solde de chars suffisant."
+            "text": "Un remboursement n’est possible que pour des packs achetés et non consommés, sous réserve d’un solde de Wheels suffisant."
           },
           {
             "type": "list",
-            "text": "Le remboursement est effectué par pack acheté (sans recomposition en packs différents) et les chars correspondants sont déduits lors du traitement."
+            "text": "Le remboursement est effectué par pack acheté (sans recomposition en packs différents) et les Wheels correspondants sont déduits lors du traitement."
           }
         ]
       },
@@ -365,7 +379,7 @@
           },
           {
             "type": "list",
-            "text": "En cas de suspension ou de suppression du compte, l’accès aux chars non utilisés peut être limité ou perdu selon les obligations légales et techniques applicables."
+            "text": "En cas de suspension ou de suppression du compte, l’accès aux Wheels non utilisés peut être limité ou perdu selon les obligations légales et techniques applicables."
           }
         ]
       },
@@ -402,7 +416,7 @@
       }
     ]
   },
-  "legalNotice":{
+  "legalNotice": {
     "sections": [
       {
         "title": "Introduction",
@@ -430,7 +444,7 @@
           },
           {
             "type": "list",
-            "text": "Données de transaction liées à l’achat de packs de chars et aux demandes de remboursement."
+            "text": "Données de transaction liées à l’achat de packs de Wheels et aux demandes de remboursement."
           }
         ]
       },
@@ -447,7 +461,7 @@
           },
           {
             "type": "list",
-            "text": "Gestion des achats de packs, du crédit de chars et des remboursements éligibles,"
+            "text": "Gestion des achats de packs, du crédit de Wheels et des remboursements éligibles,"
           },
           {
             "type": "list",
@@ -516,6 +530,23 @@
           {
             "type": "list",
             "text": "Consentement requis."
+          }
+        ]
+      },
+      {
+        "title": "Crédits des images au sein de l'application",
+        "content": [
+          {
+            "type": "list",
+            "text": "Image campagne : designed by liuzishan - Freepik.com"
+          },
+          {
+            "type": "list",
+            "text": "Image personnage : designed by Freepik"
+          },
+          {
+            "type": "list",
+            "text": "Image session : designed by upklyak - Freepik.com"
           }
         ]
       },
@@ -625,7 +656,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "Pour toute information concernant la collecte et le traitement de vos données personnelles, y compris les données de paiement et d’historique d’achats de packs de chars, veuillez consulter notre Politique de confidentialité."
+            "text": "Pour toute information concernant la collecte et le traitement de vos données personnelles, y compris les données de paiement et d’historique d’achats de packs de Wheels, veuillez consulter notre Politique de confidentialité."
           }
         ]
       }
@@ -633,6 +664,8 @@
   },
   "auth": {
     "loading": "Chargement...",
-    "pleaseWait": "Veuillez patienter pendant la vérification de votre session"
+    "pleaseWait": "Veuillez patienter pendant la vérification de votre session",
+    "loginSuccess": "Connexion réussie",
+    "logoutSuccess": "Déconnexion réussie"
   }
 }

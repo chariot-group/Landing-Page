@@ -1,17 +1,19 @@
-import { defaultLocale, Locale } from "@/i18n/request";
+import { defaultLocale, locales, Locale } from "@/i18n/request";
 
 export function scrollToSection(
   section: string,
+  behavior: ScrollBehavior = "smooth",
 ) {
   const el = document.getElementById(section);
   if (el) {
-    const topOffset = el.getBoundingClientRect().top + window.scrollY;
-    window.scrollTo({
-      top: topOffset - 100,
-      behavior: "smooth",
-    });
+    el.scrollIntoView({ behavior, block: "start" });
   } else {
-    window.location.href = `/#${section}`;
+    const [, maybeLocale] = window.location.pathname.split("/");
+    const locale = locales.includes(maybeLocale as Locale)
+      ? maybeLocale
+      : defaultLocale;
+
+    window.location.href = `/${locale}#${section}`;
   }
 }
 

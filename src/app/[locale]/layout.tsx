@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter_Tight } from "next/font/google";
+import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
 import ToastContainer from "@/components/ToastContainer";
 import { NextIntlClientProvider } from "next-intl";
@@ -37,10 +38,10 @@ export default async function RootLayout({
         className={`${interTight.variable} w-full antialiased font-sans h-screen`}
       >
         <NextIntlClientProvider messages={messages}>
+          <ToastContainer />
           <KeycloakProvider>
             <div className="bg-card w-full overflow-hidden">
               <Header />
-              <ToastContainer />
               {children}
               <Footer />
             </div>

@@ -5,6 +5,7 @@
     "home": "Inicio",
     "packs": "Nuestros paquetes",
     "howWorks": "¿Cómo funciona?",
+    "faq": "FAQ",
     "features": "Funcionalidades de Chariot",
     "myAccount": "Mi espacio",
     "logout": "Cerrar sesión"
@@ -12,7 +13,8 @@
   "hero": {
     "title": "¡Gestiona tus campañas de Dungeons & Dragons y juego de rol como nunca antes!",
     "packs": "NUESTROS PAQUETES",
-    "registration": "Crear mi cuenta"
+    "registration": "Crear mi cuenta",
+    "freeTokenOffer": "Crea tu cuenta. Obtén tu primer Wheel gratis !"
   },
   "packs": {
     "custom": {
@@ -22,11 +24,11 @@
     },
     "explorator": {
       "name": "PAQUETE EXPLORADOR",
-      "description": "Ideal para Maestros del Juego que empiezan con Dungeons & Dragons."
+      "description": "Ideal para jugadores que empiezan con Dungeons & Dragons."
     },
     "legendary": {
       "name": "PAQUETE LÉGENDARIO",
-      "description": "Para los Maestros del Juego experimentados que buscan el máximo poder en sus campañas de D&D."
+      "description": "Para los jugadores experimentados que buscan el máximo poder en sus campañas de D&D."
     },
     "aventurer": {
       "name": "PAQUETE AVENTURERO",
@@ -48,9 +50,9 @@
   },
   "howWorks": {
     "title1": "¿CÓMO FUNCIONAN",
-    "title2": "LOS CHARS",
-    "description1": "El Char es la moneda única de Chariot, la aplicación para Maestros del Juego de rol de mesa y Dungeons & Dragons. En Chariot, el principio es sencillo.",
-    "description2": "Para luchar una sesión de 5, podrías gastar 1 char cada uno, o un jugador podría pagar 5 chars para que todos puedan jugar. En Chariot, cada uno se organiza como quiera.",
+    "title2": "LOS WHEELS",
+    "description1": "El Wheel es la moneda única de Chariot, la aplicación para Maestros del Juego de rol de mesa y Dungeons & Dragons. En Chariot, el principio es sencillo.",
+    "description2": "Para luchar una sesión de 5, podrías gastar 1 Wheel cada uno, o un jugador podría pagar 5 Wheels para que todos puedan jugar. En Chariot, cada uno se organiza como quiera.",
     "session": "SESIÓN"
   },
   "features": {
@@ -79,6 +81,18 @@
     "ready": "¿Listo para partir a la aventura?",
     "packs": "NUESTROS PAQUETES",
     "registration": "Crear mi cuenta"
+  },
+  "faq": {
+    "title": "FAQ",
+    "q1": "¿Qué sistemas de juego soportáis?",
+    "a1": "Por ahora, solo soportamos Dungeons & Dragons 5ª edición, pero tenemos la ambición de soportar otros sistemas de juego en el futuro. ¡No dudes en hacernos llegar tus sugerencias!",
+    "q2": "¿Cuánto dura un Wheel?",
+    "a2": "Un Wheel dura 8 horas una vez consumido, ¡pero mientras no lo gastes, puedes guardarlo de por vida!",
+    "q3": "¿Qué novedades podemos esperar?",
+    "a3": "Actualmente estamos trabajando en las sesiones, un módulo que te permitirá interactuar con todos los jugadores de tu partida en tiempo real. Incluirá el gestor de combate en tiempo real, la gestión de las fichas de personaje por el MJ durante la partida, y las acciones de partida: lanzar un hechizo, usar una habilidad (furia, inspiración bárdica, etc.), descanso, etc.",
+    "contactTitle": "¿No encuentras tu respuesta?",
+    "contactDescription": "Estaremos encantados de ayudarte por correo",
+    "contactCta": "Contáctanos"
   },
   "footer": {
     "mobile": {
@@ -138,7 +152,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "El servicio ofrece una versión freemium para crear, organizar y gestionar campañas, así como la compra puntual de paquetes de Chars (sin suscripción ni renovación automática) con funciones avanzadas."
+            "text": "El servicio ofrece una versión freemium para crear, organizar y gestionar campañas, así como la compra puntual de paquetes de Wheels (sin suscripción ni renovación automática) con funciones avanzadas."
           }
         ]
       },
@@ -275,7 +289,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "Estas Condiciones Generales de Venta regulan la venta de paquetes de Chars y de los servicios de pago asociados de la aplicación Chariot por parte de CHARIOT."
+            "text": "Estas Condiciones Generales de Venta regulan la venta de paquetes de Wheels y de los servicios de pago asociados de la aplicación Chariot por parte de CHARIOT."
           }
         ]
       },
@@ -284,7 +298,7 @@
         "content": [
           {
             "type": "list",
-            "text": "Las ofertas de pago corresponden a 4 paquetes de Chars descritos en el sitio web."
+            "text": "Las ofertas de pago corresponden a 4 paquetes de Wheels descritos en el sitio web."
           },
           {
             "type": "list",
@@ -305,7 +319,7 @@
           },
           {
             "type": "list",
-            "text": "La validación del pedido implica la aceptación de las Condiciones Generales de Venta y activa el abono inmediato de Chars."
+            "text": "La validación del pedido implica la aceptación de las Condiciones Generales de Venta y activa el abono inmediato de Wheels."
           }
         ]
       },
@@ -331,11 +345,11 @@
         "content": [
           {
             "type": "list",
-            "text": "Los paquetes de Chars son compras puntuales sin renovación automática."
+            "text": "Los paquetes de Wheels son compras puntuales sin renovación automática."
           },
           {
             "type": "list",
-            "text": "Los Chars abonados permanecen disponibles en la cuenta del usuario mientras no se consuman y la cuenta siga activa."
+            "text": "Los Wheels abonados permanecen disponibles en la cuenta del usuario mientras no se consuman y la cuenta siga activa."
           }
         ]
       },
@@ -348,11 +362,11 @@
           },
           {
             "type": "list",
-            "text": "El reembolso solo es posible para paquetes comprados y no consumidos, siempre que el usuario disponga de un saldo de Chars suficiente."
+            "text": "El reembolso solo es posible para paquetes comprados y no consumidos, siempre que el usuario disponga de un saldo de Wheels suficiente."
           },
           {
             "type": "list",
-            "text": "El reembolso se procesa por paquete comprado (sin recomposición en paquetes distintos) y los Chars correspondientes se deducen durante el tratamiento."
+            "text": "El reembolso se procesa por paquete comprado (sin recomposición en paquetes distintos) y los Wheels correspondientes se deducen durante el tratamiento."
           }
         ]
       },
@@ -365,7 +379,7 @@
           },
           {
             "type": "list",
-            "text": "En caso de suspensión o eliminación de la cuenta, el acceso a los Chars no utilizados puede limitarse o perderse según las obligaciones legales y técnicas aplicables."
+            "text": "En caso de suspensión o eliminación de la cuenta, el acceso a los Wheels no utilizados puede limitarse o perderse según las obligaciones legales y técnicas aplicables."
           }
         ]
       },
@@ -430,7 +444,7 @@
           },
           {
             "type": "list",
-            "text": "Datos de transacción relacionados con la compra de paquetes de Chars y las solicitudes de reembolso."
+            "text": "Datos de transacción relacionados con la compra de paquetes de Wheels y las solicitudes de reembolso."
           }
         ]
       },
@@ -447,7 +461,7 @@
           },
           {
             "type": "list",
-            "text": "Gestión de compras de paquetes, abono de Chars y reembolsos elegibles,"
+            "text": "Gestión de compras de paquetes, abono de Wheels y reembolsos elegibles,"
           },
           {
             "type": "list",
@@ -516,6 +530,23 @@
           {
             "type": "list",
             "text": "Consentimiento requerido."
+          }
+        ]
+      },
+      {
+        "title": "Créditos de imágenes dentro de la aplicación",
+        "content": [
+          {
+            "type": "list",
+            "text": "Imagen de campaña: designed by liuzishan - Freepik.com"
+          },
+          {
+            "type": "list",
+            "text": "Imagen de personaje: designed by Freepik"
+          },
+          {
+            "type": "list",
+            "text": "Imagen de sesión: designed by upklyak - Freepik.com"
           }
         ]
       },
@@ -625,7 +656,7 @@
         "content": [
           {
             "type": "paragraph",
-            "text": "Para cualquier información sobre la recopilación y el tratamiento de sus datos personales, incluidos los datos de pago y el historial de compra de paquetes de Chars, consulte nuestra Política de Privacidad."
+            "text": "Para cualquier información sobre la recopilación y el tratamiento de sus datos personales, incluidos los datos de pago y el historial de compra de paquetes de Wheels, consulte nuestra Política de Privacidad."
           }
         ]
       }
@@ -633,6 +664,8 @@
   },
   "auth": {
     "loading": "Cargando...",
-    "pleaseWait": "Por favor, espere mientras verificamos su sesión"
+    "pleaseWait": "Por favor, espere mientras verificamos su sesión",
+    "loginSuccess": "Conexión exitosa",
+    "logoutSuccess": "Sesión cerrada correctamente"
   }
 }
