@@ -79,10 +79,10 @@ export default function Header() {
                       type="button"
                       className="h-9 px-4 py-2 cursor-pointer hover:text-primary transition-colors duration-300 text-left w-full"
                       onClick={() => {
-                          setIsSheetOpen(false);
-                          window.setTimeout(() => {
-                            scrollToSection(item.id);
-                          }, 0);
+                        setIsSheetOpen(false);
+                        window.setTimeout(() => {
+                          scrollToSection(item.id);
+                        }, 0);
                       }}
                     >
                       {item.libelle}
@@ -106,7 +106,7 @@ export default function Header() {
                     </SelectGroup>
                   </SelectContent>
                 </Select>
-                <div className="flex gap-2">
+                <div className="flex flex-wrap gap-2">
                   {authenticated ? (
                     <React.Fragment>
                       <Button variant={"outline"} onClick={logout}>
