@@ -22,6 +22,12 @@ import { Products, StripeProductWithPrices } from "@/types/stripe.type";
 import StripeService from "@/services/stripe.service";
 import CheckoutDisabledNotice from "@/components/CheckoutDisabledNotice";
 import { Locale } from "@/i18n/request";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
 
 type PendingCheckout = {
   packId: string;
@@ -413,7 +419,7 @@ export default function HomePageClient() {
                   €{" "}
                   <Image
                     src={Token}
-                    alt="Char token"
+                    alt="Wheel token"
                     width={15}
                     height={15}
                     className="inline-block ml-1"
@@ -455,7 +461,7 @@ export default function HomePageClient() {
                     {product.metadata?.token_number}{" "}
                     <Image
                       src={Token}
-                      alt="Char token"
+                      alt="Wheel token"
                       className="md:h-6.25 md:w-6.25 h-4 w-4"
                       width={25}
                       height={25}
@@ -512,14 +518,14 @@ export default function HomePageClient() {
                 </div>
                 <span className="sm:flex hidden font-bold text-8xl self-center text-primary">
                   {recommended.metadata?.token_number}{" "}
-                  <Image src={Token} alt="Char token" width={60} height={60} />
+                  <Image src={Token} alt="Wheel token" width={60} height={60} />
                 </span>
               </div>
 
               <div className="flex flex-row sm:self-end justify-between items-center">
                 <span className="flex sm:hidden font-bold text-3xl self-center text-primary">
                   {recommended.metadata?.token_number}{" "}
-                  <Image src={Token} alt="Char token" width={25} height={25} />
+                  <Image src={Token} alt="Wheel token" width={25} height={25} />
                 </span>
                 <div className="flex flex-col">
                   <span className="md:text-sm text-xs">
@@ -532,6 +538,28 @@ export default function HomePageClient() {
               </div>
             </Card>
           )}
+        </div>
+      </Card>
+
+      <Card id="faq" className="bg-white p-0 text-black rounded-b-none ">
+        <div className="xl:m-26 lg:m-15 m-10 flex flex-col gap-5 mx-auto items-center">
+          <div className="self-start flex flex-col gap-2">
+            <h2 className="md:text-4xl text-xl font-bold">{t("faq.title")}</h2>
+          </div>
+          <Accordion type="multiple" className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>{t("faq.q1")}</AccordionTrigger>
+              <AccordionContent>{t("faq.a1")}</AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>{t("faq.q2")}</AccordionTrigger>
+              <AccordionContent>{t("faq.a2")}</AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger>{t("faq.q3")}</AccordionTrigger>
+              <AccordionContent>{t("faq.a3")}</AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </Card>
 
