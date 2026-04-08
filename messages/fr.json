@@ -651,6 +651,8 @@
   },
   "auth": {
     "loading": "Chargement...",
-    "pleaseWait": "Veuillez patienter pendant la vérification de votre session"
+    "pleaseWait": "Veuillez patienter pendant la vérification de votre session",
+    "loginSuccess": "Connexion réussie",
+    "logoutSuccess": "Déconnexion réussie"
   }
 }

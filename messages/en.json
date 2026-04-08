@@ -651,6 +651,8 @@
   },
   "auth": {
     "loading": "Loading...",
-    "pleaseWait": "Please wait while we verify your session"
+    "pleaseWait": "Please wait while we verify your session",
+    "loginSuccess": "Successfully logged in",
+    "logoutSuccess": "Successfully logged out"
   }
 }

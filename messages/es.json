@@ -651,6 +651,8 @@
   },
   "auth": {
     "loading": "Cargando...",
-    "pleaseWait": "Por favor, espere mientras verificamos su sesión"
+    "pleaseWait": "Por favor, espere mientras verificamos su sesión",
+    "loginSuccess": "Conexión exitosa",
+    "logoutSuccess": "Sesión cerrada correctamente"
   }
 }

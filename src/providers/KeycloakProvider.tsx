@@ -14,6 +14,10 @@ import { useLocale, useTranslations } from "next-intl";
 import { setKeycloakInstance } from "@/services/api.service";
 import { Locale, locales } from "@/i18n/request";
 import { getStoredLocale, saveStoredLocale } from "@/hooks/useLocalPreference";
+import { showToast } from "@/lib/toast";
+
+const LOGIN_TOAST_PENDING_KEY = "chariot_login_toast_pending";
+const LOGOUT_TOAST_PENDING_KEY = "chariot_logout_toast_pending";
 
 interface KeycloakContextType {
   keycloak: Keycloak | null;
@@ -99,6 +103,11 @@ export function KeycloakProvider({ children }: { children: ReactNode }) {
 
         const authenticated = await kc.init(initOptions);
 
+        const loginToastPending =
+          sessionStorage.getItem(LOGIN_TOAST_PENDING_KEY) === "1";
+        const logoutToastPending =
+          sessionStorage.getItem(LOGOUT_TOAST_PENDING_KEY) === "1";
+
         if (authenticated && kc.tokenParsed?.sub) {
           const currentUserId = kc.tokenParsed.sub;
           setUserId(currentUserId);
@@ -133,6 +142,18 @@ export function KeycloakProvider({ children }: { children: ReactNode }) {
         setAuthenticated(authenticated);
         setToken(kc.token || null);
 
+        if (authenticated && loginToastPending) {
+          console.log("Showing login success toast");
+          showToast(t("loginSuccess"), "success");
+          sessionStorage.removeItem(LOGIN_TOAST_PENDING_KEY);
+        }
+
+        if (!authenticated && logoutToastPending) {
+          console.log("Showing logout success toast");
+          showToast(t("logoutSuccess"), "success");
+          sessionStorage.removeItem(LOGOUT_TOAST_PENDING_KEY);
+        }
+
         setKeycloakInstance(kc);
 
         if (authenticated && kc.token) {
@@ -142,7 +163,7 @@ export function KeycloakProvider({ children }: { children: ReactNode }) {
 
           refreshIntervalRef.current = setInterval(() => {
             kc.updateToken(70)
-              .then((refreshed) => {
+              .then((refreshed: boolean) => {
                 if (refreshed) {
                   setToken(kc.token || null);
                 }
@@ -160,7 +181,7 @@ export function KeycloakProvider({ children }: { children: ReactNode }) {
           if (document.visibilityState !== "visible") return;
 
           kc.updateToken(70)
-            .then((refreshed) => {
+            .then((refreshed: boolean) => {
               if (refreshed) setToken(kc.token || null);
             })
             .catch(() => {
@@ -218,6 +239,9 @@ export function KeycloakProvider({ children }: { children: ReactNode }) {
   };
 
   const login = () => {
+    sessionStorage.setItem(LOGIN_TOAST_PENDING_KEY, "1");
+    sessionStorage.removeItem(LOGOUT_TOAST_PENDING_KEY);
+
     keycloak?.login({
       redirectUri: getRedirectUri(),
       locale: locale,
@@ -226,6 +250,9 @@ export function KeycloakProvider({ children }: { children: ReactNode }) {
 
   const logout = async () => {
     setLoading(true);
+
+    sessionStorage.setItem(LOGOUT_TOAST_PENDING_KEY, "1");
+    sessionStorage.removeItem(LOGIN_TOAST_PENDING_KEY);
 
     if (refreshIntervalRef.current) {
       clearInterval(refreshIntervalRef.current);
