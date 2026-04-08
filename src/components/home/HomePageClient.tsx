@@ -167,6 +167,23 @@ export default function HomePageClient() {
     }
   };
 
+  useEffect(() => {
+    const elements = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 },
+    );
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   const unit = products?.unit;
   const recommended = products?.recommended;
 
@@ -210,7 +227,7 @@ export default function HomePageClient() {
       </section>
       <Card id="features" className="p-0">
         <div className="max-w-6xl w-full xl:px-0 md:px-10 p-2 xl:m-17 m-10 mx-auto flex flex-col gap-10 self-center">
-          <div className="self-start flex flex-col gap-2 scroll-reveal">
+          <div className="self-start flex flex-col gap-2 reveal">
             <h2 className="md:text-4xl text-xl font-bold">
               {t("features.title")}
             </h2>
@@ -219,7 +236,7 @@ export default function HomePageClient() {
             </p>
           </div>
           <div className="flex flex-col gap-2 w-full mx-auto self-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 max-w-4xl mx-auto gap-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 max-w-4xl mx-auto gap-2 reveal reveal-d1">
               <Feature
                 title={t("features.feature1.title")}
                 description={[
@@ -260,7 +277,7 @@ export default function HomePageClient() {
           className="bg-white p-0 text-black gap-0 rounded-b-none"
         >
           <div className="xl:m-26 lg:m-15 m-10 flex flex-col gap-5 lg:grid grid-cols-1 lg:grid-cols-2 max-w-6xl mx-auto items-center self-center">
-            <div className="justify-center items-center flex md:px-10 px-2">
+            <div className="justify-center items-center flex md:px-10 px-2 reveal">
               <h2 className="font-bold flex items-center justify-center lg:justify-start gap-2 flex-wrap xl:text-4xl md:text-3xl text-xl">
                 <span>{t("howWorks.title1")}</span>
                 <div className="flex flex-row gap-2 items-center">
@@ -276,7 +293,7 @@ export default function HomePageClient() {
                 </div>
               </h2>
             </div>
-            <div className="flex flex-col gap-4 md:px-10 px-2">
+            <div className="flex flex-col gap-4 md:px-10 px-2 reveal reveal-d1">
               <p className="md:text-sm text-xs">{t("howWorks.description1")}</p>
               <p className="md:text-sm text-xs">{t("howWorks.description2")}</p>
             </div>
@@ -292,7 +309,7 @@ export default function HomePageClient() {
             <div className="absolute inset-0 bg-black/60 top-0 bottom-0"></div>
 
             <div className="max-w-7xl mx-auto h-full flex items-center justify-center">
-              <span className="md:text-6xl text-2xl text-white font-bold flex items-center gap-2 z-10">
+              <span className="md:text-6xl text-2xl text-white font-bold flex items-center gap-2 z-10 reveal">
                 <span className="flex gap-2 items-center">
                   1{" "}
                   <Image
@@ -317,7 +334,7 @@ export default function HomePageClient() {
             </div>
           </div>
           <Card id="packs" className="-translate-y-5 gap-0 rounded-b-none p-0">
-            <div className="relative lg:m-20 m-10 md:grid flex flex-col md:grid-cols-2 xl:grid-cols-4 lg:px-0 px-2 sm:px-10 md:gap-4 gap-3 max-w-6xl mx-auto self-center">
+            <div className="relative lg:m-20 m-10 md:grid flex flex-col md:grid-cols-2 xl:grid-cols-4 lg:px-0 px-2 sm:px-10 md:gap-4 gap-3 max-w-6xl mx-auto self-center reveal">
               {isCheckoutDisabled && <CheckoutDisabledNotice />}
 
               {!authenticated && (
@@ -504,10 +521,10 @@ export default function HomePageClient() {
             </div>
             <div className="bg-linear-to-t from-black to-transparent md:py-20 pb-10 pt-5">
               <div className="flex flex-col gap-4">
-                <h2 className="md:text-5xl text-2xl font-bold text-center scroll-reveal">
+                <h2 className="md:text-5xl text-2xl font-bold text-center reveal">
                   {t("features.ready")}
                 </h2>
-                <div className="flex md:gap-4 gap-2 justify-center scroll-reveal">
+                <div className="flex md:gap-4 gap-2 justify-center reveal reveal-d1">
                   <Button
                     type="button"
                     className="md:text-sm text-xs"
@@ -538,12 +555,12 @@ export default function HomePageClient() {
               className="-translate-y-5 bg-white p-0 text-black rounded-b-none "
             >
               <div className="xl:m-26 lg:m-15 m-10 flex flex-col gap-5 mx-auto items-center">
-                <div className="self-start flex flex-col gap-2">
+                <div className="self-start flex flex-col gap-2 reveal">
                   <h2 className="md:text-4xl text-xl font-bold">
                     {t("faq.title")}
                   </h2>
                 </div>
-                <div className="flex flex-col gap-10 lg:grid grid-cols-1 lg:grid-cols-3 w-full mx-auto self-center items-start">
+                <div className="flex flex-col gap-10 lg:grid grid-cols-1 lg:grid-cols-3 w-full mx-auto self-center items-start reveal reveal-d1">
                   <Accordion type="multiple" className="w-full lg:col-span-2">
                     <AccordionItem value="item-1">
                       <AccordionTrigger>{t("faq.q1")}</AccordionTrigger>
