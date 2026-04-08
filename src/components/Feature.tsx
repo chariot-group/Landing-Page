@@ -8,9 +8,9 @@ interface FeatureProps {
 
 export default function Feature({ title, description, url }: FeatureProps) {
   return (
-    <Card className="relative justify-between p-0 overflow-hidden">
+    <Card className="relative justify-between p-0 overflow-hidden transition-transform duration-300 hover:scale-[1.03] hover:shadow-lg hover:shadow-black/40 cursor-default group">
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat blur-[2px] scale-105"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat blur-[2px] scale-105 transition-transform duration-500 group-hover:scale-110"
         style={{ backgroundImage: `url('${url}')`, opacity: 0.7 }}
       ></div>
       <div className="absolute top-0 left-0 right-0 h-1/2 bg-linear-to-b from-black/70 to-transparent"></div>

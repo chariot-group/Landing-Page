@@ -236,3 +236,77 @@
     border-color: var(--purple);
   }
 }
+
+/* ─── Button slide-from-left hover effect ─── */
+.btn-slide-primary {
+  background-image: linear-gradient(to right, #3600a0 50%, #4e00de 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.35s ease, box-shadow 0.2s ease;
+}
+.btn-slide-primary:hover {
+  background-position: 0% 0;
+}
+
+.btn-slide-outline {
+  background-image: linear-gradient(to right, #aa00ff 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.35s ease, color 0.2s ease;
+}
+.btn-slide-outline:hover {
+  background-position: 0% 0;
+}
+
+/* ─── Scroll-driven entrance animations ─── */
+@keyframes fade-up-in {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.scroll-reveal {
+  animation: fade-up-in 0.65s ease both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 35%;
+}
+
+.scroll-fade {
+  animation: fade-in 0.7s ease both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 30%;
+}
+
+/* ─── Hero entrance animation (above-fold) ─── */
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-animate {
+  animation: hero-in 0.7s ease both;
+}
+
+.hero-animate-delay-1 {
+  animation: hero-in 0.7s 0.15s ease both;
+}
+
+.hero-animate-delay-2 {
+  animation: hero-in 0.7s 0.3s ease both;
+}

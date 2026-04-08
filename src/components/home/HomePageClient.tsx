@@ -180,11 +180,11 @@ export default function HomePageClient() {
         <div className="flex flex-col h-[70vh] justify-end xl:max-w-5xl sm:px-10 px-2 mx-auto gap-5">
           <h1
             id="hero-title"
-            className="lg:text-6xl text-4xl font-medium text-center text-shadow-sm text-shadow-white"
+            className="lg:text-6xl text-4xl font-medium text-center text-shadow-sm text-shadow-white hero-animate"
           >
             {t("hero.title")}
           </h1>
-          <div className="flex sm:gap-4 gap-2 justify-center">
+          <div className="flex sm:gap-4 gap-2 justify-center hero-animate-delay-2">
             <Button
               className="md:text-sm text-xs"
               onClick={() => scrollToSection("packs")}
@@ -210,7 +210,7 @@ export default function HomePageClient() {
       </section>
       <Card id="features" className="p-0">
         <div className="max-w-6xl w-full xl:px-0 md:px-10 p-2 xl:m-17 m-10 mx-auto flex flex-col gap-10 self-center">
-          <div className="self-start flex flex-col gap-2">
+          <div className="self-start flex flex-col gap-2 scroll-reveal">
             <h2 className="md:text-4xl text-xl font-bold">
               {t("features.title")}
             </h2>
@@ -392,7 +392,7 @@ export default function HomePageClient() {
                     }
                     tabIndex={0}
                     role="button"
-                    className="bg-white cursor-pointer text-black justify-between hover:bg-white/90 transition-colors duration-300 h-full"
+                    className="bg-white cursor-pointer text-black justify-between hover:bg-white/90 transition-all duration-300 h-full hover:scale-[1.02] hover:shadow-lg hover:shadow-black/20"
                   >
                     <div className="flex flex-col gap-0">
                       <div className="flex flex-row justify-between">
@@ -447,7 +447,7 @@ export default function HomePageClient() {
                   }
                   tabIndex={0}
                   role="button"
-                  className="cursor-pointer relative h-full col-span-1 bg-white text-black justify-between hover:bg-white/90 transition-colors duration-300"
+                  className="cursor-pointer relative h-full col-span-1 bg-white text-black justify-between hover:bg-white/90 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-black/20"
                 >
                   <Card className="absolute -top-2 -left-1 bg-primary px-2 py-1 flex flex-row items-center gap-1 rounded-full">
                     <ArrowDown height={15} width={15} />
@@ -504,10 +504,10 @@ export default function HomePageClient() {
             </div>
             <div className="bg-linear-to-t from-black to-transparent md:py-20 pb-10 pt-5">
               <div className="flex flex-col gap-4">
-                <h2 className="md:text-5xl text-2xl font-bold text-center">
+                <h2 className="md:text-5xl text-2xl font-bold text-center scroll-reveal">
                   {t("features.ready")}
                 </h2>
-                <div className="flex md:gap-4 gap-2 justify-center">
+                <div className="flex md:gap-4 gap-2 justify-center scroll-reveal">
                   <Button
                     type="button"
                     className="md:text-sm text-xs"
