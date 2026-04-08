@@ -46,6 +46,7 @@ export default function Header() {
     { libelle: `${t("features")}`, id: "features" },
     { libelle: `${t("howWorks")}`, id: "how-it-works" },
     { libelle: `${t("packs")}`, id: "packs" },
+    { libelle: `${t("faq")}`, id: "faq" },
   ];
 
   return (
@@ -148,7 +149,7 @@ export default function Header() {
           </ul>
         </nav>
       </div>
-      <div className="hidden xl:flex gap-5">
+      <div className="hidden items-center xl:flex gap-5">
         <Select value={locale} onValueChange={switchLocale}>
           <SelectTrigger>
             <SelectValue placeholder="Select a langue" />

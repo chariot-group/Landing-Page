@@ -5,6 +5,7 @@
     "home": "Accueil",
     "packs": "Nos packs",
     "howWorks": "Comment ça marche ?",
+    "faq": "FAQ",
     "features": "Fonctionnalités Chariot",
     "myAccount": "Mon espace",
     "logout": "Déconnexion"
@@ -13,7 +14,7 @@
     "title": "Gérez vos campagnes Donjons & Dragons et jeux de rôle comme jamais auparavant !",
     "packs": "NOS PACKS",
     "registration": "Créer mon compte",
-    "freeTokenOffer": "Crée ton compte, ton 1er wheel est offert !"
+    "freeTokenOffer": "Crée ton compte, ton premier Wheel est offert !"
   },
   "packs": {
     "custom": {

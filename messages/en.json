@@ -5,6 +5,7 @@
     "home": "Home",
     "packs": "Our packs",
     "howWorks": "How it works?",
+    "faq": "FAQ",
     "features": "Chariot features",
     "myAccount": "My account",
     "logout": "Logout"
@@ -13,7 +14,7 @@
     "title": "Manage your Dungeons & Dragons and TTRPG campaigns like never before!",
     "packs": "OUR PACKS",
     "registration": "Create my account",
-    "freeTokenOffer": "Create your account. Get your 1st wheel for free !"
+    "freeTokenOffer": "Create your account. Get your first Wheel for free !"
   },
   "packs": {
     "custom": {

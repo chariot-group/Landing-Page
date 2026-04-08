@@ -5,6 +5,7 @@
     "home": "Inicio",
     "packs": "Nuestros paquetes",
     "howWorks": "¿Cómo funciona?",
+    "faq": "FAQ",
     "features": "Funcionalidades de Chariot",
     "myAccount": "Mi espacio",
     "logout": "Cerrar sesión"
@@ -13,7 +14,7 @@
     "title": "¡Gestiona tus campañas de Dungeons & Dragons y juego de rol como nunca antes!",
     "packs": "NUESTROS PAQUETES",
     "registration": "Crear mi cuenta",
-    "freeTokenOffer": "Crea tu cuenta. Obtén tu 1er wheel gratis !"
+    "freeTokenOffer": "Crea tu cuenta. Obtén tu primer Wheel gratis !"
   },
   "packs": {
     "custom": {
