@@ -27,6 +27,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import Profile from "@/components/layout/Profile";
 
 interface item {
   libelle: string;
@@ -38,7 +39,7 @@ export default function Header() {
 
   const t = useTranslations("header");
   const { locale, languageOptions, switchLocale } = useLanguageSwitcher();
-  const { authenticated, login, register, logout } = useKeycloak();
+  const { authenticated, login, register } = useKeycloak();
 
   const buttons: item[] = [
     { libelle: `${t("home")}`, id: "hero" },
@@ -106,16 +107,12 @@ export default function Header() {
                     </SelectGroup>
                   </SelectContent>
                 </Select>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   {authenticated ? (
-                    <React.Fragment>
-                      <Button variant={"outline"} onClick={logout}>
-                        {t("logout")}
-                      </Button>
-                      <Link href={chariotAppUrl(locale)}>
-                        <Button variant={"custom"}>{t("myAccount")}</Button>
-                      </Link>
-                    </React.Fragment>
+                    <Profile
+                      accountHref={chariotAppUrl(locale)}
+                      onAction={() => setIsSheetOpen(false)}
+                    />
                   ) : (
                     <React.Fragment>
                       <Button variant={"outline"} onClick={register}>
@@ -166,17 +163,9 @@ export default function Header() {
             </SelectGroup>
           </SelectContent>
         </Select>
-        <div className="flex gap-2">
+        <div className="flex items-center gap-2">
           {authenticated ? (
-            // Afficher un avatar simple (exemple générique)
-            <React.Fragment>
-              <Button variant={"outline"} onClick={logout}>
-                {t("logout")}
-              </Button>
-              <Link href={chariotAppUrl(locale)}>
-                <Button variant={"custom"}>{t("myAccount")}</Button>
-              </Link>
-            </React.Fragment>
+            <Profile accountHref={chariotAppUrl(locale)} />
           ) : (
             <React.Fragment>
               <Button variant={"outline"} onClick={register}>
