@@ -6,6 +6,7 @@ import {
   ArrowDown,
   ArrowRight,
   ArrowUpRight,
+  Send,
   ShoppingCart,
   UserRound,
 } from "lucide-react";
@@ -542,20 +543,41 @@ export default function HomePageClient() {
                     {t("faq.title")}
                   </h2>
                 </div>
-                <Accordion type="multiple" className="w-full">
-                  <AccordionItem value="item-1">
-                    <AccordionTrigger>{t("faq.q1")}</AccordionTrigger>
-                    <AccordionContent>{t("faq.a1")}</AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem value="item-2">
-                    <AccordionTrigger>{t("faq.q2")}</AccordionTrigger>
-                    <AccordionContent>{t("faq.a2")}</AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem value="item-3">
-                    <AccordionTrigger>{t("faq.q3")}</AccordionTrigger>
-                    <AccordionContent>{t("faq.a3")}</AccordionContent>
-                  </AccordionItem>
-                </Accordion>
+                <div className="flex flex-col gap-10 lg:grid grid-cols-1 lg:grid-cols-3 w-full mx-auto self-center items-start">
+                  <Accordion type="multiple" className="w-full lg:col-span-2">
+                    <AccordionItem value="item-1">
+                      <AccordionTrigger>{t("faq.q1")}</AccordionTrigger>
+                      <AccordionContent>{t("faq.a1")}</AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-2">
+                      <AccordionTrigger>{t("faq.q2")}</AccordionTrigger>
+                      <AccordionContent>{t("faq.a2")}</AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="item-3">
+                      <AccordionTrigger>{t("faq.q3")}</AccordionTrigger>
+                      <AccordionContent>{t("faq.a3")}</AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                  <Card className="h-fit">
+                    <div className="flex flex-col items-center text-center gap-4">
+                      <div className="flex flex-col gap-3">
+                        <h3 className="md:text-2xl text-xl font-semibold">
+                          {t("faq.contactTitle")}
+                        </h3>
+                        <p className="md:text-sm text-xs text-foreground">
+                          {t("faq.contactDescription")}
+                        </p>
+                      </div>
+
+                      <Link
+                        href={`mailto:${process.env.NEXT_PUBLIC_RECEIVER_EMAIL}`}
+                        className="md:text-sm text-xs flex items-center gap-2 hover:underline underline-offset-3"
+                      >
+                        <Send size={15} /> {t("faq.contactCta")}
+                      </Link>
+                    </div>
+                  </Card>
+                </div>
               </div>
             </Card>
           </Card>

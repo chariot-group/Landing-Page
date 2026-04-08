@@ -24,11 +24,11 @@
     },
     "explorator": {
       "name": "PAQUETE EXPLORADOR",
-      "description": "Ideal para Maestros del Juego que empiezan con Dungeons & Dragons."
+      "description": "Ideal para jugadores que empiezan con Dungeons & Dragons."
     },
     "legendary": {
       "name": "PAQUETE LÉGENDARIO",
-      "description": "Para los Maestros del Juego experimentados que buscan el máximo poder en sus campañas de D&D."
+      "description": "Para los jugadores experimentados que buscan el máximo poder en sus campañas de D&D."
     },
     "aventurer": {
       "name": "PAQUETE AVENTURERO",
@@ -89,7 +89,10 @@
     "q2": "¿Cuánto dura un Wheel?",
     "a2": "Un Wheel dura 8 horas una vez consumido, ¡pero mientras no lo gastes, puedes guardarlo de por vida!",
     "q3": "¿Qué novedades podemos esperar?",
-    "a3": "Actualmente estamos trabajando en las sesiones, un módulo que te permitirá interactuar con todos los jugadores de tu partida en tiempo real. Incluirá el gestor de combate en tiempo real, la gestión de las fichas de personaje por el MJ durante la partida, y las acciones de partida: lanzar un hechizo, usar una habilidad (furia, inspiración bárdica, etc.), descanso, etc."
+    "a3": "Actualmente estamos trabajando en las sesiones, un módulo que te permitirá interactuar con todos los jugadores de tu partida en tiempo real. Incluirá el gestor de combate en tiempo real, la gestión de las fichas de personaje por el MJ durante la partida, y las acciones de partida: lanzar un hechizo, usar una habilidad (furia, inspiración bárdica, etc.), descanso, etc.",
+    "contactTitle": "¿No encuentras tu respuesta?",
+    "contactDescription": "Estaremos encantados de ayudarte por correo",
+    "contactCta": "Contáctanos"
   },
   "footer": {
     "mobile": {
