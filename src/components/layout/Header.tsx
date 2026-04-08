@@ -27,6 +27,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import Profile from "@/components/layout/Profile";
 
 interface item {
   libelle: string;
@@ -38,17 +39,21 @@ export default function Header() {
 
   const t = useTranslations("header");
   const { locale, languageOptions, switchLocale } = useLanguageSwitcher();
-  const { authenticated, login, register, logout } = useKeycloak();
+  const { authenticated, login, register } = useKeycloak();
 
   const buttons: item[] = [
     { libelle: `${t("home")}`, id: "hero" },
-    { libelle: `${t("packs")}`, id: "packs" },
-    { libelle: `${t("howWorks")}`, id: "how-it-works" },
     { libelle: `${t("features")}`, id: "features" },
+    { libelle: `${t("howWorks")}`, id: "how-it-works" },
+    { libelle: `${t("packs")}`, id: "packs" },
+    { libelle: `${t("faq")}`, id: "faq" },
   ];
 
   return (
-    <header className="xl:px-15 px-10 py-4 flex items-center justify-between fixed top-0 left-0 right-0 z-50 bg-linear-to-b from-black to-transparent">
+    <header
+      id="site-header"
+      className="xl:px-15 px-10 py-4 flex items-center justify-between fixed top-0 left-0 right-0 z-50 bg-linear-to-b from-black to-transparent"
+    >
       <div className="flex items-center gap-15">
         <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
           <SheetTrigger asChild className="xl:hidden">
@@ -76,8 +81,10 @@ export default function Header() {
                       type="button"
                       className="h-9 px-4 py-2 cursor-pointer hover:text-primary transition-colors duration-300 text-left w-full"
                       onClick={() => {
-                        scrollToSection(item.id);
                         setIsSheetOpen(false);
+                        window.setTimeout(() => {
+                          scrollToSection(item.id);
+                        }, 0);
                       }}
                     >
                       {item.libelle}
@@ -101,16 +108,12 @@ export default function Header() {
                     </SelectGroup>
                   </SelectContent>
                 </Select>
-                <div className="flex gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   {authenticated ? (
-                    <React.Fragment>
-                      <Button variant={"outline"} onClick={logout}>
-                        {t("logout")}
-                      </Button>
-                      <Link href={chariotAppUrl(locale)}>
-                        <Button variant={"custom"}>{t("myAccount")}</Button>
-                      </Link>
-                    </React.Fragment>
+                    <Profile
+                      accountHref={chariotAppUrl(locale)}
+                      onAction={() => setIsSheetOpen(false)}
+                    />
                   ) : (
                     <React.Fragment>
                       <Button variant={"outline"} onClick={register}>
@@ -146,7 +149,7 @@ export default function Header() {
           </ul>
         </nav>
       </div>
-      <div className="hidden xl:flex gap-5">
+      <div className="hidden items-center xl:flex gap-5">
         <Select value={locale} onValueChange={switchLocale}>
           <SelectTrigger>
             <SelectValue placeholder="Select a langue" />
@@ -161,17 +164,9 @@ export default function Header() {
             </SelectGroup>
           </SelectContent>
         </Select>
-        <div className="flex gap-2">
+        <div className="flex items-center gap-2">
           {authenticated ? (
-            // Afficher un avatar simple (exemple générique)
-            <React.Fragment>
-              <Button variant={"outline"} onClick={logout}>
-                {t("logout")}
-              </Button>
-              <Link href={chariotAppUrl(locale)}>
-                <Button variant={"custom"}>{t("myAccount")}</Button>
-              </Link>
-            </React.Fragment>
+            <Profile accountHref={chariotAppUrl(locale)} />
           ) : (
             <React.Fragment>
               <Button variant={"outline"} onClick={register}>

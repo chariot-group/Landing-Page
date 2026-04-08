@@ -3,6 +3,7 @@
 import { ToastContainer } from "react-toastify";
 import "@/app/[locale]/globals.css";
 
+
 const CustomToastContainer = () => {
   return (
     <ToastContainer

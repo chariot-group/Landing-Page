@@ -5,6 +5,7 @@
     "home": "Accueil",
     "packs": "Nos packs",
     "howWorks": "Comment ça marche ?",
+    "faq": "FAQ",
     "features": "Fonctionnalités Chariot",
     "myAccount": "Mon espace",
     "logout": "Déconnexion"
@@ -12,7 +13,8 @@
   "hero": {
     "title": "Gérez vos campagnes Donjons & Dragons et jeux de rôle comme jamais auparavant !",
     "packs": "NOS PACKS",
-    "registration": "Créer mon compte"
+    "registration": "Créer mon compte",
+    "freeTokenOffer": "Crée ton compte, ton premier Wheel est offert !"
   },
   "packs": {
     "custom": {
@@ -22,11 +24,11 @@
     },
     "explorator": {
       "name": "PACK EXPLORATEUR",
-      "description": "Idéal pour les Maîtres du Jeu qui débutent en Donjons & Dragons."
+      "description": "Idéal pour les joueurs qui débutent en Donjons & Dragons."
     },
     "legendary": {
       "name": "PACK LÉGENDAIRE",
-      "description": "Pour les Maîtres du Jeu aguerris en quête de la puissance ultime pour leurs campagnes D&D."
+      "description": "Pour les joueurs aguerris en quête de la puissance ultime pour leurs campagnes D&D."
     },
     "aventurer": {
       "name": "PACK AVENTURIER",
@@ -87,7 +89,10 @@
     "q2": "Combien de temps dure un Wheel ?",
     "a2": "Un Wheel dure 8h une fois consommé, mais tant qu'il n'est pas dépensé vous pouvez le garder à vie !",
     "q3": "Quelles sont les nouveautés à attendre ?",
-    "a3": "Nous travaillons actuellement sur les sessions, un module qui vous permettra d'interagir avec tous les joueurs de votre partie en temps réel. Ce module intégrera le gestionnaire de combat en temps réel, la gestion des fiches personnages des joueurs par le MJ durant la partie ainsi que les actions de partie : lancer un sort, utiliser une compétence (rage, inspiration bardique, etc.), repos, etc."
+    "a3": "Nous travaillons actuellement sur les sessions, un module qui vous permettra d'interagir avec tous les joueurs de votre partie en temps réel. Ce module intégrera le gestionnaire de combat en temps réel, la gestion des fiches personnages des joueurs par le MJ durant la partie ainsi que les actions de partie : lancer un sort, utiliser une compétence (rage, inspiration bardique, etc.), repos, etc.",
+    "contactTitle": "Vous ne trouvez pas votre réponse ?",
+    "contactDescription": "On se fera un plaisir de vous aider par mail",
+    "contactCta": "Nous contacter"
   },
   "footer": {
     "mobile": {
@@ -411,7 +416,7 @@
       }
     ]
   },
-  "legalNotice":{
+  "legalNotice": {
     "sections": [
       {
         "title": "Introduction",
@@ -529,6 +534,23 @@
         ]
       },
       {
+        "title": "Crédits des images au sein de l'application",
+        "content": [
+          {
+            "type": "list",
+            "text": "Image campagne : designed by liuzishan - Freepik.com"
+          },
+          {
+            "type": "list",
+            "text": "Image personnage : designed by Freepik"
+          },
+          {
+            "type": "list",
+            "text": "Image session : designed by upklyak - Freepik.com"
+          }
+        ]
+      },
+      {
         "title": "Contact",
         "content": [
           {
@@ -642,6 +664,8 @@
   },
   "auth": {
     "loading": "Chargement...",
-    "pleaseWait": "Veuillez patienter pendant la vérification de votre session"
+    "pleaseWait": "Veuillez patienter pendant la vérification de votre session",
+    "loginSuccess": "Connexion réussie",
+    "logoutSuccess": "Déconnexion réussie"
   }
 }

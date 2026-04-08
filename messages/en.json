@@ -5,6 +5,7 @@
     "home": "Home",
     "packs": "Our packs",
     "howWorks": "How it works?",
+    "faq": "FAQ",
     "features": "Chariot features",
     "myAccount": "My account",
     "logout": "Logout"
@@ -12,7 +13,8 @@
   "hero": {
     "title": "Manage your Dungeons & Dragons and TTRPG campaigns like never before!",
     "packs": "OUR PACKS",
-    "registration": "Create my account"
+    "registration": "Create my account",
+    "freeTokenOffer": "Create your account. Get your first Wheel for free !"
   },
   "packs": {
     "custom": {
@@ -22,11 +24,11 @@
     },
     "explorator": {
       "name": "EXPLORATOR PACK",
-      "description": "Ideal for Game Masters just starting out with Dungeons & Dragons."
+      "description": "Ideal for players just starting out with Dungeons & Dragons."
     },
     "legendary": {
       "name": "LEGENDARY PACK",
-      "description": "For experienced Game Masters seeking maximum power for their D&D campaigns."
+      "description": "For experienced players seeking maximum power for their D&D campaigns."
     },
     "aventurer": {
       "name": "ADVENTURER PACK",
@@ -87,7 +89,10 @@
     "q2": "How long does a Wheel last?",
     "a2": "A Wheel lasts 8 hours once consumed, but as long as it is not spent, you can keep it forever!",
     "q3": "What new features can we expect?",
-    "a3": "We are currently working on sessions, a module that will let you interact with all your players in real time. It will include the real-time combat manager, player character sheet management by the GM during the session, and in-game actions: casting a spell, using an ability (rage, bardic inspiration, etc.), resting, and more."
+    "a3": "We are currently working on sessions, a module that will let you interact with all your players in real time. It will include the real-time combat manager, player character sheet management by the GM during the session, and in-game actions: casting a spell, using an ability (rage, bardic inspiration, etc.), resting, and more.",
+    "contactTitle": "Can't find your answer?",
+    "contactDescription": "We'll be happy to help you by email",
+    "contactCta": "Contact us"
   },
   "footer": {
     "mobile": {
@@ -529,6 +534,23 @@
         ]
       },
       {
+        "title": "In-app image credits",
+        "content": [
+          {
+            "type": "list",
+            "text": "Campaign image: designed by liuzishan - Freepik.com"
+          },
+          {
+            "type": "list",
+            "text": "Character image: designed by Freepik"
+          },
+          {
+            "type": "list",
+            "text": "Session image: designed by upklyak - Freepik.com"
+          }
+        ]
+      },
+      {
         "title": "Contact",
         "content": [
           {
@@ -642,6 +664,8 @@
   },
   "auth": {
     "loading": "Loading...",
-    "pleaseWait": "Please wait while we verify your session"
+    "pleaseWait": "Please wait while we verify your session",
+    "loginSuccess": "Successfully logged in",
+    "logoutSuccess": "Successfully logged out"
   }
 }
